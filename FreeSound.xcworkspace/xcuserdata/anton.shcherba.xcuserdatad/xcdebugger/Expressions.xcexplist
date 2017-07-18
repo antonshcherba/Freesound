@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "SoundTagsCell.awakeFromNib() -&gt; ():SoundTagsCell.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DatabaseManager.fetchDetailInfoForID(Int64) -&gt; SoundDetailInfo?:DatabaseManager.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DescriptionViewController.viewTapped(UITapGestureRecognizer) -&gt; ():DescriptionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "descriptionTextView.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundDetailViewController.configureData() -&gt; ():SoundDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "detailInfo.name">
+            </PersistentString>
+            <PersistentString
+               value = "soundInfo">
+            </PersistentString>
+            <PersistentString
+               value = "soundDetailInfo!.name">
+            </PersistentString>
+            <PersistentString
+               value = "soundInfo.detailInfo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundDetailViewController.tableView(UITableView, cellForRowAtIndexPath : NSIndexPath) -&gt; UITableViewCell:SoundDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "soundInfo.tags!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundDetailViewController.configurePlayer() -&gt; ():SoundDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "soundDetailInfo!.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProfileViewController.(viewDidLoad() -&gt; ()).(closure #1).(closure #1):ProfileViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SoundDetailViewController.playButtonTapped(UIButton) -&gt; ():SoundDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "soundDetailInfo!.name">
+            </PersistentString>
+            <PersistentString
+               value = "self.soundInfo.detailInfo.previewSound">
+            </PersistentString>
+            <PersistentString
+               value = "soundPlayer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundListViewController.tableView(UITableView, willDisplayCell : UITableViewCell, forRowAtIndexPath : NSIndexPath) -&gt; ():SoundListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fetchController.fetchedObjects?.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundListViewController.configureDataForCell(SoundInfoCell, atIndexPath : NSIndexPath) -&gt; ():SoundListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fetchController.fetchedObjects">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static Tag.tagsFromJSON(JSON) -&gt; [Tag]:Tag.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;tags&quot;].array">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundLoader.stopLoading() -&gt; ():SoundLoader.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SoundInfo.configureWithJson(JSON) -&gt; ():SoundInfo.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tags[0]">
+            </PersistentString>
+            <PersistentString
+               value = "self.tags">
+            </PersistentString>
+            <PersistentString
+               value = "self.managedObjectContext">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundLoader.loadUser(withName : String, authRequired : Bool, handler : (user : User) -&gt; ()) -&gt; ():SoundLoader.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "request.allHTTPHeaderFields">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundListViewController.numberOfSectionsInTableView(UITableView) -&gt; Int:SoundListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fetchController.sections?.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundDetailViewController.(configurePlayer() -&gt; ()).(closure #1):SoundDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "soundInfo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginViewController.loginButtonTapped(UIButton) -&gt; ():LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "SegueID.authViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundLoader.load(withComplitionHandler : (sounds : [SoundInfo]) -&gt; ()) -&gt; ():SoundLoader.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundListViewController.searchSoundByText(String) -&gt; ():SoundListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fetchController.fetchedObjects">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OAuth2Swift.authorizeWithCallbackURL(NSURL, scope : String, state : String, params : [String : String], success : (credential : OAuthSwiftCredential, response : NSURLResponse?, parameters : [String : String]) -&gt; (), failure : (error : NSError) -&gt; ()) -&gt; ():OAuth2Swift.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "callbackURL.absoluteString">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AuthViewController.webView(WKWebView, didReceiveServerRedirectForProvisionalNavigation : WKNavigation!) -&gt; ():AuthViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "webView.URL!.query">
+            </PersistentString>
+            <PersistentString
+               value = "webView.URL!.pathComponents">
+            </PersistentString>
+            <PersistentString
+               value = "webView.URL">
+            </PersistentString>
+            <PersistentString
+               value = "webView.URL?.query">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundListViewController.configureSearchController() -&gt; ():SoundListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "searchController.searchBar">
+            </PersistentString>
+            <PersistentString
+               value = "topContainerView">
+            </PersistentString>
+            <PersistentString
+               value = "searchController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginViewController.textFieldShouldReturn(UITextField) -&gt; Bool:LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "codeTextFiled.text">
+            </PersistentString>
+            <PersistentString
+               value = "body.endIndex">
+            </PersistentString>
+            <PersistentString
+               value = "body.endIndex.predecessor()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DatabaseManager.newSoundInfo.getter:DatabaseManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tmp.managedObjectContext">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundTagsCell.init(coder : NSCoder) -&gt; SoundTagsCell?:SoundTagsCell.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SoundListViewController.viewDidLoad() -&gt; ():SoundListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fetchController.fetchedObjects!.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "User.configureWithJson(JSON) -&gt; ():User.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;username&quot;].string">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundTagsCell.collectionView(UICollectionView, layout : UICollectionViewLayout, sizeForItemAtIndexPath : NSIndexPath) -&gt; CGSize:SoundTagsCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tags[indexPath.row]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AuthViewController.handle(NSURL) -&gt; ():AuthViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SoundListViewController.prepareForSegue(UIStoryboardSegue, sender : AnyObject?) -&gt; ():SoundListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "detailIndexPath">
+            </PersistentString>
+            <PersistentString
+               value = "segue.identifier">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundLoader.parseSearchDataFrom(NSData) -&gt; [SoundInfo]:SoundLoader.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "soundInfo.tags">
+            </PersistentString>
+            <PersistentString
+               value = "soundInfo.name">
+            </PersistentString>
+            <PersistentString
+               value = "soundInfo.managedObjectContext">
+            </PersistentString>
+            <PersistentString
+               value = "subJSON[&quot;id&quot;].intValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginViewController.(textFieldShouldReturn(UITextField) -&gt; Bool).(closure #2):LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "textField.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginViewController.parseTokens(NSData) -&gt; ():LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;access_token&quot;].stringValue">
+            </PersistentString>
+            <PersistentString
+               value = "oauthSwift?.client.credential">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundDetailViewController.configurePlayerView() -&gt; ():SoundDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "info.image">
+            </PersistentString>
+            <PersistentString
+               value = "soundInfo.detailInfo?.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundLoader.parseSearchResultFrom(NSData, loadedCount : Int) -&gt; SearchResult?:SoundLoader.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AuthViewController.webView(WKWebView, didStartProvisionalNavigation : WKNavigation!) -&gt; ():AuthViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "webView.URL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

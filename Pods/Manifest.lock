@@ -1,0 +1,44 @@
+PODS:
+  - EZAudio (1.1.5):
+    - EZAudio/Full (= 1.1.5)
+  - EZAudio/Core (1.1.5)
+  - EZAudio/Full (1.1.5):
+    - EZAudio/Core
+    - TPCircularBuffer (= 1.1)
+  - FDWaveformView (2.2.1)
+  - GoogleMaps (2.3.0):
+    - GoogleMaps/Maps (= 2.3.0)
+  - GoogleMaps/Base (2.3.0)
+  - GoogleMaps/Maps (2.3.0):
+    - GoogleMaps/Base
+  - Masonry (1.0.2)
+  - OAuthSwift (1.1.0)
+  - RESideMenu (4.0.7)
+  - SnapKit (3.2.0)
+  - SwiftyJSON (3.1.4)
+  - TPCircularBuffer (1.1)
+
+DEPENDENCIES:
+  - EZAudio
+  - FDWaveformView
+  - GoogleMaps
+  - Masonry
+  - OAuthSwift (~> 1.1.0)
+  - RESideMenu (~> 4.0.7)
+  - SnapKit
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  EZAudio: 3b1cb4b6d7ebca68f0c2478576d75940aad4aa99
+  FDWaveformView: 0f2e966d4bf242ab1e747c3a87b2ca10ed9c46b8
+  GoogleMaps: 340a6a0bebd17c2db8abcd3921976c7c53c86cb8
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  OAuthSwift: 7ec2c62274f6bdc30b1ba3b799c39a6fdcaea0e5
+  RESideMenu: f24c508404b49c667344c54aba7e590883533958
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
+
+PODFILE CHECKSUM: b3636b12e1f14365362d08eb6508dc377329fa2d
+
+COCOAPODS: 1.2.1

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WGb-uM-imP">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Hhu-Zp-zYX">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="WGb-uM-imP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3lz-Oq-ZSw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mas-0E-HQM" kind="relationship" relationship="rootViewController" id="T25-sh-nse"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IIo-6G-eQl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-688" y="-471"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="4yX-5Y-uUW">
+            <objects>
+                <viewController id="mas-0E-HQM" customClass="LoginViewController" customModule="FreeSound" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8K2-1I-ZrP"/>
+                        <viewControllerLayoutGuide type="bottom" id="3bU-OZ-074"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oEl-H7-mJv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="xEY-nE-iad">
+                                <rect key="frame" x="67.5" y="77.5" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="91f-9n-qS7"/>
+                                    <constraint firstAttribute="height" constant="128" id="Gn6-vo-B4B"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sor-7n-dHO">
+                                <rect key="frame" x="20" y="269.5" width="335" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="CgJ-Xc-DV8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.corners.radius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="mas-0E-HQM" eventType="touchUpInside" id="d9n-Yc-M2Y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Sor-7n-dHO" firstAttribute="centerY" secondItem="oEl-H7-mJv" secondAttribute="centerY" constant="-40" id="2c9-8S-3g8"/>
+                            <constraint firstAttribute="trailing" secondItem="Sor-7n-dHO" secondAttribute="trailing" constant="20" symbolic="YES" id="8Pv-CH-AHA"/>
+                            <constraint firstItem="xEY-nE-iad" firstAttribute="centerX" secondItem="oEl-H7-mJv" secondAttribute="centerX" id="8S4-1j-87m"/>
+                            <constraint firstItem="Sor-7n-dHO" firstAttribute="top" secondItem="xEY-nE-iad" secondAttribute="bottom" constant="64" id="TlS-zR-kpF"/>
+                            <constraint firstItem="Sor-7n-dHO" firstAttribute="centerX" secondItem="oEl-H7-mJv" secondAttribute="centerX" id="Uo4-O4-bTQ"/>
+                            <constraint firstItem="Sor-7n-dHO" firstAttribute="leading" secondItem="oEl-H7-mJv" secondAttribute="leading" constant="20" symbolic="YES" id="tQv-wI-RxN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tdT-8a-axA"/>
+                    <connections>
+                        <segue destination="aVj-Xq-bDQ" kind="show" identifier="MenuRootViewController" id="O4d-gX-blC"/>
+                        <segue destination="uap-3i-odH" kind="show" identifier="AuthViewController" id="jz5-qV-zSb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XLt-tv-Ekc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="306" y="-471"/>
+        </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="DFL-z0-Ntm">
+            <objects>
+                <viewController storyboardIdentifier="AuthViewController" id="uap-3i-odH" customClass="AuthViewController" customModule="FreeSound" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pF8-0R-5sL"/>
+                        <viewControllerLayoutGuide type="bottom" id="jGU-33-saT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RTi-y8-2kQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wlP-Ym-R3M">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wlP-Ym-R3M" secondAttribute="trailing" id="GGf-4a-rJp"/>
+                            <constraint firstItem="wlP-Ym-R3M" firstAttribute="top" secondItem="pF8-0R-5sL" secondAttribute="bottom" id="Yp2-qJ-4uA"/>
+                            <constraint firstItem="wlP-Ym-R3M" firstAttribute="leading" secondItem="RTi-y8-2kQ" secondAttribute="leading" id="hyq-HJ-x2N"/>
+                            <constraint firstItem="jGU-33-saT" firstAttribute="top" secondItem="wlP-Ym-R3M" secondAttribute="bottom" id="ij5-eZ-EN2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="wlP-Ym-R3M" id="Cke-9K-xQI"/>
+                        <segue destination="rE8-NW-Z30" kind="unwind" identifier="LoginViewController" unwindAction="authCodeRecieved:" id="5d0-7S-Lux"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W4g-q6-eSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="rE8-NW-Z30" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="186" y="364"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="Inf-Pg-S2o">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="aVj-Xq-bDQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bIu-6R-z4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="912" y="-472"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="541" height="188"/>
+    </resources>
+</document>

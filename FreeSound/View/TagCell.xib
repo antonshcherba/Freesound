@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagCell" id="gSD-UD-jNj" customClass="TagCell" customModule="FreeSound" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag" translatesAutoresizingMaskIntoConstraints="NO" id="e8N-ZM-jdx">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97q-H0-3Lb">
+                        <rect key="frame" x="32" y="0.0" width="68" height="32"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="e8N-ZM-jdx" firstAttribute="top" secondItem="gSD-UD-jNj" secondAttribute="top" id="23u-KP-U00"/>
+                <constraint firstItem="97q-H0-3Lb" firstAttribute="top" secondItem="gSD-UD-jNj" secondAttribute="top" id="AAc-bL-4if"/>
+                <constraint firstAttribute="bottom" secondItem="97q-H0-3Lb" secondAttribute="bottom" id="C5E-nR-yzg"/>
+                <constraint firstAttribute="trailing" secondItem="97q-H0-3Lb" secondAttribute="trailing" id="W2z-DF-Yu4"/>
+                <constraint firstItem="97q-H0-3Lb" firstAttribute="leading" secondItem="gSD-UD-jNj" secondAttribute="leading" constant="32" id="Zsn-QK-tWl"/>
+                <constraint firstItem="e8N-ZM-jdx" firstAttribute="leading" secondItem="gSD-UD-jNj" secondAttribute="leading" id="bGQ-U8-7kT"/>
+                <constraint firstAttribute="bottom" secondItem="e8N-ZM-jdx" secondAttribute="bottom" id="mDG-UQ-0CE"/>
+                <constraint firstAttribute="trailing" secondItem="e8N-ZM-jdx" secondAttribute="trailing" id="xi3-p6-cVQ"/>
+            </constraints>
+            <connections>
+                <outlet property="tagLabel" destination="97q-H0-3Lb" id="Gab-FP-F2W"/>
+            </connections>
+            <point key="canvasLocation" x="361" y="564"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="tag" width="14" height="32"/>
+    </resources>
+</document>
