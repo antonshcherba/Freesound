@@ -79,6 +79,8 @@ class SoundListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     fileprivate var filterParameter: FilterParameter?
     
+    fileprivate var sortParameter: SortParameter?
+    
     // MARK: - Constructors
     
     override func viewDidLoad() {
@@ -92,8 +94,8 @@ class SoundListViewController: UIViewController, UITableViewDelegate, UITableVie
 //            return
 //        }
         
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        self.searchSoundWith(text: "", sortParameter: nil, filterParameter: nil)
+        sortParameter = .relevance
+        self.searchSoundWith(text: "", sortParameter: sortParameter, filterParameter: nil)
     }
     
     deinit {
@@ -117,6 +119,15 @@ class SoundListViewController: UIViewController, UITableViewDelegate, UITableVie
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+        
+        let searchSettingsButton = UIButton(type: .custom)
+        searchSettingsButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        searchSettingsButton.setImage(UIImage(named: "SettingsButtonIcon"), for: .normal)
+        searchSettingsButton.addTarget(self, action: #selector(searchSettingsButtonTapped(_:)), for: .touchUpInside)
+        
+        let barItem = UIBarButtonItem(customView: searchSettingsButton);
+        
+        navigationItem.rightBarButtonItem = barItem
     }
     
     func configureFilterControlls() {
@@ -209,7 +220,38 @@ class SoundListViewController: UIViewController, UITableViewDelegate, UITableVie
         let index = sender.tag - 200
         
         filterParameter = (index < params.count ? params[index] : nil)
-        searchSoundWith(text: searchController.searchBar.text!, sortParameter: nil, filterParameter: filterParameter)
+        searchSoundWith(text: searchController.searchBar.text!, sortParameter: sortParameter, filterParameter: filterParameter)
+    }
+    
+    @IBAction func actionButtonTapped(_ sender: UIButton) {
+        
+        let actionController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
+        let oneAction = UIAlertAction(title: "Download", style: .default) { _ in }
+        let twoAction = UIAlertAction(title: "Add to bookmarks", style: .default) { _ in }
+        let threeAction = UIAlertAction(title: "Share", style: .default) { _ in }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in }
+        
+        actionController.addAction(oneAction)
+        actionController.addAction(twoAction)
+        actionController.addAction(threeAction)
+        actionController.addAction(cancelAction)
+        
+        self.present(actionController, animated: true, completion: nil)
+
+    }
+    
+    func searchSettingsButtonTapped(_ sender: UIButton) {
+        let controller = SearchOptionsController()
+        controller.sortParameter = sortParameter
+        
+        controller.searchOptionsApply = { params in
+            self.sortParameter = params
+            self.searchSoundWith(text: self.searchController.searchBar.text!,
+                                 sortParameter: self.sortParameter,
+                                 filterParameter: self.filterParameter)
+        }
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     // MARK: - Private methods
@@ -312,7 +354,7 @@ extension SoundListViewController: UISearchResultsUpdating {
         guard let searchString = searchController.searchBar.text, searchString.characters.count > 1 else {
             return
         }
-        searchSoundWith(text: searchString, sortParameter: nil, filterParameter: filterParameter)
+        searchSoundWith(text: searchString, sortParameter: sortParameter, filterParameter: filterParameter)
     }
     
 //    func searchSoundByText(_ text: String) {
@@ -348,6 +390,7 @@ extension SoundListViewController: UISearchResultsUpdating {
 //    }
     
     func searchSoundWith(text: String, sortParameter: SortParameter?, filterParameter: FilterParameter?) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         loader.searchSoundWith(text, sortParameter: sortParameter, filterParameter: filterParameter) { (sounds) in
             if sounds.count <= 0 {
                 return
@@ -388,7 +431,7 @@ extension SoundListViewController: UISearchBarDelegate {
 //    }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchSoundWith(text: "", sortParameter: nil, filterParameter: filterParameter)
+        searchSoundWith(text: "", sortParameter: sortParameter, filterParameter: filterParameter)
     }
 }
 

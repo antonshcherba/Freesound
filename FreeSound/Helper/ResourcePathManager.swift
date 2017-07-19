@@ -41,6 +41,14 @@ class ResourcePathManager {
         }
     }
     
+    enum SoundResource: String {
+        case download = "download"
+        case upload = "upload"
+        case bookmark = "bookmark"
+        case comments = "comments"
+        case rate = "rate"
+    }
+    
     enum Authentication: String {
         case Code = "authorize"
         case Logout = "logout_and_authorize"
@@ -114,10 +122,9 @@ class ResourcePathManager {
         return tmp
     }
     
-    //    let soundRequestString = "http://www.freesound.org/apiv2/sounds/"
+    //    let soundRequestString = "http://www.freesound.org/apiv2/sounds"
     var soundPath: String {
-        return basePath +
-            Resource.Sound.rawValue + String.slash
+        return basePath + Resource.Sound.rawValue
     }
     
     var userPath: String {
@@ -180,10 +187,30 @@ class ResourcePathManager {
     }
     
     func soundPathFor(_ id: String) -> String {
-        return soundPath +
-            id + String.slash + String.questionMark +
-            tokenParameter()
-
+        return [soundPath,
+                id,
+                String.questionMark]
+            .joined(separator:String.slash) + tokenParameter()
+        
+//        return soundPath +
+//            id + String.slash + String.questionMark +
+//            tokenParameter()
+    }
+    
+    func downloadSoundPathFor(_ id: String) -> String {
+        return [soundPath,
+                id,
+                SoundResource.download.rawValue,
+                String.questionMark]
+            .joined(separator: String.slash) + tokenParameter()
+    }
+    
+    func commentsPathFor(_ id: String) -> String {
+        return [soundPath,
+                id,
+                SoundResource.comments.rawValue,
+                String.questionMark]
+            .joined(separator: String.slash) + tokenParameter()
     }
     
     func userPathFor(_ user: String) -> String {

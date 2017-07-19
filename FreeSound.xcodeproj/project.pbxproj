@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A50B3D3B1F1D064100CC666E /* SearchOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B3D3A1F1D064100CC666E /* SearchOptionsCell.swift */; };
 		A52221A91F0BCC970002AB04 /* Dictionary+HTTPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52221A81F0BCC970002AB04 /* Dictionary+HTTPParameters.swift */; };
+		A53D9FBD1F1F75770066A588 /* CommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53D9FBC1F1F75770066A588 /* CommentsController.swift */; };
 		A541899D1F177D2900B8F198 /* SoundPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A541899C1F177D2900B8F198 /* SoundPlayerController.swift */; };
 		A54D4F091F0B9798009937EA /* FreesoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D4F081F0B9798009937EA /* FreesoundService.swift */; };
 		A5556CBE1F0E40FA00051AE0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5556CBD1F0E40FA00051AE0 /* AVFoundation.framework */; };
@@ -63,6 +64,7 @@
 		4B4E927B89794D3F6F97A723 /* Pods-FreeSound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeSound.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreeSound/Pods-FreeSound.release.xcconfig"; sourceTree = "<group>"; };
 		A50B3D3A1F1D064100CC666E /* SearchOptionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchOptionsCell.swift; path = View/SearchOptionsCell.swift; sourceTree = "<group>"; };
 		A52221A81F0BCC970002AB04 /* Dictionary+HTTPParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+HTTPParameters.swift"; path = "Helper/Dictionary+HTTPParameters.swift"; sourceTree = "<group>"; };
+		A53D9FBC1F1F75770066A588 /* CommentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentsController.swift; path = ViewController/CommentsController.swift; sourceTree = "<group>"; };
 		A541899C1F177D2900B8F198 /* SoundPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundPlayerController.swift; path = ViewController/SoundPlayerController.swift; sourceTree = "<group>"; };
 		A54D4F081F0B9798009937EA /* FreesoundService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FreesoundService.swift; path = Service/FreesoundService.swift; sourceTree = "<group>"; };
 		A5556CBD1F0E40FA00051AE0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -158,18 +160,19 @@
 		D20D880E1CDD1B9A00B4EB84 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D20D880F1CDD1C0D00B4EB84 /* SoundListViewController.swift */,
-				D289D5781CDDFD61007ED01E /* SoundDetailViewController.swift */,
-				D29DE1EB1CE5AC9900240AFD /* PlayerModalViewController.swift */,
-				D2F33D161CEDB0D7009036EC /* DescriptionViewController.swift */,
-				D2F7E5D41CF716FF00D926A2 /* MenuRootViewController.swift */,
-				D2F7E5D61CF71B5D00D926A2 /* LeftMenuViewController.swift */,
-				D2F736D81CF7511900EE0066 /* ProfileViewController.swift */,
-				D2F2369B1CFDBBB500673ED2 /* LoginViewController.swift */,
 				D2BC87471D1C22180021239C /* AuthViewController.swift */,
+				A53D9FBC1F1F75770066A588 /* CommentsController.swift */,
+				D2F33D161CEDB0D7009036EC /* DescriptionViewController.swift */,
+				D2F7E5D61CF71B5D00D926A2 /* LeftMenuViewController.swift */,
+				D2F2369B1CFDBBB500673ED2 /* LoginViewController.swift */,
+				D2F7E5D41CF716FF00D926A2 /* MenuRootViewController.swift */,
+				D29DE1EB1CE5AC9900240AFD /* PlayerModalViewController.swift */,
+				D2F736D81CF7511900EE0066 /* ProfileViewController.swift */,
+				A5ED95341F1CA70E00DFE1D7 /* SearchOptionsController.swift */,
+				D289D5781CDDFD61007ED01E /* SoundDetailViewController.swift */,
+				D20D880F1CDD1C0D00B4EB84 /* SoundListViewController.swift */,
 				A5EDD4031F0FA7C300422C88 /* SoundMapController.swift */,
 				A541899C1F177D2900B8F198 /* SoundPlayerController.swift */,
-				A5ED95341F1CA70E00DFE1D7 /* SearchOptionsController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				D20D880C1CDD191B00B4EB84 /* SearchResult.swift in Sources */,
 				D2F90BBE1CEC6B5F00B86215 /* TagsView.swift in Sources */,
 				D2B1D58D1CDFD19A00113A84 /* TagCell.swift in Sources */,
+				A53D9FBD1F1F75770066A588 /* CommentsController.swift in Sources */,
 				A5CE117F1F0E767B00AA3AF9 /* SoundInfo+CoreDataProperties.swift in Sources */,
 				D2A90DE31CE37BDC00441F8A /* DatabaseManager.swift in Sources */,
 				D2F7E5D71CF71B5D00D926A2 /* LeftMenuViewController.swift in Sources */,

@@ -20,6 +20,16 @@ class SoundDetailViewController: UIViewController {
         case SoundDescription
     }
     
+    enum TableSection: Int {
+        case title = 0
+        case metaInfo
+        case tags
+        case map
+        case comments
+        case description
+        case count
+    }
+    
     // MARK: - Outlets
     
     @IBOutlet weak var tableView: UITableView!
@@ -42,7 +52,13 @@ class SoundDetailViewController: UIViewController {
     
     let playerController = SoundPlayerController()
     
-    // MARK: - Constructors
+    // MARK: - Private Properties
+    
+    fileprivate let metaTitles:[MetaInfoCell.Description: String] = [.type: "Type",
+                                                                     .bitrate: "Bitrate",
+                                                                     .duration: "Duration",
+                                                                     .filesize: "Filesize"]
+    // MARK: - Livecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,10 +73,6 @@ class SoundDetailViewController: UIViewController {
         }
         
         tableView.tableHeaderView = controller.view
-        
-        controller.playerView.playPauseButton.addTarget(self, action: #selector(playButtonTapped(_:)), for: .touchUpInside)
-        let aa = controller.playerView.playPauseButton.actions(forTarget: self, forControlEvent: .touchUpInside)
-        
     }
     
     
@@ -177,24 +189,6 @@ class SoundDetailViewController: UIViewController {
         }
     }
     
-    var firstTapped = true
-    
-    @IBAction func playButtonTapped(_ sender: UIButton) {
-        if soundPlayer!.isPlaying {
-            soundPlayer?.pause()
-        } else {
-            soundPlayer?.play()
-        }
-    }
-    
-    @IBAction func stopButtonTapped(_ sender: UIButton) {
-        
-        if soundPlayer!.isPlaying {
-            soundPlayer?.stop()
-            soundPlayer?.currentTime = 0.0
-        }
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let id = segue.identifier else {
             return
@@ -221,7 +215,7 @@ extension SoundDetailViewController: UITableViewDataSource {
             return 0
         }
         
-        return 5
+        return TableSection.count.rawValue
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -229,17 +223,22 @@ extension SoundDetailViewController: UITableViewDataSource {
             return 0
         }
         
+        guard let tableSection = TableSection(rawValue:section) else { return 0 }
+        
         let rowCount: Int
-        switch section {
-        case 0:
+        switch tableSection {
+        case .title:
             rowCount = 1
-        case 1:
+        case .metaInfo:
             rowCount = metaInfoCount
-        case 2:
+        case .tags:
             rowCount = 1
-        case 3:
+        case .map:
             rowCount = (soundInfo.latitude != 0 ? 1 : 0)
-        case 4:
+            
+        case .comments:
+            rowCount = 1
+        case .description:
             rowCount = 1
         default:
             rowCount = 0
@@ -249,48 +248,46 @@ extension SoundDetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                
-        switch indexPath.section {
-        case 0:
+        guard let tableSection = TableSection(rawValue:indexPath.section) else {
+            return tableView.dequeueReusableCell(withIdentifier: CellID.SoundTitle.rawValue)!
+        }
+        
+        switch tableSection {
+        case .title:
             let cell = tableView.dequeueReusableCell(withIdentifier: CellID.SoundTitle.rawValue,
                                                                    for: indexPath) as! SoundTitleCell
             cell.titleLabel.text = soundInfo.name
             return cell
-            
-//        case 1:
-//            let cell = tableView.dequeueReusableCellWithIdentifier(CellID.SoundPlayer.rawValue,
-//                                                                   forIndexPath: indexPath) as! SoundPlayerCell
-//            
-//            if let data = NSData(contentsOfURL: NSURL(string: soundInfo.detailInfo!.image)!) {
-//                cell.plotImageView.image = UIImage(data: data)!
-//            }
-////            cell.plotImageView.image = soundDetailInfo?.image
-//            return cell
-        case 1:
+        case .metaInfo:
             let cell = tableView.dequeueReusableCell(withIdentifier: CellID.MetaInfo.rawValue,
                                                                    for: indexPath) as! MetaInfoCell
             configureMetaInfoCell(cell, forIndexPath: indexPath)
             return cell
-        case 2:
+        case .tags:
             let cell = tableView.dequeueReusableCell(withIdentifier: CellID.SoundTags.rawValue,
                                                                    for: indexPath) as! SoundTagsCell
             
             cell.tags = soundInfo.tags!.map {($0 as AnyObject).title}//soundDetailInfo!.tags
             return cell
             
-        case 3:
+        case .map:
             let cell = tableView.dequeueReusableCell(withIdentifier: CellID.SoundTitle.rawValue,
                                                      for: indexPath) as! SoundTitleCell
             
             cell.titleLabel.text = "Show on Map"
             return cell
-        case 4:
+        case .map:
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellID.SoundTitle.rawValue,
+                                                     for: indexPath) as! SoundTitleCell
+            
+            cell.titleLabel.text = "Show comments"
+            return cell
+        case .description:
             let cell = tableView.dequeueReusableCell(withIdentifier: CellID.SoundDescription.rawValue,
                                                                    for: indexPath) as! SoundDescriptionCell
             cell.textView.text = soundInfo.detailInfo!.userDescription
             return cell
         default:
-//            return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
             return tableView.dequeueReusableCell(withIdentifier: CellID.SoundTitle.rawValue)!
         }
     }
@@ -300,18 +297,23 @@ extension SoundDetailViewController: UITableViewDataSource {
             return
         }
         
+        let title = metaTitles[meta]
+        let value: String
+        
         switch meta {
         case MetaInfoCell.Description.type:
-            cell.setDescription("Type", withValue: soundInfo.detailInfo!.typeEnum.title)
+            value = soundInfo.detailInfo!.typeEnum.title
         case MetaInfoCell.Description.bitrate:
-            cell.setDescription("Bitrate", withValue: String(soundInfo.detailInfo!.bitrate))
+            value = String(soundInfo.detailInfo!.bitrate)
         case MetaInfoCell.Description.duration:
-            cell.setDescription("Duration", withValue: soundInfo.detailInfo!.duration.stringValue)
+            value = soundInfo.detailInfo!.duration.stringValue
         case MetaInfoCell.Description.filesize:
-            cell.setDescription("Filesize", withValue: soundInfo.detailInfo!.filesize.stringValue)
+            value = soundInfo.detailInfo!.filesize.stringValue
         default:
             break
         }
+        
+        cell.setDescription(title, withValue: soundInfo.detailInfo!.filesize.stringValue)
     }
     
     
@@ -334,8 +336,10 @@ func saveFile(name: String, data: Data) -> URL {
 
 extension SoundDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.section {
-        case 3:
+        guard let tableSection = TableSection(rawValue:indexPath.section) else { return }
+        
+        switch tableSection {
+        case .map:
             guard let soundInfo = self.soundInfo else {
                 return
             }
@@ -349,6 +353,8 @@ extension SoundDetailViewController: UITableViewDelegate {
             let controller = SoundMapController()
             controller.soundMarker = marker
             navigationController?.pushViewController(controller, animated: true)
+        case .comments:
+            break
         default:
             break
         }

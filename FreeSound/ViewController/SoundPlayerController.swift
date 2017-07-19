@@ -53,6 +53,8 @@ class SoundPlayerController: UIViewController, EZAudioPlayerDelegate {
     }
     
     func playButtonTapped(_ sender: UIButton) {
+        guard let _ = player else { return }
+        
         if player.isPlaying {
             player?.pause()
         } else {

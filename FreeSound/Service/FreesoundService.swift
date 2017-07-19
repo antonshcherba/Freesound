@@ -40,6 +40,8 @@ class FreesoundService {
                                  responseType: "code")
     }
     
+    // MARK: - User functions
+    
     func loginUser(withComplitionHandler handler: @escaping (_ error: Error?) -> Void) {
         let authController = AuthViewController()
         authController.delegate = self
@@ -53,40 +55,6 @@ class FreesoundService {
         
         self.authHandler = handler
         rootController.present(authController, animated: true, completion: nil)
-    }
-    
-    func loadSoundWithID(_ id: Int, withComplitionHandler handler: @escaping (_ sound: SoundDetailInfo?) -> Void ) {
-        
-        guard let url = URL(string: resourcePath.soundPathFor("\(id)")) else {
-            return
-        }
-        let request = URLRequest(url: url)
-        
-        defaultSession = URLSession(configuration: defaultSessionConfig,
-                                    delegate: nil,
-                                    delegateQueue: OperationQueue.main)
-        
-        
-        let task = defaultSession.dataTask(with: request, completionHandler: {[unowned self] (data, response, error) in
-            if error != nil {
-                print("Error: \(error?.localizedDescription)")
-                return
-            }
-            
-            if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-//                    if let result = self.parseSoundDetailFrom(data!) {
-//                        handler(result)
-//                    }
-                    
-                } else {
-                    print("Server Error: \(httpResponse.statusCode)")
-                }
-            } else {
-                print("Error")
-            }
-        })
-        task.resume()
     }
     
     func logoutUser(withComplitionHandler handler: @escaping (_ error: Error?) -> Void) {
@@ -127,9 +95,112 @@ class FreesoundService {
         task.resume()
     }
 
+    // MARK: - Sound functions
+    
+    func loadSoundWithID(_ id: Int, withComplitionHandler handler: @escaping (_ sound: SoundDetailInfo?) -> Void ) {
+        
+        guard let url = URL(string: resourcePath.soundPathFor("\(id)")) else {
+            return
+        }
+        let request = URLRequest(url: url)
+        
+        defaultSession = URLSession(configuration: defaultSessionConfig,
+                                    delegate: nil,
+                                    delegateQueue: OperationQueue.main)
+        
+        
+        let task = defaultSession.dataTask(with: request, completionHandler: {[unowned self] (data, response, error) in
+            if error != nil {
+                print("Error: \(error?.localizedDescription)")
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    //                    if let result = self.parseSoundDetailFrom(data!) {
+                    //                        handler(result)
+                    //                    }
+                    
+                } else {
+                    print("Server Error: \(httpResponse.statusCode)")
+                }
+            } else {
+                print("Error")
+            }
+        })
+        task.resume()
+    }
+    
+    func downloadSound(_ soundInfo: SoundInfo, withComplitionHandler handler: @escaping (_ sound: SoundDetailInfo?) -> Void ) {
+        
+        guard let url = URL(string: resourcePath.soundPathFor("\(soundInfo.id)")) else {
+            return
+        }
+        let request = URLRequest(url: url)
+        
+        defaultSession = URLSession(configuration: defaultSessionConfig,
+                                    delegate: nil,
+                                    delegateQueue: OperationQueue.main)
+        
+        
+        let task = defaultSession.dataTask(with: request, completionHandler: {[unowned self] (data, response, error) in
+            if error != nil {
+                print("Error: \(error?.localizedDescription)")
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    //                    if let result = self.parseSoundDetailFrom(data!) {
+                    //                        handler(result)
+                    //                    }
+                    
+                } else {
+                    print("Server Error: \(httpResponse.statusCode)")
+                }
+            } else {
+                print("Error")
+            }
+        })
+        task.resume()
+    }
+    
+    // MARK: - Comments functions
+    
+    func getCommentsFor(_ soundInfo: SoundInfo, withComplitionHandler handler: @escaping (_ sound: Any?) -> Void ) {
+        
+        guard let url = URL(string: resourcePath.commentsPathFor("\(soundInfo.id)")) else {
+            return
+        }
+        let request = URLRequest(url: url)
+        
+        defaultSession = URLSession(configuration: defaultSessionConfig,
+                                    delegate: nil,
+                                    delegateQueue: OperationQueue.main)
+        
+        
+        let task = defaultSession.dataTask(with: request, completionHandler: {[unowned self] (data, response, error) in
+            if error != nil {
+                print("Error: \(error?.localizedDescription)")
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+//                    if let result = self.parseSoundDetailFrom(data!) {
+//                        handler(result)
+//                    }
+                    
+                } else {
+                    print("Server Error: \(httpResponse.statusCode)")
+                }
+            } else {
+                print("Error")
+            }
+        })
+        task.resume()
+    }
 }
-
-// MARK: - Login functions
 
 extension FreesoundService: AuthControllerdDelegate {
     func didRecieve(authCode code: String) {

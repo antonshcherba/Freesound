@@ -11,6 +11,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "SearchOptionsController.configureNavigationBar() -&gt; ():SearchOptionsController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationItem">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SoundDetailViewController.configurePlayerView() -&gt; ():SoundDetailViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -20,6 +28,14 @@
       </ContextState>
       <ContextState
          contextName = "SoundLoader.(searchSoundWith(String, loadedCount : Int, sortParameter : SortParameter?, filterParameter : FilterParameter?, handler : ([SoundInfo]) -&gt; ()) -&gt; ()).(closure #1):SoundLoader.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SearchOptionsController.numberOfSections(in : UITableView) -&gt; Int:SearchOptionsController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "TableSection.count.rawValue">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "SoundDetailViewController.(configurePlayer() -&gt; ()).(closure #1):SoundDetailViewController.swift">

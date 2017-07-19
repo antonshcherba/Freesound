@@ -7,19 +7,9 @@
 //
 
 import UIKit
-
-//
-//  SoundListViewController.swift
-//  FreeSound
-//
-//  Created by Anton Shcherba on 5/6/16.
-//  Copyright © 2016 Anton Shcherba. All rights reserved.
-//
-
-import UIKit
 import CoreData
 
-class SearchOptionsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SearchOptionsController: UITableViewController {
     
     enum TableSection: Int {
         case sortOption = 0
@@ -30,17 +20,21 @@ class SearchOptionsController: UIViewController, UITableViewDelegate, UITableVie
     
     var sortParameter: SortParameter?
     
-    var sortParameters: [SortParameter]!
-    
-    var sortTitles: [String]!
+    var searchOptionsApply: (((SortParameter)) -> Void)?
     
     // MARK: - Outlets
-    
-    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Public Properties
     
     // MARK: - Private Properties
+    
+    fileprivate let screenTitle = "Search options"
+    
+    fileprivate var sectionTitles: [String]!
+    
+    fileprivate var sortParameters: [SortParameter]!
+    
+    fileprivate var sortTitles: [String]!
     
     // MARK: - Lifecycle
     
@@ -57,6 +51,8 @@ class SearchOptionsController: UIViewController, UITableViewDelegate, UITableVie
                       "Rating",
                       "Downloads count"]
         
+        sectionTitles = ["Sort by:"]
+        
         configureUI()
     }
     
@@ -68,11 +64,7 @@ class SearchOptionsController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: - Methods of instance
     
     func configureUI() {
-        
-//        configureFetchController()
-//        configureNavigationBar()
-//        configureFilterControlls()
-//        configureSearchController()
+        configureNavigationBar()
         configureTableView()
     }
     
@@ -80,25 +72,41 @@ class SearchOptionsController: UIViewController, UITableViewDelegate, UITableVie
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
-    }
-    
-    func configureFilterControlls() {
-
+        
+        navigationItem.title = screenTitle
+        
+        let textAttributes = [NSForegroundColorAttributeName: UIColor.darkGray]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
     func configureTableView() {
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 400
+        tableView.rowHeight = 50
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.register(SearchOptionsCell.self, forCellReuseIdentifier: SearchOptionsCell.identifier)
+        
+        
+        let tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        
+        let applyButton = UIButton(type: .custom)
+        applyButton.frame = tableFooterView.frame
+        applyButton.setTitle("Apply", for: .normal)
+        applyButton.setTitleColor(.red, for: .normal)
+        applyButton.addTarget(self, action: #selector(applyButtonTapped(_:)), for: .touchUpInside)
+        
+        tableFooterView.addSubview(applyButton)
+        
+        tableView.tableFooterView = tableFooterView
     }
     
     // MARK: - Actions
     
-    @IBAction func filterButtonTapped(_ sender: UIButton) {
-
+    @IBAction func applyButtonTapped(_ sender: UIButton) {
+        guard let sortParameter = sortParameter else { return }
+        
+        navigationController?.popViewController(animated: true)
+        searchOptionsApply?((sortParameter))
     }
     
     // MARK: - Private methods
@@ -107,11 +115,11 @@ class SearchOptionsController: UIViewController, UITableViewDelegate, UITableVie
 // MARK: - UITableViewDataSource
 extension SearchOptionsController {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return TableSection.count.rawValue
     }
     
-    func tableView(_ tableView: UITableView,
+    override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
         guard let tableSection = TableSection(rawValue: section) else { return 0 }
         let rowsCount: Int
@@ -125,39 +133,29 @@ extension SearchOptionsController {
         return rowsCount
     }
     
-    func tableView(_ tableView: UITableView,
+    override func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchOptionsCell.identifier,
                                                  for: indexPath) as! SearchOptionsCell
         
         configureDataForCell(cell, atIndexPath: indexPath)
         
+        cell.setNeedsUpdateConstraints()
+        cell.updateConstraints()
         return cell
     }
     
     func configureDataForCell(_ cell: SearchOptionsCell, atIndexPath indexPath: IndexPath) {
-        //        guard let soundInfo = fetchController.object(at: indexPath) as? SoundInfo else {
-        //            return
-        //        }
-        
-//        let soundInfo = sounds[indexPath.row]
-        
         cell.titleLabel.text = sortTitles[indexPath.row]
         cell.isOn = (sortParameter == sortParameters[indexPath.row])
-        
-        //        let tags = soundInfo.tags?.allObjects.map {tag in (tag as! Tag).title }
-        //        cell.tagsView.tags = tags!
-        
-//        cell.detailButton.addTarget(self, action: #selector(checkBoxButtonTapped), for: .touchUpInside)
-//        cell.detailButton.tag = indexPath.row
     }
+}
+
+// MARK: - UITableViewDelegate
+extension SearchOptionsController {
     
-    @IBAction func checkBoxButtonTapped(_ sender: UIButton) {
-        guard let cell = sender.superview?.superview as? UITableViewCell else { return }
-        
-//        let indexPath = IndexPath(row: sender.tag, section: 0)
-        guard let indexPath = tableView.indexPath(for: cell),
-            let tableSection = TableSection(rawValue:indexPath.section) else { return }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let tableSection = TableSection(rawValue:indexPath.section) else { return }
         
         switch tableSection {
         case .sortOption:
@@ -167,41 +165,27 @@ extension SearchOptionsController {
         }
         
         tableView.reloadSections([indexPath.section], with: .none)
-    }
-}
 
-// MARK: - UITableViewDelegate
-extension SearchOptionsController {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if searchController.isActive {
-//            searchController.isActive = false
-//        }
-//        
-//        performSegue(withIdentifier: SegueID.SoundDetail.rawValue, sender: self)
     }
     
-    //    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    //        if indexPath.row + 1 == fetchController.fetchedObjects?.count {
-    //
-    //            let count = fetchController.fetchedObjects!.count
-    //
-    //            if database.soundsInfoCount(from: fetchController.fetchRequest) > count {
-    //                fetchController.fetchRequest.fetchLimit += 5
-    //
-    //                do {
-    //                    try fetchController.performFetch()
-    //                    print("Performs extra fetch")
-    //                } catch {
-    //                    fatalError("Error fetching extra data: \(error)")
-    //                }
-    //
-    //                tableView.reloadData()
-    //            }
-    //        }
-    //    }
-    
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40.0
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 18.0
     }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let tableSection = TableSection(rawValue:section) else { return nil }
+        
+        let view = UIView(frame: CGRect(x:0, y:0, width:tableView.frame.size.width, height:18))
+        let label = UILabel(frame: CGRect(x:10, y:5, width:tableView.frame.size.width, height:18))
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.text = "This is a test";
+        view.addSubview(label);
+        view.backgroundColor = UIColor.white;
+        
+        label.text = sectionTitles[section]
+        
+        return view
+        
+    }
+    
 }

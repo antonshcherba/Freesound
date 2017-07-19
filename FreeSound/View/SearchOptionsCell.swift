@@ -40,7 +40,8 @@ class SearchOptionsCell: UITableViewCell {
         titleLabel = UILabel(frame: .zero)
         titleLabel.textColor = UIColor.darkGray
         
-        checkBoxButton = UIButton(frame: .zero)
+        checkBoxButton = UIButton(type: .custom)
+        checkBoxButton.isUserInteractionEnabled = false
         checkBoxButton.setImage(UIImage(named: checkBoxOnImageName), for: .selected)
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -48,8 +49,6 @@ class SearchOptionsCell: UITableViewCell {
         
         contentView.addSubview(titleLabel)
         contentView.addSubview(checkBoxButton)
-        
-        checkBoxButton.addTarget(self, action: #selector(didTappedCheckBoxButton(_:)), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -72,18 +71,12 @@ class SearchOptionsCell: UITableViewCell {
                 make.bottom.equalTo(contentView.snp.bottom).inset(insets.bottom)
                 make.right.equalTo(contentView.snp.right).inset(insets.right)
                 
-                make.width.equalTo(contentView.snp.width).dividedBy(8)
+                make.width.equalTo(contentView.snp.width).dividedBy(4)
             })
             
             didSetupConstraints = true
         }
         
         super.updateConstraints()
-    }
-    
-    // MARK: - Actions
-    
-    func didTappedCheckBoxButton(_ button: UIButton) {
-        isOn = !isOn
     }
 }
