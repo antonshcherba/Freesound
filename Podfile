@@ -14,4 +14,5 @@ target 'FreeSound' do
     pod 'GoogleMaps'
     pod 'EZAudio'
     pod 'FDWaveformView'
+    pod 'ALTextInputBar'
 end

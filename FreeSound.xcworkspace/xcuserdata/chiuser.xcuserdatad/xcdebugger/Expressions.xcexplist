@@ -3,93 +3,15 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "SoundListViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:SoundListViewController.swift">
+         contextName = "Comment.configureWithJson(JSON) -&gt; ():Comment+CoreDataClass.swift">
          <PersistentStrings>
             <PersistentString
-               value = "sounds.count">
+               value = "json[&quot;created&quot;]">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SearchOptionsController.configureNavigationBar() -&gt; ():SearchOptionsController.swift">
-         <PersistentStrings>
             <PersistentString
-               value = "navigationItem">
+               value = "dateFormatter.date(from: createdString)">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SoundDetailViewController.configurePlayerView() -&gt; ():SoundDetailViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "info.image">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SoundLoader.(searchSoundWith(String, loadedCount : Int, sortParameter : SortParameter?, filterParameter : FilterParameter?, handler : ([SoundInfo]) -&gt; ()) -&gt; ()).(closure #1):SoundLoader.swift">
-      </ContextState>
-      <ContextState
-         contextName = "SearchOptionsController.numberOfSections(in : UITableView) -&gt; Int:SearchOptionsController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "TableSection.count.rawValue">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SoundDetailViewController.(configurePlayer() -&gt; ()).(closure #1):SoundDetailViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "strongSelf.soundInfo.detailInfo!">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SoundLoader.parseSearchResultFrom(Data, loadedCount : Int) -&gt; SearchResult?:SoundLoader.swift">
-      </ContextState>
-      <ContextState
-         contextName = "-[EZAudioPlot setSampleData:length:]:EZAudioPlot.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "points[i].y">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "AuthViewController.webView(WKWebView, didReceiveServerRedirectForProvisionalNavigation : WKNavigation!) -&gt; ():AuthViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "webView.url">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LeftMenuViewController.tableView(UITableView, didSelectRowAt : IndexPath) -&gt; ():LeftMenuViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "sideMenuViewController.navigationController?.viewControllers">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SoundPlayerController.viewDidLoad() -&gt; ():SoundPlayerController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.view!">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SoundPlayerController.(audioFileURL.didset).(closure #1):SoundPlayerController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "plotData[0]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SoundPlayerView.init(frame : CGRect) -&gt; SoundPlayerView:SoundPlayerView.swift">
       </ContextState>
       <ContextState
          contextName = "SoundDetailViewController.viewDidLoad() -&gt; ():SoundDetailViewController.swift">
@@ -118,6 +40,36 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "SoundLoader.parseSearchResultFrom(Data, loadedCount : Int) -&gt; SearchResult?:SoundLoader.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SearchOptionsController.numberOfSections(in : UITableView) -&gt; Int:SearchOptionsController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "TableSection.count.rawValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundDetailViewController.configurePlayerView() -&gt; ():SoundDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "info.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundPlayerController.viewDidLoad() -&gt; ():SoundPlayerController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundPlayerView.init(frame : CGRect) -&gt; SoundPlayerView:SoundPlayerView.swift">
+      </ContextState>
+      <ContextState
          contextName = "SoundLoader.(searchSoundWith(String, loadedCount : Int, handler : ([SoundInfo]) -&gt; ()) -&gt; ()).(closure #1):SoundLoader.swift">
       </ContextState>
       <ContextState
@@ -129,7 +81,72 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "SoundListViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:SoundListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sounds.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SoundListViewController.(filterButtonTapped(UIButton) -&gt; ()).(closure #1):SoundListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "FreesoundService.(getCommentsFor(SoundInfo, withComplitionHandler : ([Comment]) -&gt; ()) -&gt; ()).(closure #1):FreesoundService.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CommentsController.viewDidLoad() -&gt; ():CommentsController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "-[EZAudioPlot setSampleData:length:]:EZAudioPlot.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "points[i].y">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LeftMenuViewController.tableView(UITableView, didSelectRowAt : IndexPath) -&gt; ():LeftMenuViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sideMenuViewController.navigationController?.viewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SearchOptionsController.configureNavigationBar() -&gt; ():SearchOptionsController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationItem">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundLoader.(searchSoundWith(String, loadedCount : Int, sortParameter : SortParameter?, filterParameter : FilterParameter?, handler : ([SoundInfo]) -&gt; ()) -&gt; ()).(closure #1):SoundLoader.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SoundDetailViewController.(configurePlayer() -&gt; ()).(closure #1):SoundDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "strongSelf.soundInfo.detailInfo!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AuthViewController.webView(WKWebView, didReceiveServerRedirectForProvisionalNavigation : WKNavigation!) -&gt; ():AuthViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "webView.url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundPlayerController.(audioFileURL.didset).(closure #1):SoundPlayerController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "plotData[0]">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

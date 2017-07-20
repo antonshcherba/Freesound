@@ -1,4 +1,5 @@
 PODS:
+  - ALTextInputBar (1.1.5)
   - EZAudio (1.1.5):
     - EZAudio/Full (= 1.1.5)
   - EZAudio/Core (1.1.5)
@@ -19,6 +20,7 @@ PODS:
   - TPCircularBuffer (1.1)
 
 DEPENDENCIES:
+  - ALTextInputBar
   - EZAudio
   - FDWaveformView
   - GoogleMaps
@@ -29,6 +31,7 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  ALTextInputBar: 9e9b9323ffd53cc77497d51b025e46d53aa2dc1e
   EZAudio: 3b1cb4b6d7ebca68f0c2478576d75940aad4aa99
   FDWaveformView: 0f2e966d4bf242ab1e747c3a87b2ca10ed9c46b8
   GoogleMaps: 340a6a0bebd17c2db8abcd3921976c7c53c86cb8
@@ -39,6 +42,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
 
-PODFILE CHECKSUM: b3636b12e1f14365362d08eb6508dc377329fa2d
+PODFILE CHECKSUM: 3756cc0aae7dfd67b36d8bdb1c7af2839d117f9b
 
 COCOAPODS: 1.2.1

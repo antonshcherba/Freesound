@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ALTextInputBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>EZAudio.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,12 +57,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0310DDFED0D841E076774EEDFBC4C3B8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>100EAFCCC6E91DEC79D9911111EC3E1D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>20EB13D53ABE6C8443141B8EF36B1B14</key>
+		<key>4950AA4049557FCC8D2F802B54674770</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>49E49CAB1E94D750D1376CF1811A64DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,22 +82,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>57BE6309BF56020DF6383324A10E0678</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>66421CE50429682860A702F4D721B08B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>68E504159A95438F18EAACAB7BBD121C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6E1E527AF71FD9CE18560DCF3F21FBBA</key>
+		<key>71B4D6DC853C56758973E4FFDF5C19D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -93,6 +98,11 @@
 			<true/>
 		</dict>
 		<key>D52144DE9D7255DE912490FF5A806573</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F9933C8B437646658F55F7D915076B6A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

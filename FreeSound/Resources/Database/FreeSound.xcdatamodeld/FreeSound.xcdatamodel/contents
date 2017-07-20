@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Xcode 7.0" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Comment" representedClassName=".Comment" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="SoundDetailInfo" representedClassName=".SoundDetailInfo" syncable="YES">
+        <attribute name="bitrate" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="duration" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="filesize" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="image" attributeType="String" syncable="YES"/>
+        <attribute name="previewSound" attributeType="String" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <attribute name="userDescription" attributeType="String" syncable="YES"/>
+        <relationship name="info" maxCount="1" deletionRule="Nullify" destinationEntity="SoundInfo" inverseName="detailInfo" inverseEntity="SoundInfo" syncable="YES"/>
+    </entity>
+    <entity name="SoundInfo" representedClassName=".SoundInfo" syncable="YES">
+        <attribute name="avgRating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="downloadsCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="license" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" attributeType="String" syncable="YES"/>
+        <relationship name="detailInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SoundDetailInfo" inverseName="info" inverseEntity="SoundDetailInfo" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="soundInfo" inverseEntity="Tag" syncable="YES"/>
+    </entity>
+    <entity name="Tag" representedClassName=".Tag" syncable="YES">
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <relationship name="soundInfo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SoundInfo" inverseName="tags" inverseEntity="SoundInfo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SoundDetailInfo" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="SoundInfo" positionX="-54" positionY="-9" width="128" height="225"/>
+        <element name="Tag" positionX="-54" positionY="54" width="128" height="75"/>
+        <element name="Comment" positionX="-54" positionY="81" width="128" height="75"/>
+    </elements>
+</model>

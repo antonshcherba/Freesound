@@ -7,113 +7,124 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A50B3D3B1F1D064100CC666E /* SearchOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B3D3A1F1D064100CC666E /* SearchOptionsCell.swift */; };
-		A52221A91F0BCC970002AB04 /* Dictionary+HTTPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52221A81F0BCC970002AB04 /* Dictionary+HTTPParameters.swift */; };
-		A53D9FBD1F1F75770066A588 /* CommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53D9FBC1F1F75770066A588 /* CommentsController.swift */; };
-		A541899D1F177D2900B8F198 /* SoundPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A541899C1F177D2900B8F198 /* SoundPlayerController.swift */; };
-		A54D4F091F0B9798009937EA /* FreesoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D4F081F0B9798009937EA /* FreesoundService.swift */; };
 		A5556CBE1F0E40FA00051AE0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5556CBD1F0E40FA00051AE0 /* AVFoundation.framework */; };
-		A5CE117F1F0E767B00AA3AF9 /* SoundInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE117E1F0E767B00AA3AF9 /* SoundInfo+CoreDataProperties.swift */; };
-		A5ED95351F1CA70E00DFE1D7 /* SearchOptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED95341F1CA70E00DFE1D7 /* SearchOptionsController.swift */; };
-		A5EDD4041F0FA7C300422C88 /* SoundMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EDD4031F0FA7C300422C88 /* SoundMapController.swift */; };
-		A5F38DBB1F0E7B47009180C8 /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F38DBA1F0E7B47009180C8 /* Tag+CoreDataProperties.swift */; };
-		D20D880C1CDD191B00B4EB84 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20D880A1CDD191B00B4EB84 /* SearchResult.swift */; };
-		D20D88101CDD1C0D00B4EB84 /* SoundListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20D880F1CDD1C0D00B4EB84 /* SoundListViewController.swift */; };
-		D20D88121CDD228C00B4EB84 /* SoundInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20D88111CDD228C00B4EB84 /* SoundInfoCell.swift */; };
-		D210FD921CDBD8A500ACE18A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D210FD911CDBD8A500ACE18A /* AppDelegate.swift */; };
-		D210FD971CDBD8A600ACE18A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D210FD951CDBD8A600ACE18A /* Main.storyboard */; };
-		D210FD991CDBD8A600ACE18A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D210FD981CDBD8A600ACE18A /* Assets.xcassets */; };
-		D210FD9C1CDBD8A600ACE18A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D210FD9A1CDBD8A600ACE18A /* LaunchScreen.storyboard */; };
-		D210FDA41CDBE07800ACE18A /* SoundLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D210FDA31CDBE07800ACE18A /* SoundLoader.swift */; };
-		D225800C1CDF74AE00E66B1B /* MetaInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D225800B1CDF74AE00E66B1B /* MetaInfoCell.swift */; };
-		D245815C1D8739F300D3130C /* SoundPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245815B1D8739F300D3130C /* SoundPlayerView.swift */; };
-		D245E5131CDF800F000B1858 /* SoundTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245E5121CDF800F000B1858 /* SoundTitleCell.swift */; };
-		D245E5151CDF8035000B1858 /* SoundPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245E5141CDF8035000B1858 /* SoundPlayerCell.swift */; };
-		D245E5171CDF8066000B1858 /* SoundDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245E5161CDF8066000B1858 /* SoundDescriptionCell.swift */; };
-		D26059B51CEA023F009DC89C /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26059B31CEA023F009DC89C /* Tag.swift */; };
-		D289D5791CDDFD61007ED01E /* SoundDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289D5781CDDFD61007ED01E /* SoundDetailViewController.swift */; };
-		D29DE1EC1CE5AC9900240AFD /* PlayerModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29DE1EB1CE5AC9900240AFD /* PlayerModalViewController.swift */; };
-		D2A90DD71CE3060300441F8A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A90DD61CE3060300441F8A /* CoreDataManager.swift */; };
-		D2A90DDB1CE3156200441F8A /* FreeSound.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2A90DD91CE3156200441F8A /* FreeSound.xcdatamodeld */; };
-		D2A90DE11CE378B600441F8A /* SoundInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A90DDF1CE378B600441F8A /* SoundInfo.swift */; };
-		D2A90DE31CE37BDC00441F8A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A90DE21CE37BDC00441F8A /* DatabaseManager.swift */; };
-		D2B1D58B1CDFC96C00113A84 /* SoundTagsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B1D58A1CDFC96C00113A84 /* SoundTagsCell.swift */; };
-		D2B1D58D1CDFD19A00113A84 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B1D58C1CDFD19A00113A84 /* TagCell.swift */; };
+		A5F5E1E31F209900002C611E /* CommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1BB1F209900002C611E /* CommentsController.swift */; };
+		A5F5E1E41F209900002C611E /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1BF1F209900002C611E /* TagCell.swift */; };
+		A5F5E1E51F209900002C611E /* TagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F5E1C01F209900002C611E /* TagCell.xib */; };
+		A5F5E1E61F209900002C611E /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1C11F209900002C611E /* TagsView.swift */; };
+		A5F5E1E71F209900002C611E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F5E1C31F209900002C611E /* LaunchScreen.storyboard */; };
+		A5F5E1E81F209900002C611E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1C61F209900002C611E /* AuthViewController.swift */; };
+		A5F5E1E91F209900002C611E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1C71F209900002C611E /* LoginViewController.swift */; };
+		A5F5E1EA1F209900002C611E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F5E1C91F209900002C611E /* Login.storyboard */; };
+		A5F5E1EB1F209900002C611E /* SoundMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1CC1F209900002C611E /* SoundMapController.swift */; };
+		A5F5E1EC1F209900002C611E /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1D01F209900002C611E /* LeftMenuViewController.swift */; };
+		A5F5E1ED1F209900002C611E /* MenuRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1D11F209900002C611E /* MenuRootViewController.swift */; };
+		A5F5E1EE1F209900002C611E /* SoundPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1D51F209900002C611E /* SoundPlayerController.swift */; };
+		A5F5E1EF1F209900002C611E /* SoundPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1D71F209900002C611E /* SoundPlayerView.swift */; };
+		A5F5E1F01F209900002C611E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1DA1F209900002C611E /* ProfileViewController.swift */; };
+		A5F5E1F71F2099EC002C611E /* FreesoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1F61F2099EC002C611E /* FreesoundService.swift */; };
+		A5F5E1FC1F209AA8002C611E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1F81F209AA8002C611E /* CoreDataManager.swift */; };
+		A5F5E1FD1F209AA8002C611E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1F91F209AA8002C611E /* DatabaseManager.swift */; };
+		A5F5E1FF1F209AA8002C611E /* SoundLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1FB1F209AA8002C611E /* SoundLoader.swift */; };
+		A5F5E20B1F209AE3002C611E /* SoundDetailInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2021F209AE3002C611E /* SoundDetailInfo+CoreDataProperties.swift */; };
+		A5F5E20C1F209AE3002C611E /* SoundDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2031F209AE3002C611E /* SoundDetailInfo.swift */; };
+		A5F5E20E1F209AE3002C611E /* SoundInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2051F209AE3002C611E /* SoundInfo+CoreDataProperties.swift */; };
+		A5F5E20F1F209AE3002C611E /* SoundInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2061F209AE3002C611E /* SoundInfo.swift */; };
+		A5F5E2101F209AE3002C611E /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2071F209AE3002C611E /* Tag+CoreDataProperties.swift */; };
+		A5F5E2111F209AE3002C611E /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2081F209AE3002C611E /* Tag.swift */; };
+		A5F5E2121F209AE3002C611E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2091F209AE3002C611E /* User.swift */; };
+		A5F5E2131F209AE3002C611E /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E20A1F209AE3002C611E /* SearchResult.swift */; };
+		A5F5E2191F209C67002C611E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2151F209C67002C611E /* Constants.swift */; };
+		A5F5E21A1F209C67002C611E /* Dictionary+HTTPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2161F209C67002C611E /* Dictionary+HTTPParameters.swift */; };
+		A5F5E21B1F209C67002C611E /* ResourcePathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2171F209C67002C611E /* ResourcePathManager.swift */; };
+		A5F5E21C1F209C67002C611E /* String+PathConstructable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2181F209C67002C611E /* String+PathConstructable.swift */; };
+		A5F5E23B1F209FAD002C611E /* SearchOptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E22A1F209FAD002C611E /* SearchOptionsController.swift */; };
+		A5F5E23C1F209FAD002C611E /* SearchOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E22C1F209FAD002C611E /* SearchOptionsCell.swift */; };
+		A5F5E23D1F209FAD002C611E /* SoundDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E22F1F209FAD002C611E /* SoundDetailViewController.swift */; };
+		A5F5E23E1F209FAD002C611E /* MetaInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2311F209FAD002C611E /* MetaInfoCell.swift */; };
+		A5F5E23F1F209FAD002C611E /* SoundDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2321F209FAD002C611E /* SoundDescriptionCell.swift */; };
+		A5F5E2401F209FAD002C611E /* SoundTagsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2331F209FAD002C611E /* SoundTagsCell.swift */; };
+		A5F5E2411F209FAD002C611E /* SoundTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2341F209FAD002C611E /* SoundTitleCell.swift */; };
+		A5F5E2421F209FAD002C611E /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2371F209FAD002C611E /* DescriptionViewController.swift */; };
+		A5F5E2431F209FAD002C611E /* SoundListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2381F209FAD002C611E /* SoundListViewController.swift */; };
+		A5F5E2441F209FAD002C611E /* SoundInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E23A1F209FAD002C611E /* SoundInfoCell.swift */; };
+		A5F5E2471F20A1A3002C611E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2461F20A1A3002C611E /* AppDelegate.swift */; };
+		A5F5E25A1F20A384002C611E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F5E2561F20A384002C611E /* Assets.xcassets */; };
+		A5F5E25B1F20A384002C611E /* FreeSound.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2581F20A384002C611E /* FreeSound.xcdatamodeld */; };
+		A5F5E25F1F20A412002C611E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5F5E25E1F20A412002C611E /* Info.plist */; };
+		A5F5E2621F20ADF3002C611E /* Comment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2601F20ADF3002C611E /* Comment+CoreDataClass.swift */; };
+		A5F5E2631F20ADF3002C611E /* Comment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2611F20ADF3002C611E /* Comment+CoreDataProperties.swift */; };
+		A5F5E2651F20C44B002C611E /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2641F20C44B002C611E /* CommentCell.swift */; };
+		A5F5E2671F20F5F4002C611E /* KeyboardInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E2661F20F5F4002C611E /* KeyboardInputBar.swift */; };
+		A5F5E2691F210284002C611E /* LeftMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F5E2681F210284002C611E /* LeftMenu.storyboard */; };
+		A5F5E26B1F210383002C611E /* MenuRoot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F5E26A1F210383002C611E /* MenuRoot.storyboard */; };
+		A5F5E26D1F2105F8002C611E /* SoundList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F5E26C1F2105F8002C611E /* SoundList.storyboard */; };
+		A5F5E2701F2107E8002C611E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F5E26F1F2107E8002C611E /* Profile.storyboard */; };
+		A5F5E2721F210C1B002C611E /* SoundDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F5E2711F210C1B002C611E /* SoundDetail.storyboard */; };
 		D2B5099E1CE9D62C00302ED2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5099D1CE9D62C00302ED2 /* CoreData.framework */; };
-		D2BC87461D1C206A0021239C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2BC87451D1C206A0021239C /* Login.storyboard */; };
-		D2BC87481D1C22180021239C /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC87471D1C22180021239C /* AuthViewController.swift */; };
-		D2C791D71CE0C326008D1987 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C791D61CE0C326008D1987 /* SoundPlayer.swift */; };
-		D2F09E6D1CF6E30300EF7454 /* ResourcePathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F09E6C1CF6E30300EF7454 /* ResourcePathManager.swift */; };
-		D2F09E6F1CF6E4C000EF7454 /* String+PathConstructable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F09E6E1CF6E4C000EF7454 /* String+PathConstructable.swift */; };
-		D2F2369C1CFDBBB500673ED2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F2369B1CFDBBB500673ED2 /* LoginViewController.swift */; };
-		D2F33D171CEDB0D7009036EC /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F33D161CEDB0D7009036EC /* DescriptionViewController.swift */; };
-		D2F736D71CF74CF400EE0066 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F736D61CF74CF400EE0066 /* User.swift */; };
-		D2F736D91CF7511900EE0066 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F736D81CF7511900EE0066 /* ProfileViewController.swift */; };
-		D2F7E5D51CF716FF00D926A2 /* MenuRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7E5D41CF716FF00D926A2 /* MenuRootViewController.swift */; };
-		D2F7E5D71CF71B5D00D926A2 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7E5D61CF71B5D00D926A2 /* LeftMenuViewController.swift */; };
-		D2F7E5D91CF71BC800D926A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7E5D81CF71BC800D926A2 /* Constants.swift */; };
-		D2F90BBE1CEC6B5F00B86215 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F90BBD1CEC6B5F00B86215 /* TagsView.swift */; };
-		D2F90BC11CEC73A800B86215 /* TagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F90BC01CEC73A800B86215 /* TagCell.xib */; };
-		D2FD04FF1CE4B84200294906 /* SoundDetailInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD04FD1CE4B84200294906 /* SoundDetailInfo+CoreDataProperties.swift */; };
-		D2FD05001CE4B84200294906 /* SoundDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD04FE1CE4B84200294906 /* SoundDetailInfo.swift */; };
 		E97BA9796BC76E32676909AE /* Pods_FreeSound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 212323CE25162754FE2CF190 /* Pods_FreeSound.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		212323CE25162754FE2CF190 /* Pods_FreeSound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreeSound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4E927B89794D3F6F97A723 /* Pods-FreeSound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeSound.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreeSound/Pods-FreeSound.release.xcconfig"; sourceTree = "<group>"; };
-		A50B3D3A1F1D064100CC666E /* SearchOptionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchOptionsCell.swift; path = View/SearchOptionsCell.swift; sourceTree = "<group>"; };
-		A52221A81F0BCC970002AB04 /* Dictionary+HTTPParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+HTTPParameters.swift"; path = "Helper/Dictionary+HTTPParameters.swift"; sourceTree = "<group>"; };
-		A53D9FBC1F1F75770066A588 /* CommentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentsController.swift; path = ViewController/CommentsController.swift; sourceTree = "<group>"; };
-		A541899C1F177D2900B8F198 /* SoundPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundPlayerController.swift; path = ViewController/SoundPlayerController.swift; sourceTree = "<group>"; };
-		A54D4F081F0B9798009937EA /* FreesoundService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FreesoundService.swift; path = Service/FreesoundService.swift; sourceTree = "<group>"; };
 		A5556CBD1F0E40FA00051AE0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		A5CE117E1F0E767B00AA3AF9 /* SoundInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SoundInfo+CoreDataProperties.swift"; path = "Model/CoreData/SoundInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A5ED95341F1CA70E00DFE1D7 /* SearchOptionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchOptionsController.swift; path = ViewController/SearchOptionsController.swift; sourceTree = "<group>"; };
-		A5EDD4031F0FA7C300422C88 /* SoundMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundMapController.swift; path = ViewController/SoundMapController.swift; sourceTree = "<group>"; };
-		A5F38DBA1F0E7B47009180C8 /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tag+CoreDataProperties.swift"; path = "Model/CoreData/Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5F5E1BB1F209900002C611E /* CommentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsController.swift; sourceTree = "<group>"; };
+		A5F5E1BF1F209900002C611E /* TagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
+		A5F5E1C01F209900002C611E /* TagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagCell.xib; sourceTree = "<group>"; };
+		A5F5E1C11F209900002C611E /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		A5F5E1C31F209900002C611E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A5F5E1C61F209900002C611E /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		A5F5E1C71F209900002C611E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A5F5E1C91F209900002C611E /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		A5F5E1CC1F209900002C611E /* SoundMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundMapController.swift; sourceTree = "<group>"; };
+		A5F5E1D01F209900002C611E /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		A5F5E1D11F209900002C611E /* MenuRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuRootViewController.swift; sourceTree = "<group>"; };
+		A5F5E1D51F209900002C611E /* SoundPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayerController.swift; sourceTree = "<group>"; };
+		A5F5E1D71F209900002C611E /* SoundPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayerView.swift; sourceTree = "<group>"; };
+		A5F5E1DA1F209900002C611E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A5F5E1F61F2099EC002C611E /* FreesoundService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreesoundService.swift; sourceTree = "<group>"; };
+		A5F5E1F81F209AA8002C611E /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A5F5E1F91F209AA8002C611E /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		A5F5E1FB1F209AA8002C611E /* SoundLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundLoader.swift; sourceTree = "<group>"; };
+		A5F5E2021F209AE3002C611E /* SoundDetailInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundDetailInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5F5E2031F209AE3002C611E /* SoundDetailInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundDetailInfo.swift; sourceTree = "<group>"; };
+		A5F5E2051F209AE3002C611E /* SoundInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5F5E2061F209AE3002C611E /* SoundInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundInfo.swift; sourceTree = "<group>"; };
+		A5F5E2071F209AE3002C611E /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5F5E2081F209AE3002C611E /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		A5F5E2091F209AE3002C611E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A5F5E20A1F209AE3002C611E /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		A5F5E2151F209C67002C611E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A5F5E2161F209C67002C611E /* Dictionary+HTTPParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+HTTPParameters.swift"; sourceTree = "<group>"; };
+		A5F5E2171F209C67002C611E /* ResourcePathManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcePathManager.swift; sourceTree = "<group>"; };
+		A5F5E2181F209C67002C611E /* String+PathConstructable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+PathConstructable.swift"; sourceTree = "<group>"; };
+		A5F5E22A1F209FAD002C611E /* SearchOptionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchOptionsController.swift; sourceTree = "<group>"; };
+		A5F5E22C1F209FAD002C611E /* SearchOptionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchOptionsCell.swift; sourceTree = "<group>"; };
+		A5F5E22F1F209FAD002C611E /* SoundDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundDetailViewController.swift; sourceTree = "<group>"; };
+		A5F5E2311F209FAD002C611E /* MetaInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaInfoCell.swift; sourceTree = "<group>"; };
+		A5F5E2321F209FAD002C611E /* SoundDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundDescriptionCell.swift; sourceTree = "<group>"; };
+		A5F5E2331F209FAD002C611E /* SoundTagsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundTagsCell.swift; sourceTree = "<group>"; };
+		A5F5E2341F209FAD002C611E /* SoundTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundTitleCell.swift; sourceTree = "<group>"; };
+		A5F5E2371F209FAD002C611E /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		A5F5E2381F209FAD002C611E /* SoundListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundListViewController.swift; sourceTree = "<group>"; };
+		A5F5E23A1F209FAD002C611E /* SoundInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundInfoCell.swift; sourceTree = "<group>"; };
+		A5F5E2461F20A1A3002C611E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A5F5E2561F20A384002C611E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5F5E2591F20A384002C611E /* FreeSound.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FreeSound.xcdatamodel; sourceTree = "<group>"; };
+		A5F5E25E1F20A412002C611E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5F5E2601F20ADF3002C611E /* Comment+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A5F5E2611F20ADF3002C611E /* Comment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5F5E2641F20C44B002C611E /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		A5F5E2661F20F5F4002C611E /* KeyboardInputBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputBar.swift; sourceTree = "<group>"; };
+		A5F5E2681F210284002C611E /* LeftMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LeftMenu.storyboard; sourceTree = "<group>"; };
+		A5F5E26A1F210383002C611E /* MenuRoot.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuRoot.storyboard; sourceTree = "<group>"; };
+		A5F5E26C1F2105F8002C611E /* SoundList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SoundList.storyboard; sourceTree = "<group>"; };
+		A5F5E26F1F2107E8002C611E /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		A5F5E2711F210C1B002C611E /* SoundDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SoundDetail.storyboard; sourceTree = "<group>"; };
 		C5E7DFB2C3AE31663FB3EBFC /* Pods-FreeSound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeSound.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreeSound/Pods-FreeSound.debug.xcconfig"; sourceTree = "<group>"; };
-		D20D880A1CDD191B00B4EB84 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResult.swift; path = Model/SearchResult.swift; sourceTree = "<group>"; };
-		D20D880F1CDD1C0D00B4EB84 /* SoundListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundListViewController.swift; path = ViewController/SoundListViewController.swift; sourceTree = "<group>"; };
-		D20D88111CDD228C00B4EB84 /* SoundInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundInfoCell.swift; path = View/SoundInfoCell.swift; sourceTree = "<group>"; };
 		D210FD8E1CDBD8A500ACE18A /* FreeSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D210FD911CDBD8A500ACE18A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D210FD961CDBD8A600ACE18A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D210FD981CDBD8A600ACE18A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D210FD9B1CDBD8A600ACE18A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D210FD9D1CDBD8A600ACE18A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D210FDA31CDBE07800ACE18A /* SoundLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundLoader.swift; path = Model/SoundLoader.swift; sourceTree = "<group>"; };
-		D225800B1CDF74AE00E66B1B /* MetaInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MetaInfoCell.swift; path = View/MetaInfoCell.swift; sourceTree = "<group>"; };
-		D245815B1D8739F300D3130C /* SoundPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundPlayerView.swift; path = View/SoundPlayerView.swift; sourceTree = "<group>"; };
-		D245E5121CDF800F000B1858 /* SoundTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundTitleCell.swift; path = View/SoundTitleCell.swift; sourceTree = "<group>"; };
-		D245E5141CDF8035000B1858 /* SoundPlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundPlayerCell.swift; path = View/SoundPlayerCell.swift; sourceTree = "<group>"; };
-		D245E5161CDF8066000B1858 /* SoundDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundDescriptionCell.swift; path = View/SoundDescriptionCell.swift; sourceTree = "<group>"; };
-		D26059B31CEA023F009DC89C /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tag.swift; path = Model/CoreData/Tag.swift; sourceTree = "<group>"; };
-		D289D5781CDDFD61007ED01E /* SoundDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundDetailViewController.swift; path = ViewController/SoundDetailViewController.swift; sourceTree = "<group>"; };
-		D29DE1EB1CE5AC9900240AFD /* PlayerModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerModalViewController.swift; path = ViewController/PlayerModalViewController.swift; sourceTree = "<group>"; };
-		D2A90DD61CE3060300441F8A /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = Model/CoreDataManager.swift; sourceTree = "<group>"; };
-		D2A90DDA1CE3156200441F8A /* FreeSound.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FreeSound.xcdatamodel; sourceTree = "<group>"; };
-		D2A90DDF1CE378B600441F8A /* SoundInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundInfo.swift; path = Model/CoreData/SoundInfo.swift; sourceTree = "<group>"; };
-		D2A90DE21CE37BDC00441F8A /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseManager.swift; path = Model/DatabaseManager.swift; sourceTree = "<group>"; };
-		D2B1D58A1CDFC96C00113A84 /* SoundTagsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundTagsCell.swift; path = View/SoundTagsCell.swift; sourceTree = "<group>"; };
-		D2B1D58C1CDFD19A00113A84 /* TagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagCell.swift; path = View/TagCell.swift; sourceTree = "<group>"; };
 		D2B5099D1CE9D62C00302ED2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		D2BC87451D1C206A0021239C /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = View/Storyboard/Login.storyboard; sourceTree = "<group>"; };
-		D2BC87471D1C22180021239C /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthViewController.swift; path = ViewController/AuthViewController.swift; sourceTree = "<group>"; };
-		D2C791D61CE0C326008D1987 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
-		D2F09E6C1CF6E30300EF7454 /* ResourcePathManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourcePathManager.swift; path = Helper/ResourcePathManager.swift; sourceTree = "<group>"; };
-		D2F09E6E1CF6E4C000EF7454 /* String+PathConstructable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+PathConstructable.swift"; path = "Helper/String+PathConstructable.swift"; sourceTree = "<group>"; };
-		D2F2369B1CFDBBB500673ED2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewController/LoginViewController.swift; sourceTree = "<group>"; };
-		D2F33D161CEDB0D7009036EC /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DescriptionViewController.swift; path = ViewController/DescriptionViewController.swift; sourceTree = "<group>"; };
-		D2F736D61CF74CF400EE0066 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/CoreData/User.swift; sourceTree = "<group>"; };
-		D2F736D81CF7511900EE0066 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ViewController/ProfileViewController.swift; sourceTree = "<group>"; };
-		D2F7E5D41CF716FF00D926A2 /* MenuRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuRootViewController.swift; path = ViewController/MenuRootViewController.swift; sourceTree = "<group>"; };
-		D2F7E5D61CF71B5D00D926A2 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuViewController.swift; path = ViewController/LeftMenuViewController.swift; sourceTree = "<group>"; };
-		D2F7E5D81CF71BC800D926A2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Helper/Constants.swift; sourceTree = "<group>"; };
-		D2F90BBD1CEC6B5F00B86215 /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagsView.swift; path = View/TagsView.swift; sourceTree = "<group>"; };
-		D2F90BC01CEC73A800B86215 /* TagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TagCell.xib; path = View/TagCell.xib; sourceTree = "<group>"; };
-		D2FD04FD1CE4B84200294906 /* SoundDetailInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SoundDetailInfo+CoreDataProperties.swift"; path = "Model/CoreData/SoundDetailInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		D2FD04FE1CE4B84200294906 /* SoundDetailInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundDetailInfo.swift; path = Model/CoreData/SoundDetailInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,59 +160,405 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A54D4F0A1F0B97A2009937EA /* Service */ = {
+		A53D9FC01F1F83290066A588 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A54D4F081F0B9798009937EA /* FreesoundService.swift */,
+				A5F5E2451F20A1A3002C611E /* AppDelegate */,
+				A5F5E2141F209C67002C611E /* Helper */,
+				A5F5E2001F209AE3002C611E /* Model */,
+				A5F5E1B81F209900002C611E /* Screen */,
+				A5F5E1F51F2099EC002C611E /* Service */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		A5F5E1B81F209900002C611E /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1B91F209900002C611E /* Comment */,
+				A5F5E1BD1F209900002C611E /* Custom */,
+				A5F5E1C21F209900002C611E /* Launch */,
+				A5F5E1C41F209900002C611E /* Login */,
+				A5F5E1CA1F209900002C611E /* Map */,
+				A5F5E1CE1F209900002C611E /* Menu */,
+				A5F5E1D31F209900002C611E /* Player */,
+				A5F5E1D81F209900002C611E /* Profile */,
+				A5F5E2271F209FAD002C611E /* Sounds */,
+			);
+			name = Screen;
+			path = Classes/Screen;
+			sourceTree = "<group>";
+		};
+		A5F5E1B91F209900002C611E /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1BA1F209900002C611E /* Controller */,
+				A5F5E1BC1F209900002C611E /* View */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		A5F5E1BA1F209900002C611E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1BB1F209900002C611E /* CommentsController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5F5E1BC1F209900002C611E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E2641F20C44B002C611E /* CommentCell.swift */,
+				A5F5E2661F20F5F4002C611E /* KeyboardInputBar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5F5E1BD1F209900002C611E /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1BE1F209900002C611E /* View */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		A5F5E1BE1F209900002C611E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1BF1F209900002C611E /* TagCell.swift */,
+				A5F5E1C01F209900002C611E /* TagCell.xib */,
+				A5F5E1C11F209900002C611E /* TagsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5F5E1C21F209900002C611E /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1C31F209900002C611E /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		A5F5E1C41F209900002C611E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1C51F209900002C611E /* Controller */,
+				A5F5E1C81F209900002C611E /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A5F5E1C51F209900002C611E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1C61F209900002C611E /* AuthViewController.swift */,
+				A5F5E1C71F209900002C611E /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5F5E1C81F209900002C611E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1C91F209900002C611E /* Login.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5F5E1CA1F209900002C611E /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1CB1F209900002C611E /* Controller */,
+				A5F5E1CD1F209900002C611E /* View */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		A5F5E1CB1F209900002C611E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1CC1F209900002C611E /* SoundMapController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5F5E1CD1F209900002C611E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5F5E1CE1F209900002C611E /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1CF1F209900002C611E /* Controller */,
+				A5F5E1D21F209900002C611E /* View */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		A5F5E1CF1F209900002C611E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1D01F209900002C611E /* LeftMenuViewController.swift */,
+				A5F5E1D11F209900002C611E /* MenuRootViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5F5E1D21F209900002C611E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E2681F210284002C611E /* LeftMenu.storyboard */,
+				A5F5E26A1F210383002C611E /* MenuRoot.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5F5E1D31F209900002C611E /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1D41F209900002C611E /* Controller */,
+				A5F5E1D61F209900002C611E /* View */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		A5F5E1D41F209900002C611E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1D51F209900002C611E /* SoundPlayerController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5F5E1D61F209900002C611E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1D71F209900002C611E /* SoundPlayerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5F5E1D81F209900002C611E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1D91F209900002C611E /* Controller */,
+				A5F5E1DB1F209900002C611E /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A5F5E1D91F209900002C611E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1DA1F209900002C611E /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5F5E1DB1F209900002C611E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E26F1F2107E8002C611E /* Profile.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5F5E1F51F2099EC002C611E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E1F81F209AA8002C611E /* CoreDataManager.swift */,
+				A5F5E1F91F209AA8002C611E /* DatabaseManager.swift */,
+				A5F5E1F61F2099EC002C611E /* FreesoundService.swift */,
+				A5F5E1FB1F209AA8002C611E /* SoundLoader.swift */,
 			);
 			name = Service;
+			path = Classes/Service;
 			sourceTree = "<group>";
 		};
-		D20D880E1CDD1B9A00B4EB84 /* ViewController */ = {
+		A5F5E2001F209AE3002C611E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D2BC87471D1C22180021239C /* AuthViewController.swift */,
-				A53D9FBC1F1F75770066A588 /* CommentsController.swift */,
-				D2F33D161CEDB0D7009036EC /* DescriptionViewController.swift */,
-				D2F7E5D61CF71B5D00D926A2 /* LeftMenuViewController.swift */,
-				D2F2369B1CFDBBB500673ED2 /* LoginViewController.swift */,
-				D2F7E5D41CF716FF00D926A2 /* MenuRootViewController.swift */,
-				D29DE1EB1CE5AC9900240AFD /* PlayerModalViewController.swift */,
-				D2F736D81CF7511900EE0066 /* ProfileViewController.swift */,
-				A5ED95341F1CA70E00DFE1D7 /* SearchOptionsController.swift */,
-				D289D5781CDDFD61007ED01E /* SoundDetailViewController.swift */,
-				D20D880F1CDD1C0D00B4EB84 /* SoundListViewController.swift */,
-				A5EDD4031F0FA7C300422C88 /* SoundMapController.swift */,
-				A541899C1F177D2900B8F198 /* SoundPlayerController.swift */,
+				A5F5E2011F209AE3002C611E /* CoreData */,
+				A5F5E20A1F209AE3002C611E /* SearchResult.swift */,
 			);
-			name = ViewController;
+			name = Model;
+			path = Classes/Model;
 			sourceTree = "<group>";
 		};
-		D20D88131CDD24E200B4EB84 /* View */ = {
+		A5F5E2011F209AE3002C611E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				D225800B1CDF74AE00E66B1B /* MetaInfoCell.swift */,
-				A50B3D3A1F1D064100CC666E /* SearchOptionsCell.swift */,
-				D245E5161CDF8066000B1858 /* SoundDescriptionCell.swift */,
-				D20D88111CDD228C00B4EB84 /* SoundInfoCell.swift */,
-				D245E5141CDF8035000B1858 /* SoundPlayerCell.swift */,
-				D245815B1D8739F300D3130C /* SoundPlayerView.swift */,
-				D2B1D58A1CDFC96C00113A84 /* SoundTagsCell.swift */,
-				D245E5121CDF800F000B1858 /* SoundTitleCell.swift */,
-				D2BC87421D1C20030021239C /* Storyboard */,
-				D2B1D58C1CDFD19A00113A84 /* TagCell.swift */,
-				D2F90BBD1CEC6B5F00B86215 /* TagsView.swift */,
+				A5F5E2601F20ADF3002C611E /* Comment+CoreDataClass.swift */,
+				A5F5E2611F20ADF3002C611E /* Comment+CoreDataProperties.swift */,
+				A5F5E2031F209AE3002C611E /* SoundDetailInfo.swift */,
+				A5F5E2021F209AE3002C611E /* SoundDetailInfo+CoreDataProperties.swift */,
+				A5F5E2061F209AE3002C611E /* SoundInfo.swift */,
+				A5F5E2051F209AE3002C611E /* SoundInfo+CoreDataProperties.swift */,
+				A5F5E2081F209AE3002C611E /* Tag.swift */,
+				A5F5E2071F209AE3002C611E /* Tag+CoreDataProperties.swift */,
+				A5F5E2091F209AE3002C611E /* User.swift */,
 			);
-			name = View;
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A5F5E2141F209C67002C611E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E2151F209C67002C611E /* Constants.swift */,
+				A5F5E2161F209C67002C611E /* Dictionary+HTTPParameters.swift */,
+				A5F5E2171F209C67002C611E /* ResourcePathManager.swift */,
+				A5F5E2181F209C67002C611E /* String+PathConstructable.swift */,
+			);
+			name = Helper;
+			path = Classes/Helper;
+			sourceTree = "<group>";
+		};
+		A5F5E2271F209FAD002C611E /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E2281F209FAD002C611E /* SearchOptions */,
+				A5F5E22D1F209FAD002C611E /* SoundDetail */,
+				A5F5E2351F209FAD002C611E /* SoundList */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		A5F5E2281F209FAD002C611E /* SearchOptions */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E2291F209FAD002C611E /* Controller */,
+				A5F5E22B1F209FAD002C611E /* View */,
+			);
+			path = SearchOptions;
+			sourceTree = "<group>";
+		};
+		A5F5E2291F209FAD002C611E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E22A1F209FAD002C611E /* SearchOptionsController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5F5E22B1F209FAD002C611E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E22C1F209FAD002C611E /* SearchOptionsCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5F5E22D1F209FAD002C611E /* SoundDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E22E1F209FAD002C611E /* Controller */,
+				A5F5E2301F209FAD002C611E /* View */,
+			);
+			path = SoundDetail;
+			sourceTree = "<group>";
+		};
+		A5F5E22E1F209FAD002C611E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E22F1F209FAD002C611E /* SoundDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5F5E2301F209FAD002C611E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E2311F209FAD002C611E /* MetaInfoCell.swift */,
+				A5F5E2321F209FAD002C611E /* SoundDescriptionCell.swift */,
+				A5F5E2331F209FAD002C611E /* SoundTagsCell.swift */,
+				A5F5E2341F209FAD002C611E /* SoundTitleCell.swift */,
+				A5F5E2711F210C1B002C611E /* SoundDetail.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5F5E2351F209FAD002C611E /* SoundList */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E2361F209FAD002C611E /* Controller */,
+				A5F5E2391F209FAD002C611E /* View */,
+			);
+			path = SoundList;
+			sourceTree = "<group>";
+		};
+		A5F5E2361F209FAD002C611E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E2371F209FAD002C611E /* DescriptionViewController.swift */,
+				A5F5E2381F209FAD002C611E /* SoundListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5F5E2391F209FAD002C611E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E23A1F209FAD002C611E /* SoundInfoCell.swift */,
+				A5F5E26C1F2105F8002C611E /* SoundList.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5F5E2451F20A1A3002C611E /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E2461F20A1A3002C611E /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			path = Classes/AppDelegate;
+			sourceTree = "<group>";
+		};
+		A5F5E2491F20A228002C611E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E2551F20A384002C611E /* Assets */,
+				A5F5E2571F20A384002C611E /* Database */,
+				A5F5E2531F20A32C002C611E /* Plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A5F5E2531F20A32C002C611E /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E25E1F20A412002C611E /* Info.plist */,
+			);
+			name = Plist;
+			sourceTree = "<group>";
+		};
+		A5F5E2551F20A384002C611E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E2561F20A384002C611E /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		A5F5E2571F20A384002C611E /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5E2581F20A384002C611E /* FreeSound.xcdatamodeld */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		D210FD851CDBD8A500ACE18A = {
 			isa = PBXGroup;
 			children = (
-				D210FD901CDBD8A500ACE18A /* FreeSound */,
-				D210FD8F1CDBD8A500ACE18A /* Products */,
 				54A2A515C9254EAC91DD3BB5 /* Frameworks */,
+				D210FD901CDBD8A500ACE18A /* FreeSound */,
 				6C82DEEF8D0F8A3CF4CF6FC5 /* Pods */,
+				D210FD8F1CDBD8A500ACE18A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -216,82 +573,10 @@
 		D210FD901CDBD8A500ACE18A /* FreeSound */ = {
 			isa = PBXGroup;
 			children = (
-				A54D4F0A1F0B97A2009937EA /* Service */,
-				D2F09E6B1CF6E29300EF7454 /* Helper */,
-				D2A90DD81CE3153D00441F8A /* Supporting Files */,
-				D2F90BBF1CEC735C00B86215 /* XIB */,
-				D20D88131CDD24E200B4EB84 /* View */,
-				D20D880E1CDD1B9A00B4EB84 /* ViewController */,
-				D28ADD2B1CDCDC3A0024C3FC /* Model */,
-				D210FD911CDBD8A500ACE18A /* AppDelegate.swift */,
-				D210FD951CDBD8A600ACE18A /* Main.storyboard */,
-				D210FD981CDBD8A600ACE18A /* Assets.xcassets */,
-				D210FD9A1CDBD8A600ACE18A /* LaunchScreen.storyboard */,
-				D210FD9D1CDBD8A600ACE18A /* Info.plist */,
+				A53D9FC01F1F83290066A588 /* Classes */,
+				A5F5E2491F20A228002C611E /* Resources */,
 			);
 			path = FreeSound;
-			sourceTree = "<group>";
-		};
-		D28ADD2B1CDCDC3A0024C3FC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				D2A90DDD1CE3745400441F8A /* CoreData */,
-				D20D880A1CDD191B00B4EB84 /* SearchResult.swift */,
-				D210FDA31CDBE07800ACE18A /* SoundLoader.swift */,
-				D2C791D61CE0C326008D1987 /* SoundPlayer.swift */,
-				D2A90DD61CE3060300441F8A /* CoreDataManager.swift */,
-				D2A90DE21CE37BDC00441F8A /* DatabaseManager.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		D2A90DD81CE3153D00441F8A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D2A90DD91CE3156200441F8A /* FreeSound.xcdatamodeld */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D2A90DDD1CE3745400441F8A /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				D2FD04FE1CE4B84200294906 /* SoundDetailInfo.swift */,
-				D2FD04FD1CE4B84200294906 /* SoundDetailInfo+CoreDataProperties.swift */,
-				D2A90DDF1CE378B600441F8A /* SoundInfo.swift */,
-				A5CE117E1F0E767B00AA3AF9 /* SoundInfo+CoreDataProperties.swift */,
-				D26059B31CEA023F009DC89C /* Tag.swift */,
-				A5F38DBA1F0E7B47009180C8 /* Tag+CoreDataProperties.swift */,
-				D2F736D61CF74CF400EE0066 /* User.swift */,
-			);
-			name = CoreData;
-			sourceTree = "<group>";
-		};
-		D2BC87421D1C20030021239C /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				D2BC87451D1C206A0021239C /* Login.storyboard */,
-			);
-			name = Storyboard;
-			sourceTree = "<group>";
-		};
-		D2F09E6B1CF6E29300EF7454 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				D2F09E6C1CF6E30300EF7454 /* ResourcePathManager.swift */,
-				D2F09E6E1CF6E4C000EF7454 /* String+PathConstructable.swift */,
-				D2F7E5D81CF71BC800D926A2 /* Constants.swift */,
-				A52221A81F0BCC970002AB04 /* Dictionary+HTTPParameters.swift */,
-			);
-			name = Helper;
-			sourceTree = "<group>";
-		};
-		D2F90BBF1CEC735C00B86215 /* XIB */ = {
-			isa = PBXGroup;
-			children = (
-				D2F90BC01CEC73A800B86215 /* TagCell.xib */,
-			);
-			name = XIB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,11 +642,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2F90BC11CEC73A800B86215 /* TagCell.xib in Resources */,
-				D2BC87461D1C206A0021239C /* Login.storyboard in Resources */,
-				D210FD9C1CDBD8A600ACE18A /* LaunchScreen.storyboard in Resources */,
-				D210FD991CDBD8A600ACE18A /* Assets.xcassets in Resources */,
-				D210FD971CDBD8A600ACE18A /* Main.storyboard in Resources */,
+				A5F5E1E51F209900002C611E /* TagCell.xib in Resources */,
+				A5F5E26D1F2105F8002C611E /* SoundList.storyboard in Resources */,
+				A5F5E2701F2107E8002C611E /* Profile.storyboard in Resources */,
+				A5F5E2721F210C1B002C611E /* SoundDetail.storyboard in Resources */,
+				A5F5E1E71F209900002C611E /* LaunchScreen.storyboard in Resources */,
+				A5F5E25F1F20A412002C611E /* Info.plist in Resources */,
+				A5F5E26B1F210383002C611E /* MenuRoot.storyboard in Resources */,
+				A5F5E1EA1F209900002C611E /* Login.storyboard in Resources */,
+				A5F5E25A1F20A384002C611E /* Assets.xcassets in Resources */,
+				A5F5E2691F210284002C611E /* LeftMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,71 +710,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2A90DE11CE378B600441F8A /* SoundInfo.swift in Sources */,
-				D245E5131CDF800F000B1858 /* SoundTitleCell.swift in Sources */,
-				A5EDD4041F0FA7C300422C88 /* SoundMapController.swift in Sources */,
-				D210FDA41CDBE07800ACE18A /* SoundLoader.swift in Sources */,
-				A52221A91F0BCC970002AB04 /* Dictionary+HTTPParameters.swift in Sources */,
-				A50B3D3B1F1D064100CC666E /* SearchOptionsCell.swift in Sources */,
-				D2F736D71CF74CF400EE0066 /* User.swift in Sources */,
-				D289D5791CDDFD61007ED01E /* SoundDetailViewController.swift in Sources */,
-				D2F736D91CF7511900EE0066 /* ProfileViewController.swift in Sources */,
-				D2F7E5D91CF71BC800D926A2 /* Constants.swift in Sources */,
-				D2A90DDB1CE3156200441F8A /* FreeSound.xcdatamodeld in Sources */,
-				D245E5151CDF8035000B1858 /* SoundPlayerCell.swift in Sources */,
-				D2FD05001CE4B84200294906 /* SoundDetailInfo.swift in Sources */,
-				D2F33D171CEDB0D7009036EC /* DescriptionViewController.swift in Sources */,
-				D225800C1CDF74AE00E66B1B /* MetaInfoCell.swift in Sources */,
-				D2F09E6D1CF6E30300EF7454 /* ResourcePathManager.swift in Sources */,
-				D20D88101CDD1C0D00B4EB84 /* SoundListViewController.swift in Sources */,
-				D20D880C1CDD191B00B4EB84 /* SearchResult.swift in Sources */,
-				D2F90BBE1CEC6B5F00B86215 /* TagsView.swift in Sources */,
-				D2B1D58D1CDFD19A00113A84 /* TagCell.swift in Sources */,
-				A53D9FBD1F1F75770066A588 /* CommentsController.swift in Sources */,
-				A5CE117F1F0E767B00AA3AF9 /* SoundInfo+CoreDataProperties.swift in Sources */,
-				D2A90DE31CE37BDC00441F8A /* DatabaseManager.swift in Sources */,
-				D2F7E5D71CF71B5D00D926A2 /* LeftMenuViewController.swift in Sources */,
-				A5ED95351F1CA70E00DFE1D7 /* SearchOptionsController.swift in Sources */,
-				D20D88121CDD228C00B4EB84 /* SoundInfoCell.swift in Sources */,
-				D2F2369C1CFDBBB500673ED2 /* LoginViewController.swift in Sources */,
-				D26059B51CEA023F009DC89C /* Tag.swift in Sources */,
-				D2C791D71CE0C326008D1987 /* SoundPlayer.swift in Sources */,
-				D210FD921CDBD8A500ACE18A /* AppDelegate.swift in Sources */,
-				A54D4F091F0B9798009937EA /* FreesoundService.swift in Sources */,
-				D245815C1D8739F300D3130C /* SoundPlayerView.swift in Sources */,
-				D245E5171CDF8066000B1858 /* SoundDescriptionCell.swift in Sources */,
-				A541899D1F177D2900B8F198 /* SoundPlayerController.swift in Sources */,
-				D2BC87481D1C22180021239C /* AuthViewController.swift in Sources */,
-				D2B1D58B1CDFC96C00113A84 /* SoundTagsCell.swift in Sources */,
-				A5F38DBB1F0E7B47009180C8 /* Tag+CoreDataProperties.swift in Sources */,
-				D2F7E5D51CF716FF00D926A2 /* MenuRootViewController.swift in Sources */,
-				D2A90DD71CE3060300441F8A /* CoreDataManager.swift in Sources */,
-				D2F09E6F1CF6E4C000EF7454 /* String+PathConstructable.swift in Sources */,
-				D29DE1EC1CE5AC9900240AFD /* PlayerModalViewController.swift in Sources */,
-				D2FD04FF1CE4B84200294906 /* SoundDetailInfo+CoreDataProperties.swift in Sources */,
+				A5F5E25B1F20A384002C611E /* FreeSound.xcdatamodeld in Sources */,
+				A5F5E1EB1F209900002C611E /* SoundMapController.swift in Sources */,
+				A5F5E2131F209AE3002C611E /* SearchResult.swift in Sources */,
+				A5F5E2671F20F5F4002C611E /* KeyboardInputBar.swift in Sources */,
+				A5F5E2631F20ADF3002C611E /* Comment+CoreDataProperties.swift in Sources */,
+				A5F5E23B1F209FAD002C611E /* SearchOptionsController.swift in Sources */,
+				A5F5E21A1F209C67002C611E /* Dictionary+HTTPParameters.swift in Sources */,
+				A5F5E2421F209FAD002C611E /* DescriptionViewController.swift in Sources */,
+				A5F5E1F01F209900002C611E /* ProfileViewController.swift in Sources */,
+				A5F5E20B1F209AE3002C611E /* SoundDetailInfo+CoreDataProperties.swift in Sources */,
+				A5F5E1E41F209900002C611E /* TagCell.swift in Sources */,
+				A5F5E1E81F209900002C611E /* AuthViewController.swift in Sources */,
+				A5F5E1E31F209900002C611E /* CommentsController.swift in Sources */,
+				A5F5E1FF1F209AA8002C611E /* SoundLoader.swift in Sources */,
+				A5F5E1FD1F209AA8002C611E /* DatabaseManager.swift in Sources */,
+				A5F5E1ED1F209900002C611E /* MenuRootViewController.swift in Sources */,
+				A5F5E2401F209FAD002C611E /* SoundTagsCell.swift in Sources */,
+				A5F5E1E91F209900002C611E /* LoginViewController.swift in Sources */,
+				A5F5E21C1F209C67002C611E /* String+PathConstructable.swift in Sources */,
+				A5F5E20C1F209AE3002C611E /* SoundDetailInfo.swift in Sources */,
+				A5F5E1EC1F209900002C611E /* LeftMenuViewController.swift in Sources */,
+				A5F5E1EF1F209900002C611E /* SoundPlayerView.swift in Sources */,
+				A5F5E23C1F209FAD002C611E /* SearchOptionsCell.swift in Sources */,
+				A5F5E2471F20A1A3002C611E /* AppDelegate.swift in Sources */,
+				A5F5E1FC1F209AA8002C611E /* CoreDataManager.swift in Sources */,
+				A5F5E2411F209FAD002C611E /* SoundTitleCell.swift in Sources */,
+				A5F5E23D1F209FAD002C611E /* SoundDetailViewController.swift in Sources */,
+				A5F5E2121F209AE3002C611E /* User.swift in Sources */,
+				A5F5E1EE1F209900002C611E /* SoundPlayerController.swift in Sources */,
+				A5F5E2441F209FAD002C611E /* SoundInfoCell.swift in Sources */,
+				A5F5E20E1F209AE3002C611E /* SoundInfo+CoreDataProperties.swift in Sources */,
+				A5F5E2621F20ADF3002C611E /* Comment+CoreDataClass.swift in Sources */,
+				A5F5E21B1F209C67002C611E /* ResourcePathManager.swift in Sources */,
+				A5F5E2111F209AE3002C611E /* Tag.swift in Sources */,
+				A5F5E23E1F209FAD002C611E /* MetaInfoCell.swift in Sources */,
+				A5F5E1E61F209900002C611E /* TagsView.swift in Sources */,
+				A5F5E2101F209AE3002C611E /* Tag+CoreDataProperties.swift in Sources */,
+				A5F5E20F1F209AE3002C611E /* SoundInfo.swift in Sources */,
+				A5F5E2431F209FAD002C611E /* SoundListViewController.swift in Sources */,
+				A5F5E1F71F2099EC002C611E /* FreesoundService.swift in Sources */,
+				A5F5E23F1F209FAD002C611E /* SoundDescriptionCell.swift in Sources */,
+				A5F5E2191F209C67002C611E /* Constants.swift in Sources */,
+				A5F5E2651F20C44B002C611E /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		D210FD951CDBD8A600ACE18A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D210FD961CDBD8A600ACE18A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D210FD9A1CDBD8A600ACE18A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D210FD9B1CDBD8A600ACE18A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D210FD9E1CDBD8A600ACE18A /* Debug */ = {
@@ -642,12 +914,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D2A90DD91CE3156200441F8A /* FreeSound.xcdatamodeld */ = {
+		A5F5E2581F20A384002C611E /* FreeSound.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D2A90DDA1CE3156200441F8A /* FreeSound.xcdatamodel */,
+				A5F5E2591F20A384002C611E /* FreeSound.xcdatamodel */,
 			);
-			currentVersion = D2A90DDA1CE3156200441F8A /* FreeSound.xcdatamodel */;
+			currentVersion = A5F5E2591F20A384002C611E /* FreeSound.xcdatamodel */;
 			path = FreeSound.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

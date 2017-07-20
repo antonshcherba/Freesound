@@ -89,6 +89,7 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/ALTextInputBar/ALTextInputBar.framework"
   install_framework "$BUILT_PRODUCTS_DIR/EZAudio/EZAudio.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FDWaveformView/FDWaveformView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
@@ -99,6 +100,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/TPCircularBuffer/TPCircularBuffer.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/ALTextInputBar/ALTextInputBar.framework"
   install_framework "$BUILT_PRODUCTS_DIR/EZAudio/EZAudio.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FDWaveformView/FDWaveformView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
