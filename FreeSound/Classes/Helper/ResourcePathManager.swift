@@ -128,7 +128,7 @@ class ResourcePathManager {
     }
     
     var userPath: String {
-        return basePath + Resource.User.rawValue + String.slash
+        return basePath + Resource.User.rawValue
     }
     
     // MARK: - Private Properties

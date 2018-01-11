@@ -18,6 +18,12 @@ class LeftMenuViewController : UITableViewController {
     
     // MARK: - Public Properties
     
+    let controllers = {
+        return [NavigationManager.getController() as SoundListViewController,
+                NavigationManager.getController() as ProfileViewController]
+            .map { UINavigationController(rootViewController: $0) }
+    }()
+    
     let storyboardIDs = [StoryboardID.soundsViewController,
                          StoryboardID.profileViewController]
     
@@ -88,13 +94,10 @@ extension LeftMenuViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 1:
-            let name = storyboardName[indexPath.row]
-            let id = storyboardIDs[indexPath.row]
-            
-            let storyboard = UIStoryboard(name: name, bundle: nil)
-            sideMenuViewController.setContentViewController(storyboard.instantiateViewController(withIdentifier: id), animated: true)
+            sideMenuViewController.setContentViewController(controllers[indexPath.row], animated: true)
             selectedIndexPath = indexPath
             sideMenuViewController.hideViewController()
+            
         case 2:
             self.logoutUser()
         default:
