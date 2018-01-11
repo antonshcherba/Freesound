@@ -14,6 +14,7 @@ class SoundDetailViewController: UIViewController {
 
     enum CellID: String {
         case SoundTitle
+        case Author
         case SoundPlayer
         case MetaInfo
         case SoundTags
@@ -22,6 +23,7 @@ class SoundDetailViewController: UIViewController {
     
     enum TableSection: Int {
         case title = 0
+        case author
         case metaInfo
         case tags
         case map
@@ -172,6 +174,8 @@ class SoundDetailViewController: UIViewController {
     func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 400
+        
+        tableView.register(UINib.init(nibName: AuthorCell.className, bundle: nil), forCellReuseIdentifier: AuthorCell.ID)
     }
     
     func configureNavigationBar() {
@@ -211,7 +215,7 @@ extension SoundDetailViewController: UITableViewDataSource {
         
         let rowCount: Int
         switch tableSection {
-        case .title:
+        case .title, .author:
             rowCount = 1
         case .metaInfo:
             rowCount = metaInfoCount
@@ -241,6 +245,12 @@ extension SoundDetailViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellID.SoundTitle.rawValue,
                                                                    for: indexPath) as! SoundTitleCell
             cell.titleLabel.text = soundInfo.name
+            return cell
+            
+        case .author:
+            let cell = tableView.dequeueReusableCell(withIdentifier: AuthorCell.ID,
+                                                     for: indexPath) as! AuthorCell
+            cell.authorLabel.text = soundInfo.username
             return cell
         case .metaInfo:
             let cell = tableView.dequeueReusableCell(withIdentifier: CellID.MetaInfo.rawValue,
@@ -323,6 +333,12 @@ extension SoundDetailViewController: UITableViewDelegate {
         guard let tableSection = TableSection(rawValue:indexPath.section) else { return }
         
         switch tableSection {
+        case .author:
+            let controller = NavigationManager.getController() as ProfileViewController
+            if let username = soundInfo.username {
+                controller.username = username
+            }
+            navigationController?.pushViewController(controller, animated: true)
         case .map:
             guard let soundInfo = self.soundInfo else {
                 return

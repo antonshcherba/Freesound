@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A542441920064DA500C7B697 /* AuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542441720064DA500C7B697 /* AuthorCell.swift */; };
+		A542441A20064DA500C7B697 /* AuthorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A542441820064DA500C7B697 /* AuthorCell.xib */; };
+		A542441C200650D200C7B697 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542441B200650D200C7B697 /* Navigation.swift */; };
 		A5556CBE1F0E40FA00051AE0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5556CBD1F0E40FA00051AE0 /* AVFoundation.framework */; };
 		A5F5E1E31F209900002C611E /* CommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1BB1F209900002C611E /* CommentsController.swift */; };
 		A5F5E1E41F209900002C611E /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1BF1F209900002C611E /* TagCell.swift */; };
@@ -68,6 +71,9 @@
 /* Begin PBXFileReference section */
 		212323CE25162754FE2CF190 /* Pods_FreeSound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreeSound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4E927B89794D3F6F97A723 /* Pods-FreeSound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeSound.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreeSound/Pods-FreeSound.release.xcconfig"; sourceTree = "<group>"; };
+		A542441720064DA500C7B697 /* AuthorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorCell.swift; sourceTree = "<group>"; };
+		A542441820064DA500C7B697 /* AuthorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorCell.xib; sourceTree = "<group>"; };
+		A542441B200650D200C7B697 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		A5556CBD1F0E40FA00051AE0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A5F5E1BB1F209900002C611E /* CommentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsController.swift; sourceTree = "<group>"; };
 		A5F5E1BF1F209900002C611E /* TagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
@@ -411,6 +417,7 @@
 			children = (
 				A5F5E2151F209C67002C611E /* Constants.swift */,
 				A5F5E2161F209C67002C611E /* Dictionary+HTTPParameters.swift */,
+				A542441B200650D200C7B697 /* Navigation.swift */,
 				A5F5E2171F209C67002C611E /* ResourcePathManager.swift */,
 				A5F5E2181F209C67002C611E /* String+PathConstructable.swift */,
 			);
@@ -478,6 +485,8 @@
 				A5F5E2331F209FAD002C611E /* SoundTagsCell.swift */,
 				A5F5E2341F209FAD002C611E /* SoundTitleCell.swift */,
 				A5F5E2711F210C1B002C611E /* SoundDetail.storyboard */,
+				A542441720064DA500C7B697 /* AuthorCell.swift */,
+				A542441820064DA500C7B697 /* AuthorCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -642,6 +651,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A542441A20064DA500C7B697 /* AuthorCell.xib in Resources */,
 				A5F5E1E51F209900002C611E /* TagCell.xib in Resources */,
 				A5F5E26D1F2105F8002C611E /* SoundList.storyboard in Resources */,
 				A5F5E2701F2107E8002C611E /* Profile.storyboard in Resources */,
@@ -728,6 +738,7 @@
 				A5F5E1ED1F209900002C611E /* MenuRootViewController.swift in Sources */,
 				A5F5E2401F209FAD002C611E /* SoundTagsCell.swift in Sources */,
 				A5F5E1E91F209900002C611E /* LoginViewController.swift in Sources */,
+				A542441920064DA500C7B697 /* AuthorCell.swift in Sources */,
 				A5F5E21C1F209C67002C611E /* String+PathConstructable.swift in Sources */,
 				A5F5E20C1F209AE3002C611E /* SoundDetailInfo.swift in Sources */,
 				A5F5E1EC1F209900002C611E /* LeftMenuViewController.swift in Sources */,
@@ -751,6 +762,7 @@
 				A5F5E2431F209FAD002C611E /* SoundListViewController.swift in Sources */,
 				A5F5E1F71F2099EC002C611E /* FreesoundService.swift in Sources */,
 				A5F5E23F1F209FAD002C611E /* SoundDescriptionCell.swift in Sources */,
+				A542441C200650D200C7B697 /* Navigation.swift in Sources */,
 				A5F5E2191F209C67002C611E /* Constants.swift in Sources */,
 				A5F5E2651F20C44B002C611E /* CommentCell.swift in Sources */,
 			);

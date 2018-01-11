@@ -81,6 +81,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in SoundLoader.loadUser(withName:authRequired:handler:):SoundLoader.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "String.init(data: data!, encoding: .utf8)">
+            </PersistentString>
+            <PersistentString
+               value = "user">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SoundListViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:SoundListViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -89,13 +100,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "CommentsController.viewDidLoad() -&gt; ():CommentsController.swift">
+      </ContextState>
+      <ContextState
          contextName = "SoundListViewController.(filterButtonTapped(UIButton) -&gt; ()).(closure #1):SoundListViewController.swift">
       </ContextState>
       <ContextState
          contextName = "FreesoundService.(getCommentsFor(SoundInfo, withComplitionHandler : ([Comment]) -&gt; ()) -&gt; ()).(closure #1):FreesoundService.swift">
-      </ContextState>
-      <ContextState
-         contextName = "CommentsController.viewDidLoad() -&gt; ():CommentsController.swift">
       </ContextState>
       <ContextState
          contextName = "-[EZAudioPlot setSampleData:length:]:EZAudioPlot.m">

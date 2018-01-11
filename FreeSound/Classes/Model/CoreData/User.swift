@@ -56,7 +56,7 @@ class User {
             return
         }
         
-        guard let homepage = json["homepage"].string else {
+        guard let homepage = json["home_page"].string else {
             print("Error SoundDeetailInfo initalization! 2")
             return
         }
