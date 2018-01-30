@@ -2,7 +2,7 @@
 //  Comment+CoreDataClass.swift
 //  
 //
-//  Created by chiuser on 7/20/17.
+//  Created by Anton Shcherba on 7/20/17.
 //
 //
 

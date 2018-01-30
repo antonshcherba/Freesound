@@ -142,6 +142,8 @@ class SoundLoader {
         task.resume()
     }
     
+    
+    
     func searchSoundWith(_ text: String, loadedCount: Int = 0, handler: @escaping (_ sounds: [SoundInfo]) -> Void) {
         guard let url = URL(string: resourcePath.searchPathWith(text)) else {
             return
@@ -173,6 +175,40 @@ class SoundLoader {
                 print("Error")
             }
         }) 
+        task.resume()
+    }
+    
+    func sounds(for user: User, loadedCount: Int = 0, handler: @escaping (_ sounds: [SoundInfo]) -> Void) {
+        guard let url = URL(string: resourcePath.soundsPath(for: user)) else {
+            return
+        }
+        
+        let request = URLRequest(url: url)
+        
+        defaultSession = URLSession(configuration: defaultSessionConfig,
+                                    delegate: nil,
+                                    delegateQueue: OperationQueue.main)
+        
+        
+        let task = defaultSession.dataTask(with: request, completionHandler: {[unowned self] (data, response, error) in
+            if error != nil {
+                print("Error: \(error?.localizedDescription)")
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    if let result = self.parseSearchResultFrom(data!, loadedCount: loadedCount) {
+                        handler(result.results as! [SoundInfo])
+                    }
+                    
+                } else {
+                    print("Server Error: \(httpResponse.statusCode)")
+                }
+            } else {
+                print("Error")
+            }
+        })
         task.resume()
     }
     

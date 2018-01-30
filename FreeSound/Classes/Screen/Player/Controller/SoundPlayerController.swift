@@ -2,7 +2,7 @@
 //  SoundPlayerController.swift
 //  FreeSound
 //
-//  Created by chiuser on 7/13/17.
+//  Created by Anton Shcherba on 7/13/17.
 //  Copyright © 2017 Anton Shcherba. All rights reserved.
 //
 

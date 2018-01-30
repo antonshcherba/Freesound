@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PinkBackground" translatesAutoresizingMaskIntoConstraints="NO" id="1lb-cC-ddS">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stephen Dennis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXf-dO-AyZ">
                                 <rect key="frame" x="103" y="248" width="169" height="32"/>
@@ -104,7 +104,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="X1t-CI-FFT" firstAttribute="top" secondItem="wAx-ve-TvQ" secondAttribute="bottom" id="25E-iD-IOr"/>
-                            <constraint firstItem="1lb-cC-ddS" firstAttribute="top" secondItem="4or-2W-lLW" secondAttribute="bottom" id="B3L-8i-SQf"/>
                             <constraint firstItem="1lb-cC-ddS" firstAttribute="leading" secondItem="OSP-36-Eyl" secondAttribute="leading" id="Fmj-B0-0am"/>
                             <constraint firstItem="wAx-ve-TvQ" firstAttribute="leading" secondItem="OSP-36-Eyl" secondAttribute="leading" id="K1f-5g-9kg"/>
                             <constraint firstItem="d3i-jb-CJt" firstAttribute="leading" secondItem="OSP-36-Eyl" secondAttribute="leading" constant="20" symbolic="YES" id="KYH-mV-7BS"/>
@@ -120,6 +119,7 @@
                             <constraint firstItem="gWO-AW-8vI" firstAttribute="top" secondItem="kwO-1u-3MO" secondAttribute="bottom" id="jt0-Kt-d9F"/>
                             <constraint firstItem="d3i-jb-CJt" firstAttribute="top" secondItem="fL6-3l-vSA" secondAttribute="bottom" constant="8" symbolic="YES" id="mYc-xk-ztN"/>
                             <constraint firstItem="wAx-ve-TvQ" firstAttribute="top" secondItem="gWO-AW-8vI" secondAttribute="bottom" constant="8" symbolic="YES" id="mdJ-2h-eeY"/>
+                            <constraint firstItem="1lb-cC-ddS" firstAttribute="top" secondItem="OSP-36-Eyl" secondAttribute="top" id="sMm-IE-BWu"/>
                             <constraint firstAttribute="trailing" secondItem="wAx-ve-TvQ" secondAttribute="trailing" id="sgC-if-2D1"/>
                             <constraint firstItem="fL6-3l-vSA" firstAttribute="top" secondItem="4or-2W-lLW" secondAttribute="bottom" constant="32" id="xET-N0-g5Y"/>
                         </constraints>
@@ -130,11 +130,12 @@
                         <outlet property="homepageLabel" destination="d3i-jb-CJt" id="N3X-AZ-PgE"/>
                         <outlet property="joinedDate" destination="gWO-AW-8vI" id="pjm-x2-3gv"/>
                         <outlet property="nameLabel" destination="vXf-dO-AyZ" id="hUi-T0-7ze"/>
+                        <outlet property="tableView" destination="wAx-ve-TvQ" id="TLB-qz-DR0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sDa-Hn-fwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2092.5" y="-537.67605633802816"/>
+            <point key="canvasLocation" x="2092" y="-538.38080959520244"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WY3-gL-SbY">

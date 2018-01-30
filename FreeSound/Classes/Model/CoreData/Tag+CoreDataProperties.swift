@@ -2,7 +2,7 @@
 //  Tag+CoreDataProperties.swift
 //  
 //
-//  Created by chiuser on 7/6/17.
+//  Created by Anton Shcherba on 7/6/17.
 //
 //
 

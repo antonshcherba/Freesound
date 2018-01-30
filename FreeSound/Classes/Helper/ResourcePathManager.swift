@@ -197,6 +197,17 @@ class ResourcePathManager {
 //            tokenParameter()
     }
     
+    func soundsPath(for user: User) -> String {
+        return [userPath,
+                user.name,
+                "sounds"]
+            .joined(separator:String.slash) + tokenParameter()
+        
+        //        return soundPath +
+        //            id + String.slash + String.questionMark +
+        //            tokenParameter()
+    }
+    
     func downloadSoundPathFor(_ id: String) -> String {
         return [soundPath,
                 id,

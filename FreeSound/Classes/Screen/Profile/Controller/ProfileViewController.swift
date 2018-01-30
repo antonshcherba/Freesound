@@ -10,6 +10,11 @@ import UIKit
 
 class ProfileViewController : UIViewController {
     
+    enum TableRow: Int {
+        case sounds
+        case packs
+    }
+    
     // MARK: - Variables
     
     // MARK: - Outlets
@@ -21,6 +26,8 @@ class ProfileViewController : UIViewController {
     @IBOutlet weak var homepageLabel: UILabel!
     
     @IBOutlet weak var joinedDate: UILabel!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var soundsCountLabel: UILabel!
     
@@ -41,21 +48,29 @@ class ProfileViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loader.loadUser(withName: username, authRequired: true) { (user) in
-            DispatchQueue.main.async { [unowned self] in
-                self.nameLabel.text = user.name
-                self.avatarImageView.image = user.avatar
-                self.homepageLabel.text = user.homepage
-                self.joinedDate.text = user.joinedDate
-                
-//                self.soundsCountLabel.text = String(user.soundsCount)
-//                self.packsCountLabel.text = String(user.packsCount)
-                
+        loader.loadUser(withName: username, authRequired: true) { [weak self] (user) in
+            guard let strongSelf = self else { return }
+            
+            strongSelf.user = user
+            
+            DispatchQueue.main.async {
+                strongSelf.nameLabel.text = user.name
+                strongSelf.avatarImageView.image = user.avatar
+                strongSelf.homepageLabel.text = user.homepage
+                strongSelf.joinedDate.text = user.joinedDate
+                strongSelf.tableView.reloadData()
             }
         }
+        
+        setupUI()
     }
     
-    func configureNavigationBar() {
+    func setupUI() {
+        setupNavigationBar()
+        setupTableView()
+    }
+    
+    func setupNavigationBar() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
@@ -74,6 +89,12 @@ class ProfileViewController : UIViewController {
         navigationItem.leftBarButtonItem = barItem
     }
     
+    func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: UserInfoCell.nibbName, bundle: nil), forCellReuseIdentifier: UserInfoCell.nibbName)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -90,4 +111,52 @@ class ProfileViewController : UIViewController {
     
     // MARK: - Private methods
     
+}
+
+extension ProfileViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let user = user else { return 0 }
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoCell.nibbName, for: indexPath) as! UserInfoCell
+        guard let row = TableRow(rawValue: indexPath.row) else { return cell }
+        
+        switch row {
+        case .sounds:
+            cell.nameLabel.text = "Sounds"
+            cell.valueLabel.text = "\(user.soundsCount)"
+        case .packs:
+            cell.nameLabel.text = "Packs"
+            cell.valueLabel.text = "\(user.packsCount)"
+        }
+        
+        return cell
+    }
+}
+
+extension ProfileViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView(frame: .zero)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let row = TableRow.init(rawValue: indexPath.row) else {
+            return
+        }
+        
+        switch row {
+        case .sounds:
+            let controller = NavigationManager.getController() as UserSoundsController
+            navigationController?.pushViewController(controller, animated: true)
+        default:
+            break
+        }
+    }
 }

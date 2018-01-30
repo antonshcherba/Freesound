@@ -28,6 +28,8 @@ extension UIViewController {
 
 extension UIView {
     class var ID: String { return className }
+    
+    static var nibbName: String { return className }
 }
 
 struct NibNames {
@@ -98,4 +100,8 @@ extension ProfileViewController: Storyboarding, Identifing {
 
 extension SoundListViewController: Storyboarding, Identifing {
     static var storyboardName = StoryboardName.soundList
+}
+
+extension UserSoundsController: Storyboarding, Identifing {
+    static var storyboardName = StoryboardName.userSounds
 }
