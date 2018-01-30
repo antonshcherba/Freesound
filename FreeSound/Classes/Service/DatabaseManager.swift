@@ -22,9 +22,9 @@ class DatabaseManager {
         return tmp
     }
     
-    var newComment: Comment {
-        return NSEntityDescription.insertNewObject(forEntityName: Comment.entityName,
-                                                                   into: coreData.context) as! Comment
+    var newComment: CommentCoreData {
+        return NSEntityDescription.insertNewObject(forEntityName: CommentCoreData.entityName,
+                                                                   into: coreData.context) as! CommentCoreData
     }
     
     var newSoundDetailInfo: SoundDetailInfo {

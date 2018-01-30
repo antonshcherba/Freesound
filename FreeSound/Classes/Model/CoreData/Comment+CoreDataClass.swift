@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import SwiftyJSON
 
-public class Comment: NSManagedObject {
+public class CommentCoreData: NSManagedObject {
 
     var user: User?
     
@@ -35,7 +35,7 @@ public class Comment: NSManagedObject {
             print("Error Comment initalization! 3")
             return
         }
-        
+        self.text = text
         self.text = text
         self.created = created.timeIntervalSince1970
         

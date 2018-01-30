@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-extension Comment {
+extension CommentCoreData {
 
     class var entityName:String {
         get {
@@ -18,8 +18,8 @@ extension Comment {
         }
     }
     
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Comment> {
-        return NSFetchRequest<Comment>(entityName: "Comment")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<CommentCoreData> {
+        return NSFetchRequest<CommentCoreData>(entityName: "Comment")
     }
 
     @NSManaged public var text: String?

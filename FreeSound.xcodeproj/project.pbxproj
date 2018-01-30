@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A521E87A202111E0007074C3 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A521E879202111E0007074C3 /* Comment.swift */; };
 		A542441920064DA500C7B697 /* AuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542441720064DA500C7B697 /* AuthorCell.swift */; };
 		A542441A20064DA500C7B697 /* AuthorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A542441820064DA500C7B697 /* AuthorCell.xib */; };
 		A542441C200650D200C7B697 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542441B200650D200C7B697 /* Navigation.swift */; };
@@ -77,6 +78,7 @@
 /* Begin PBXFileReference section */
 		212323CE25162754FE2CF190 /* Pods_FreeSound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreeSound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4E927B89794D3F6F97A723 /* Pods-FreeSound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeSound.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreeSound/Pods-FreeSound.release.xcconfig"; sourceTree = "<group>"; };
+		A521E879202111E0007074C3 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A542441720064DA500C7B697 /* AuthorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorCell.swift; sourceTree = "<group>"; };
 		A542441820064DA500C7B697 /* AuthorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorCell.xib; sourceTree = "<group>"; };
 		A542441B200650D200C7B697 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
@@ -176,6 +178,14 @@
 				4B4E927B89794D3F6F97A723 /* Pods-FreeSound.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A521E878202111C9007074C3 /* Plain */ = {
+			isa = PBXGroup;
+			children = (
+				A521E879202111E0007074C3 /* Comment.swift */,
+			);
+			path = Plain;
 			sourceTree = "<group>";
 		};
 		A53D9FC01F1F83290066A588 /* Classes */ = {
@@ -404,8 +414,9 @@
 			isa = PBXGroup;
 			children = (
 				A5F5E2011F209AE3002C611E /* CoreData */,
-				A5F5E20A1F209AE3002C611E /* SearchResult.swift */,
+				A521E878202111C9007074C3 /* Plain */,
 				A5F88E9F2007ACDE004C0F6A /* SearchOptions.swift */,
+				A5F5E20A1F209AE3002C611E /* SearchResult.swift */,
 			);
 			name = Model;
 			path = Classes/Model;
@@ -789,6 +800,7 @@
 				A5F5E1EC1F209900002C611E /* LeftMenuViewController.swift in Sources */,
 				A5F88E9D200788DC004C0F6A /* UserInfoCell.swift in Sources */,
 				A5F5E1EF1F209900002C611E /* SoundPlayerView.swift in Sources */,
+				A521E87A202111E0007074C3 /* Comment.swift in Sources */,
 				A5F5E23C1F209FAD002C611E /* SearchOptionsCell.swift in Sources */,
 				A5F5E2471F20A1A3002C611E /* AppDelegate.swift in Sources */,
 				A5F5E1FC1F209AA8002C611E /* CoreDataManager.swift in Sources */,

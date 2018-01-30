@@ -15,7 +15,7 @@ class CommentsController: UITableViewController {
     
     var soundInfo: SoundInfo!
     
-    var comments:[Comment] = []
+    var comments:[CommentCoreData] = []
     
     var dateFormatter: DateFormatter!
     

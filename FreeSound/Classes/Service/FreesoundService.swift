@@ -168,7 +168,7 @@ class FreesoundService {
     
     // MARK: - Comments functions
     
-    func getCommentsFor(_ soundInfo: SoundInfo, withComplitionHandler handler: @escaping (_ sound: [Comment]) -> Void ) {
+    func getCommentsFor(_ soundInfo: SoundInfo, withComplitionHandler handler: @escaping (_ sound: [CommentCoreData]) -> Void ) {
         
         guard let url = URL(string: resourcePath.commentsPathFor("\(soundInfo.id)")) else {
             return
@@ -189,7 +189,7 @@ class FreesoundService {
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 200 {
                     if let result = self.parseCommentSearchResultFrom(data!) {
-                        handler(result.results as! [Comment])
+                        handler(result.results as! [CommentCoreData])
                     }
                     
                 } else {
@@ -221,10 +221,10 @@ class FreesoundService {
     
     // MARK: - Parse Comments
     
-    func parseCommetnsFrom(_ data: Data) -> [Comment] {
+    func parseCommetnsFrom(_ data: Data) -> [CommentCoreData] {
         let json = JSON(data: data)
         var jsonResultsArray = json["results"].array
-        var results = [Comment]()
+        var results = [CommentCoreData]()
         
         let database = DatabaseManager()
         
