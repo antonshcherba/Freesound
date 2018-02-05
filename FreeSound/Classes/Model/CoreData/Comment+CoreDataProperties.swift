@@ -14,7 +14,7 @@ extension CommentCoreData {
 
     class var entityName:String {
         get {
-            return "Comment"
+            return "CommentCoreData"
         }
     }
     
