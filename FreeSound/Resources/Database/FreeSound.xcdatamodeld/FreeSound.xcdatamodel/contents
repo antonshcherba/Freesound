@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G29" minimumToolsVersion="Xcode 7.0" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CommentCoreData" representedClassName=".Comment" syncable="YES">
+    <entity name="CommentCoreData" representedClassName=".CommentCoreData" syncable="YES">
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
