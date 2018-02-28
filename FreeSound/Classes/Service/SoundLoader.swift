@@ -113,7 +113,8 @@ class SoundLoader {
         guard let url = URL(string: resourcePath.soundPathFor("\(id)")) else {
             return
         }
-        let request = URLRequest(url: url)
+
+        let request = RequestBuilder.create(request: SoundInstanceRequest(id: id))
         
         defaultSession = URLSession(configuration: defaultSessionConfig,
                                       delegate: nil,
@@ -264,17 +265,8 @@ class SoundLoader {
         guard let url = URL(string: resourcePath.userPathFor(name)) else {
             return
         }
-        
-        let request = NSMutableURLRequest(url: url)
-        if authRequired {
-//            print(oauthClient.credential.oauth_token)
-//            request.addValue("Bearer \(oauthClient.credential.oauth_token)", forHTTPHeaderField: "Authorization")
-
-            
-            print(oauthSwift!.client.credential.oauthToken)
-            request.addValue("Bearer \(oauthSwift!.client.credential.oauthToken)",
-                             forHTTPHeaderField: "Authorization")
-        }
+                
+        let request = RequestBuilder.create(request: UserInstanceRequest(username: name))
         
         defaultSession = URLSession(configuration: defaultSessionConfig,
                                       delegate: nil,

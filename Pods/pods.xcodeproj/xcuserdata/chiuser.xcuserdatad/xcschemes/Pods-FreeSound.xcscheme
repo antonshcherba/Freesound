@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4950AA4049557FCC8D2F802B54674770"
+               BlueprintIdentifier = "F6B168D6D4C89BB064D5C89191CFA8F6"
                BuildableName = "Pods_FreeSound.framework"
                BlueprintName = "Pods-FreeSound"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4950AA4049557FCC8D2F802B54674770"
+            BlueprintIdentifier = "F6B168D6D4C89BB064D5C89191CFA8F6"
             BuildableName = "Pods_FreeSound.framework"
             BlueprintName = "Pods-FreeSound"
             ReferencedContainer = "container:Pods.xcodeproj">

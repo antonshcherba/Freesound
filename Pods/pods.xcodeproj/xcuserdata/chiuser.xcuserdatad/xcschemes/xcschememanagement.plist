@@ -24,6 +24,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MessageKit-MessageKitAssets.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MessageKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>OAuthSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,17 +67,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0310DDFED0D841E076774EEDFBC4C3B8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>100EAFCCC6E91DEC79D9911111EC3E1D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4950AA4049557FCC8D2F802B54674770</key>
+		<key>159DC1FC6E0BBB9B9AB3ABB8B971D89F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,12 +87,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5B1770BB14753B3AE4D6AA0B9BFA20CD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>68E504159A95438F18EAACAB7BBD121C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>71B4D6DC853C56758973E4FFDF5C19D2</key>
+		<key>6A1CE7AD04AD5717FAF89136044F5932</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7C1D8F6B6BC4C3AB2F165768DAD927FB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B11DEC6F2B0FE534625854ECB08DE653</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,7 +122,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F9933C8B437646658F55F7D915076B6A</key>
+		<key>F6B168D6D4C89BB064D5C89191CFA8F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

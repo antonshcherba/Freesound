@@ -15,4 +15,5 @@ target 'FreeSound' do
     pod 'EZAudio'
     pod 'FDWaveformView'
     pod 'ALTextInputBar'
+    pod 'MessageKit', '~> 0.9.0'
 end

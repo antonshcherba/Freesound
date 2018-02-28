@@ -13,6 +13,7 @@ PODS:
   - GoogleMaps/Maps (2.3.0):
     - GoogleMaps/Base
   - Masonry (1.0.2)
+  - MessageKit (0.9.0)
   - OAuthSwift (1.1.0)
   - RESideMenu (4.0.7)
   - SnapKit (3.2.0)
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - FDWaveformView
   - GoogleMaps
   - Masonry
+  - MessageKit (~> 0.9.0)
   - OAuthSwift (~> 1.1.0)
   - RESideMenu (~> 4.0.7)
   - SnapKit
@@ -36,12 +38,13 @@ SPEC CHECKSUMS:
   FDWaveformView: 0f2e966d4bf242ab1e747c3a87b2ca10ed9c46b8
   GoogleMaps: 340a6a0bebd17c2db8abcd3921976c7c53c86cb8
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MessageKit: c996c72247fac52098fd283e53e442e86a1995e8
   OAuthSwift: 7ec2c62274f6bdc30b1ba3b799c39a6fdcaea0e5
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
 
-PODFILE CHECKSUM: 3756cc0aae7dfd67b36d8bdb1c7af2839d117f9b
+PODFILE CHECKSUM: 88fa700e16d0a1cade41166b5bce2e58bcbbb38c
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1
