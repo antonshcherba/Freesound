@@ -16,6 +16,7 @@
 		A5556CBE1F0E40FA00051AE0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5556CBD1F0E40FA00051AE0 /* AVFoundation.framework */; };
 		A56753442046A41300F1F6D5 /* SoundInstanceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56753432046A41200F1F6D5 /* SoundInstanceRequest.swift */; };
 		A56753462046A53200F1F6D5 /* FSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56753452046A53200F1F6D5 /* FSRequest.swift */; };
+		A5D8AC57204C52C000B8571D /* SoundCommentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D8AC56204C52C000B8571D /* SoundCommentsRequest.swift */; };
 		A5ECCCB620290687004F4251 /* CommentCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECCCB420290684004F4251 /* CommentCoreData+CoreDataClass.swift */; };
 		A5ECCCB720290687004F4251 /* CommentCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECCCB520290685004F4251 /* CommentCoreData+CoreDataProperties.swift */; };
 		A5F5E1E31F209900002C611E /* CommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1BB1F209900002C611E /* CommentsController.swift */; };
@@ -91,6 +92,7 @@
 		A5556CBD1F0E40FA00051AE0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A56753432046A41200F1F6D5 /* SoundInstanceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundInstanceRequest.swift; sourceTree = "<group>"; };
 		A56753452046A53200F1F6D5 /* FSRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSRequest.swift; sourceTree = "<group>"; };
+		A5D8AC56204C52C000B8571D /* SoundCommentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCommentsRequest.swift; sourceTree = "<group>"; };
 		A5ECCCB420290684004F4251 /* CommentCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CommentCoreData+CoreDataClass.swift"; path = "/Users/chiuser/Downloads/Freesound-Intern/FreeSound/Classes/Model/CoreData/CommentCoreData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		A5ECCCB520290685004F4251 /* CommentCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CommentCoreData+CoreDataProperties.swift"; path = "/Users/chiuser/Downloads/Freesound-Intern/FreeSound/Classes/Model/CoreData/CommentCoreData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		A5F5E1BB1F209900002C611E /* CommentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				A5539A1B2045F3CA00D6FAE6 /* RequestBuilder.swift */,
 				A56753432046A41200F1F6D5 /* SoundInstanceRequest.swift */,
 				A56753452046A53200F1F6D5 /* FSRequest.swift */,
+				A5D8AC56204C52C000B8571D /* SoundCommentsRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -846,6 +849,7 @@
 				A5F5E1E91F209900002C611E /* LoginViewController.swift in Sources */,
 				A542441920064DA500C7B697 /* AuthorCell.swift in Sources */,
 				A5F5E21C1F209C67002C611E /* String+PathConstructable.swift in Sources */,
+				A5D8AC57204C52C000B8571D /* SoundCommentsRequest.swift in Sources */,
 				A5F5E20C1F209AE3002C611E /* SoundDetailInfo.swift in Sources */,
 				A5F5E1EC1F209900002C611E /* LeftMenuViewController.swift in Sources */,
 				A5F88E9D200788DC004C0F6A /* UserInfoCell.swift in Sources */,

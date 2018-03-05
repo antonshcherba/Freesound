@@ -169,11 +169,8 @@ class FreesoundService {
     // MARK: - Comments functions
     
     func getCommentsFor(_ soundInfo: SoundInfo, withComplitionHandler handler: @escaping (_ sound: [CommentCoreData]) -> Void ) {
-        
-        guard let url = URL(string: resourcePath.commentsPathFor("\(soundInfo.id)")) else {
-            return
-        }
-        let request = URLRequest(url: url)
+
+        let request = RequestBuilder.create(request: SoundCommentsRequest(id: Int(soundInfo.id)))
         
         defaultSession = URLSession(configuration: defaultSessionConfig,
                                     delegate: nil,
@@ -198,7 +195,7 @@ class FreesoundService {
             } else {
                 print("Error")
             }
-        })
+        })	
         task.resume()
     }
     
