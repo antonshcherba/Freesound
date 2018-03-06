@@ -108,7 +108,7 @@ class SoundLoader {
         task.resume()
     }
     
-    func loadSoundWithID(_ id: Int, withComplitionHandler handler: @escaping (_ sound: SoundDetailInfo?) -> Void ) {
+    func loadSoundWithID(_ id: Int, withComplitionHandler handler: @escaping (_ result: Result<SoundDetailInfo>) -> Void ) {
         
         guard let url = URL(string: resourcePath.soundPathFor("\(id)")) else {
             return
@@ -122,19 +122,24 @@ class SoundLoader {
         
         
         let task = defaultSession.dataTask(with: request, completionHandler: {[unowned self] (data, response, error) in
-            if error != nil {
-                print("Error: \(error?.localizedDescription)")
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                handler(.failure(error))
                 return
             }
             
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 200 {
                     if let result = self.parseSoundDetailFrom(data!) {
-                        handler(result)
+                        handler(.success(result))
                     }
                     
                 } else {
                     print("Server Error: \(httpResponse.statusCode)")
+                    
+                    let error = NetworkError.responseStatusError(status: httpResponse.statusCode,
+                                                                 message: HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
+                    handler(.failure(error))
                 }
             } else {
                 print("Error")
@@ -261,7 +266,7 @@ class SoundLoader {
         task.resume()
     }
 
-    func loadUser(withName name: String, authRequired: Bool = false, handler: @escaping (_ user: User) -> Void) {
+    func loadUser(withName name: String, authRequired: Bool = false, handler: @escaping (_ result: Result<User>) -> Void) {
         guard let url = URL(string: resourcePath.userPathFor(name)) else {
             return
         }
@@ -273,8 +278,9 @@ class SoundLoader {
                                       delegateQueue: OperationQueue.main)
 //        defaultSession.data
         let task = self.defaultSession.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
-            if error != nil {
-                print("Error: \(error?.localizedDescription)")
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                handler(.failure(error))
                 return
             }
             
@@ -282,10 +288,14 @@ class SoundLoader {
                 if httpResponse.statusCode == 200 {
                     let user = User()
                     user.configureWithJson(JSON(data: data!))
-                    handler(user)
+                    handler(.success(user))
                     
                 } else {
                     print("Server Error: \(httpResponse.statusCode)")
+                    
+                    let error = NetworkError.responseStatusError(status: httpResponse.statusCode,
+                                                                 message: HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
+                    handler(.failure(error))
                 }
             } else {
                 print("Error")

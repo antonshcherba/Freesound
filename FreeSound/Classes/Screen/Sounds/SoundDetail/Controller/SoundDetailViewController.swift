@@ -84,16 +84,31 @@ class SoundDetailViewController: UIViewController {
         } else {
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
             
-            loader.loadSoundWithID(Int(soundInfo.id)) { (detailInfo) in
-                DispatchQueue.main.async { [unowned self] in
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            loader.loadSoundWithID(Int(soundInfo.id)) { [weak self] (result) in
+                guard let strongSelf = self else { return }
+                
+                switch result {
+                case .success(let detailInfo):
+                    DispatchQueue.main.async {
+                        strongSelf.soundInfo.detailInfo = detailInfo
+                        strongSelf.database.saveObject(detailInfo)
+                        strongSelf.tableView.reloadData()
+                        
+                        strongSelf.configurePlayer()
+                    }
+                case .failure(let error):
+                    print("error")
+                    print(error)
                     
-                    self.soundInfo.detailInfo = detailInfo
-                    self.database.saveObject(detailInfo!)
-                    self.tableView.reloadData()
+                    let alertController = UIAlertController(title: "Alert", message: error.localizedDescription, preferredStyle: .alert)
                     
-                    self.configurePlayer()
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                    alertController.addAction(cancelAction)
+                    
+                    strongSelf.present(alertController, animated: true, completion: nil)
                 }
+                
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
         }
     }

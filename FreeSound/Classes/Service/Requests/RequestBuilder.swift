@@ -21,6 +21,9 @@ class RequestBuilder {
         request.headers.forEach {
             urlRequest.addValue($0.value, forHTTPHeaderField: $0.key)
         }
+        
+        urlRequest.timeoutInterval = 30
+        
         return urlRequest
     }
 }

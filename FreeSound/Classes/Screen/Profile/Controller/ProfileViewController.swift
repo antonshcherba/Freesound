@@ -48,17 +48,25 @@ class ProfileViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loader.loadUser(withName: username, authRequired: true) { [weak self] (user) in
+        loader.loadUser(withName: username, authRequired: true) { [weak self] (result) in
             guard let strongSelf = self else { return }
-            
-            strongSelf.user = user
-            
-            DispatchQueue.main.async {
-                strongSelf.nameLabel.text = user.name
-                strongSelf.avatarImageView.image = user.avatar
-                strongSelf.homepageLabel.text = user.homepage
-                strongSelf.joinedDate.text = user.joinedDate
-                strongSelf.tableView.reloadData()
+                        
+            switch result {
+            case .success(let user):
+                strongSelf.user = user
+                DispatchQueue.main.async {
+                    strongSelf.updateWith(user)
+                }
+            case .failure(let error):
+                print("error")
+                print(error)
+                
+                let alertController = UIAlertController(title: "Alert", message: error.localizedDescription, preferredStyle: .alert)
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                alertController.addAction(cancelAction)
+
+                strongSelf.present(alertController, animated: true, completion: nil)
             }
         }
         
@@ -93,6 +101,15 @@ class ProfileViewController : UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: UserInfoCell.nibbName, bundle: nil), forCellReuseIdentifier: UserInfoCell.nibbName)
+    }
+    
+    func updateWith(_ user: User) {
+        nameLabel.text = user.name
+        avatarImageView.image = user.avatar
+        homepageLabel.text = user.homepage
+        joinedDate.text = user.joinedDate
+        
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
