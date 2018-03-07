@@ -97,41 +97,7 @@ class FreesoundService {
     }
 
     // MARK: - Sound functions
-    
-    func loadSoundWithID(_ id: Int, withComplitionHandler handler: @escaping (_ sound: SoundDetailInfo?) -> Void ) {
         
-        guard let url = URL(string: resourcePath.soundPathFor("\(id)")) else {
-            return
-        }
-        let request = URLRequest(url: url)
-        
-        defaultSession = URLSession(configuration: defaultSessionConfig,
-                                    delegate: nil,
-                                    delegateQueue: OperationQueue.main)
-        
-        
-        let task = defaultSession.dataTask(with: request, completionHandler: {[unowned self] (data, response, error) in
-            if error != nil {
-                print("Error: \(error?.localizedDescription)")
-                return
-            }
-            
-            if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    //                    if let result = self.parseSoundDetailFrom(data!) {
-                    //                        handler(result)
-                    //                    }
-                    
-                } else {
-                    print("Server Error: \(httpResponse.statusCode)")
-                }
-            } else {
-                print("Error")
-            }
-        })
-        task.resume()
-    }
-    
     func downloadSound(_ soundInfo: SoundInfo, withComplitionHandler handler: @escaping (_ sound: SoundDetailInfo?) -> Void ) {
         
         guard let url = URL(string: resourcePath.soundPathFor("\(soundInfo.id)")) else {

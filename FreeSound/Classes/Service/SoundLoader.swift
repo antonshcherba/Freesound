@@ -10,6 +10,8 @@ import Foundation
 import SwiftyJSON
 import OAuthSwift
 import CoreData
+import RxSwift
+import RxCocoa
 
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
@@ -108,10 +110,10 @@ class SoundLoader {
         task.resume()
     }
     
-    func loadSoundWithID(_ id: Int, withComplitionHandler handler: @escaping (_ result: Result<SoundDetailInfo>) -> Void ) {
+    func loadSoundWithID(_ id: Int) -> Observable<SoundDetailInfo> {
         
         guard let url = URL(string: resourcePath.soundPathFor("\(id)")) else {
-            return
+            return Observable.error(SomeError.wrongData)
         }
 
         let request = RequestBuilder.create(request: SoundInstanceRequest(id: id))
@@ -121,31 +123,49 @@ class SoundLoader {
                                       delegateQueue: OperationQueue.main)
         
         
-        let task = defaultSession.dataTask(with: request, completionHandler: {[unowned self] (data, response, error) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-                handler(.failure(error))
-                return
-            }
-            
-            if let httpResponse = response as? HTTPURLResponse {
+//        let task = defaultSession.dataTask(with: request, completionHandler: {[unowned self] (data, response, error) in
+//            if let error = error {
+//                print("Error: \(error.localizedDescription)")
+//                handler(.failure(error))
+//                return
+//            }
+//
+//            if let httpResponse = response as? HTTPURLResponse {
+//                if httpResponse.statusCode == 200 {
+//                    if let result = self.parseSoundDetailFrom(data!) {
+//                        handler(.success(result))
+//                    }
+//
+//                    return Observable.error(SomeError.wrongData)
+//                } else {
+//                    print("Server Error: \(httpResponse.statusCode)")
+//
+//                    let error = NetworkError.responseStatusError(status: httpResponse.statusCode,
+//                                                                 message: HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
+//                    handler(.failure(error))
+//                }
+//            } else {
+//                print("Error")
+//            }
+//        })
+//        task.resume()
+        
+        return self.defaultSession.rx.response(request: request)
+            .map({ (httpResponse, data) -> SoundDetailInfo in
                 if httpResponse.statusCode == 200 {
-                    if let result = self.parseSoundDetailFrom(data!) {
-                        handler(.success(result))
+                    if let soundDetailInfo = self.parseSoundDetailFrom(data) {
+                        return soundDetailInfo
                     }
                     
+                    throw SomeError.wrongData
                 } else {
                     print("Server Error: \(httpResponse.statusCode)")
                     
                     let error = NetworkError.responseStatusError(status: httpResponse.statusCode,
                                                                  message: HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
-                    handler(.failure(error))
+                    throw error
                 }
-            } else {
-                print("Error")
-            }
-        }) 
-        task.resume()
+        })
     }
     
     
@@ -266,9 +286,9 @@ class SoundLoader {
         task.resume()
     }
 
-    func loadUser(withName name: String, authRequired: Bool = false, handler: @escaping (_ result: Result<User>) -> Void) {
+    func loadUser(withName name: String, authRequired: Bool = false) -> Observable<User> {
         guard let url = URL(string: resourcePath.userPathFor(name)) else {
-            return
+            return Observable.error(SomeError.wrongData)
         }
                 
         let request = RequestBuilder.create(request: UserInstanceRequest(username: name))
@@ -276,32 +296,22 @@ class SoundLoader {
         defaultSession = URLSession(configuration: defaultSessionConfig,
                                       delegate: nil,
                                       delegateQueue: OperationQueue.main)
-//        defaultSession.data
-        let task = self.defaultSession.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-                handler(.failure(error))
-                return
-            }
-            
-            if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    let user = User()
-                    user.configureWithJson(JSON(data: data!))
-                    handler(.success(user))
-                    
-                } else {
-                    print("Server Error: \(httpResponse.statusCode)")
-                    
-                    let error = NetworkError.responseStatusError(status: httpResponse.statusCode,
-                                                                 message: HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
-                    handler(.failure(error))
-                }
-            } else {
-                print("Error")
-            }
-        }) 
-        task.resume()
+        
+        return self.defaultSession.rx.response(request: request)
+            .map({ (httpResponse, data) -> User in
+                    if httpResponse.statusCode == 200 {
+                        let user = User()
+                        user.configureWithJson(JSON(data: data))
+                        
+                        return user
+                    } else {
+                        print("Server Error: \(httpResponse.statusCode)")
+                        
+                        let error = NetworkError.responseStatusError(status: httpResponse.statusCode,
+                                                                     message: HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
+                        throw error
+                    }
+            })
     }
     
     func parseSearchResultFrom(_ data: Data) -> SearchResult? {

@@ -9,6 +9,8 @@
 import UIKit
 import AVFoundation
 import GoogleMaps
+import RxSwift
+import RxCocoa
 
 class SoundDetailViewController: UIViewController {
 
@@ -56,6 +58,8 @@ class SoundDetailViewController: UIViewController {
     
     // MARK: - Private Properties
     
+    fileprivate let bag = DisposeBag()
+    
     fileprivate let metaTitles:[MetaInfoCell.Description: String] = [.type: "Type",
                                                                      .bitrate: "Bitrate",
                                                                      .duration: "Duration",
@@ -84,32 +88,31 @@ class SoundDetailViewController: UIViewController {
         } else {
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
             
-            loader.loadSoundWithID(Int(soundInfo.id)) { [weak self] (result) in
+            loader.loadSoundWithID(Int(soundInfo.id))
+                .subscribe(onNext: ({ [weak self] (detailInfo) in
                 guard let strongSelf = self else { return }
-                
-                switch result {
-                case .success(let detailInfo):
-                    DispatchQueue.main.async {
-                        strongSelf.soundInfo.detailInfo = detailInfo
-                        strongSelf.database.saveObject(detailInfo)
-                        strongSelf.tableView.reloadData()
-                        
-                        strongSelf.configurePlayer()
-                    }
-                case .failure(let error):
-                    print("error")
-                    print(error)
+                DispatchQueue.main.async {
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     
-                    let alertController = UIAlertController(title: "Alert", message: error.localizedDescription, preferredStyle: .alert)
+                    strongSelf.soundInfo.detailInfo = detailInfo
+                    strongSelf.database.saveObject(detailInfo)
+                    strongSelf.tableView.reloadData()
                     
-                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                    alertController.addAction(cancelAction)
-                    
-                    strongSelf.present(alertController, animated: true, completion: nil)
+                    strongSelf.configurePlayer()
                 }
-                
+            }), onError: ({ [weak self] (error) in
+                guard let strongSelf = self else { return }
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            }
+                print("error")
+                print(error)
+                
+                let alertController = UIAlertController(title: "Alert", message: error.localizedDescription, preferredStyle: .alert)
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                alertController.addAction(cancelAction)
+                
+                strongSelf.present(alertController, animated: true, completion: nil)
+            })).disposed(by: bag)
         }
     }
     

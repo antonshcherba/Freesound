@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ProfileViewController : UIViewController {
     
@@ -41,6 +43,8 @@ class ProfileViewController : UIViewController {
     
     // MARK: - Private Properties
     
+    fileprivate let bag = DisposeBag()
+    
     fileprivate let loader = SoundLoader()
     
     // MARK: - Constructors
@@ -48,16 +52,15 @@ class ProfileViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loader.loadUser(withName: username, authRequired: true) { [weak self] (result) in
-            guard let strongSelf = self else { return }
-                        
-            switch result {
-            case .success(let user):
+        loader.loadUser(withName: username, authRequired: true)
+            .subscribe(onNext: ({ [weak self] user in
+                guard let strongSelf = self else { return }
                 strongSelf.user = user
                 DispatchQueue.main.async {
                     strongSelf.updateWith(user)
                 }
-            case .failure(let error):
+            }), onError: ({ [weak self] error in
+                guard let strongSelf = self else { return }
                 print("error")
                 print(error)
                 
@@ -65,10 +68,9 @@ class ProfileViewController : UIViewController {
                 
                 let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
                 alertController.addAction(cancelAction)
-
+                
                 strongSelf.present(alertController, animated: true, completion: nil)
-            }
-        }
+            })).disposed(by: bag)
         
         setupUI()
     }

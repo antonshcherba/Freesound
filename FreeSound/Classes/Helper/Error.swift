@@ -20,3 +20,7 @@ extension NetworkError: LocalizedError {
         }
     }
 }
+
+enum SomeError: Error {
+    case wrongData
+}
