@@ -203,7 +203,7 @@ class FreesoundService {
     
     // MARK: - Parse SearchResult
     func parseCommentSearchResultFrom(_ data: Data, loadedCount: Int = 0) -> SearchResult? {
-        let searchJSONResult = JSON(data: data)
+        let searchJSONResult = try! JSON(data: data)
         let tmp = String(data: data, encoding: String.Encoding.utf8)
         
         guard let searchResult = SearchResult(fromJSON: searchJSONResult) else { return nil }
@@ -219,7 +219,7 @@ class FreesoundService {
     // MARK: - Parse Comments
     
     func parseCommetnsFrom(_ data: Data) -> [CommentCoreData] {
-        let json = JSON(data: data)
+        let json = try! JSON(data: data)
         var jsonResultsArray = json["results"].array
         var results = [CommentCoreData]()
         
@@ -258,7 +258,7 @@ class FreesoundService {
     }
     
     func parseSoundDetailFrom(_ data: Data) -> SoundDetailInfo? {
-        let soundDetailJSON = JSON(data: data)
+        let soundDetailJSON = try! JSON(data: data)
         
         let database = DatabaseManager()
         let detailInfo = database.newSoundDetailInfo
@@ -290,7 +290,7 @@ extension FreesoundService: AuthControllerdDelegate {
     }
     
     func parseTokens(_ data: Data) {
-        let json = JSON(data: data)
+        let json = try! JSON(data: data)
         oauthSwift?.client.credential.oauthToken = json["access_token"].stringValue
         oauthSwift?.client.credential.oauthRefreshToken = json["refresh_token"].stringValue
         print("access_token = \(oauthSwift?.client.credential.oauthToken)")

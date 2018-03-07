@@ -16,4 +16,6 @@ target 'FreeSound' do
     pod 'FDWaveformView'
     pod 'ALTextInputBar'
     pod 'MessageKit', '~> 0.9.0'
+    pod 'RxSwift'
+    pod 'RxCocoa'
 end

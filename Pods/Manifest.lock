@@ -16,6 +16,9 @@ PODS:
   - MessageKit (0.9.0)
   - OAuthSwift (1.1.0)
   - RESideMenu (4.0.7)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
   - SnapKit (3.2.0)
   - SwiftyJSON (3.1.4)
   - TPCircularBuffer (1.1)
@@ -29,6 +32,8 @@ DEPENDENCIES:
   - MessageKit (~> 0.9.0)
   - OAuthSwift (~> 1.1.0)
   - RESideMenu (~> 4.0.7)
+  - RxCocoa
+  - RxSwift
   - SnapKit
   - SwiftyJSON
 
@@ -41,10 +46,12 @@ SPEC CHECKSUMS:
   MessageKit: c996c72247fac52098fd283e53e442e86a1995e8
   OAuthSwift: 7ec2c62274f6bdc30b1ba3b799c39a6fdcaea0e5
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
 
-PODFILE CHECKSUM: 88fa700e16d0a1cade41166b5bce2e58bcbbb38c
+PODFILE CHECKSUM: 5f722dbce253318ce6cf83b993dfb7fd0ac3fb83
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0
