@@ -24,7 +24,7 @@ class MenuRootViewController: RESideMenu {
 
 extension UIViewController {
 
-    func presentLeftViewController(_ sender: AnyObject) {
+    @objc func presentLeftViewController(_ sender: AnyObject) {
         sideMenuViewController.presentLeftMenuViewController()
     }
 }

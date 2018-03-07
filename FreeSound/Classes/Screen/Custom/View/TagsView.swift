@@ -54,7 +54,7 @@ extension TagsView: UICollectionViewDelegateFlowLayout {
         
         
         var size: CGSize
-        size = (tags[indexPath.row] as NSString).size(attributes: [NSFontAttributeName:UIFont.boldSystemFont(ofSize: 17.0)])
+        size = (tags[indexPath.row] as NSString).size(withAttributes: [NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 17.0)])
         
         size.width += 32 + 10
         size.height += 10

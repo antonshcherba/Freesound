@@ -9,7 +9,7 @@
 import UIKit
 import EZAudio
 
-class SoundPlayerController: UIViewController, EZAudioPlayerDelegate {
+@objcMembers class SoundPlayerController: UIViewController, EZAudioPlayerDelegate {
     
     var player: EZAudioPlayer!
     
@@ -49,10 +49,10 @@ class SoundPlayerController: UIViewController, EZAudioPlayerDelegate {
         self.view = self.playerView
         
         playerView.playing = false
-        playerView.playPauseButton.addTarget(self, action: #selector(playButtonTapped(_:)), for: .touchUpInside)
+//        playerView.playPauseButton.addTarget(self, action: #selector(playButtonTapped(_:)), for: .touchUpInside)
     }
     
-    func playButtonTapped(_ sender: UIButton) {
+    @objc func playButtonTapped(_ sender: UIButton) {
         guard let _ = player else { return }
         
         if player.isPlaying {

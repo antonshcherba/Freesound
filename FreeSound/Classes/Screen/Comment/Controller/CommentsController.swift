@@ -85,7 +85,7 @@ class CommentsController: MessagesViewController {
         dateFormatter.timeStyle = .medium
     }
     
-    func sendCommentButtonTapped(_ sender: UIButton) {
+    @objc func sendCommentButtonTapped(_ sender: UIButton) {
     }
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {

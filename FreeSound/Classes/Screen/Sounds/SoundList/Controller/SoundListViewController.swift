@@ -242,7 +242,7 @@ class SoundListViewController: UIViewController, UITableViewDelegate, UITableVie
 
     }
     
-    func searchSettingsButtonTapped(_ sender: UIButton) {
+    @objc func searchSettingsButtonTapped(_ sender: UIButton) {
         let controller = SearchOptionsController()
         controller.sortParameter = sortParameter
         

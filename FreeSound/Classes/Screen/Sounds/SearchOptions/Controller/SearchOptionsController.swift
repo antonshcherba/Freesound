@@ -75,7 +75,7 @@ class SearchOptionsController: UITableViewController {
         
         navigationItem.title = screenTitle
         
-        let textAttributes = [NSForegroundColorAttributeName: UIColor.darkGray]
+        let textAttributes = [NSAttributedStringKey.foregroundColor: UIColor.darkGray]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
