@@ -75,41 +75,6 @@ class SoundLoader {
             consumerSecret: resourcePath.clientSecret)
     }
     
-    func load(withComplitionHandler handler: @escaping (_ sounds: [SoundInfo]) -> Void) {
-        let requestString = resourcePath.searchPathWith("")
-
-        guard let url = URL(string: requestString) else {
-            return
-        }
-        let request = URLRequest(url: url)
-        
-        defaultSession = URLSession(configuration: defaultSessionConfig,
-                                      delegate: nil,
-                                      delegateQueue: OperationQueue.main)
-        
-        
-        let task = defaultSession.dataTask(with: request, completionHandler: {[unowned self] (data, response, error) in
-            if error != nil {
-                print("Error: \(error?.localizedDescription)")
-                return
-            }
-            
-            if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    if let result = self.parseSearchResultFrom(data!) {
-                        handler(result.results as! [SoundInfo])
-                    }
-                    
-                } else {
-                    print("Server Error: \(httpResponse.statusCode)")
-                }
-            } else {
-                print("Error")
-            }
-        }) 
-        task.resume()
-    }
-    
     func loadSoundWithID(_ id: Int) -> Observable<SoundDetailInfo> {
         
         guard let url = URL(string: resourcePath.soundPathFor("\(id)")) else {
@@ -121,34 +86,6 @@ class SoundLoader {
         defaultSession = URLSession(configuration: defaultSessionConfig,
                                       delegate: nil,
                                       delegateQueue: OperationQueue.main)
-        
-        
-//        let task = defaultSession.dataTask(with: request, completionHandler: {[unowned self] (data, response, error) in
-//            if let error = error {
-//                print("Error: \(error.localizedDescription)")
-//                handler(.failure(error))
-//                return
-//            }
-//
-//            if let httpResponse = response as? HTTPURLResponse {
-//                if httpResponse.statusCode == 200 {
-//                    if let result = self.parseSoundDetailFrom(data!) {
-//                        handler(.success(result))
-//                    }
-//
-//                    return Observable.error(SomeError.wrongData)
-//                } else {
-//                    print("Server Error: \(httpResponse.statusCode)")
-//
-//                    let error = NetworkError.responseStatusError(status: httpResponse.statusCode,
-//                                                                 message: HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
-//                    handler(.failure(error))
-//                }
-//            } else {
-//                print("Error")
-//            }
-//        })
-//        task.resume()
         
         return self.defaultSession.rx.response(request: request)
             .map({ (httpResponse, data) -> SoundDetailInfo in
@@ -286,7 +223,7 @@ class SoundLoader {
         task.resume()
     }
 
-    func loadUser(withName name: String, authRequired: Bool = false) -> Observable<User> {
+    func loadUser1(withName name: String, authRequired: Bool = false) -> Observable<User> {
         guard let url = URL(string: resourcePath.userPathFor(name)) else {
             return Observable.error(SomeError.wrongData)
         }
@@ -311,6 +248,38 @@ class SoundLoader {
                                                                      message: HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
                         throw error
                     }
+            })
+    }
+    
+    func loadUser(withName name: String, authRequired: Bool = false) -> Observable<User> {
+        guard let url = URL(string: resourcePath.userPathFor(name)) else {
+            return Observable.error(SomeError.wrongData)
+        }
+
+        return loadd(request: UserInstanceRequest(username: name))
+    }
+    
+    func loadd<T:Parsable>(request: FRRequest) -> Observable<T> {
+        let request = RequestBuilder.create(request: request)
+        
+        defaultSession = URLSession(configuration: defaultSessionConfig,
+                                    delegate: nil,
+                                    delegateQueue: OperationQueue.main)
+        
+        return self.defaultSession.rx.response(request: request)
+            .map({ (httpResponse, data) -> T in
+                if httpResponse.statusCode == 200 {
+                    let parsed = T.init()
+                    parsed.configureWithJson(JSON(data: data))
+                    
+                    return parsed
+                } else {
+                    print("Server Error: \(httpResponse.statusCode)")
+                    
+                    let error = NetworkError.responseStatusError(status: httpResponse.statusCode,
+                                                                 message: HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
+                    throw error
+                }
             })
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A51F55D42050101F0048645E /* Parsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F55D32050101F0048645E /* Parsable.swift */; };
 		A521E87A202111E0007074C3 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A521E879202111E0007074C3 /* Comment.swift */; };
 		A542441920064DA500C7B697 /* AuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542441720064DA500C7B697 /* AuthorCell.swift */; };
 		A542441A20064DA500C7B697 /* AuthorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A542441820064DA500C7B697 /* AuthorCell.xib */; };
@@ -85,6 +86,7 @@
 /* Begin PBXFileReference section */
 		212323CE25162754FE2CF190 /* Pods_FreeSound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreeSound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4E927B89794D3F6F97A723 /* Pods-FreeSound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeSound.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreeSound/Pods-FreeSound.release.xcconfig"; sourceTree = "<group>"; };
+		A51F55D32050101F0048645E /* Parsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsable.swift; sourceTree = "<group>"; };
 		A521E879202111E0007074C3 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A542441720064DA500C7B697 /* AuthorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorCell.swift; sourceTree = "<group>"; };
 		A542441820064DA500C7B697 /* AuthorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorCell.xib; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 				A5F5E2181F209C67002C611E /* String+PathConstructable.swift */,
 				A5715EA4204DAD920096A2FF /* Result.swift */,
 				A5715EA6204ECEB80096A2FF /* Error.swift */,
+				A51F55D32050101F0048645E /* Parsable.swift */,
 			);
 			name = Helper;
 			path = Classes/Helper;
@@ -847,6 +850,7 @@
 				A5F5E2421F209FAD002C611E /* DescriptionViewController.swift in Sources */,
 				A5F5E1F01F209900002C611E /* ProfileViewController.swift in Sources */,
 				A5F5E20B1F209AE3002C611E /* SoundDetailInfo+CoreDataProperties.swift in Sources */,
+				A51F55D42050101F0048645E /* Parsable.swift in Sources */,
 				A5F5E1E41F209900002C611E /* TagCell.swift in Sources */,
 				A5F5E1E81F209900002C611E /* AuthViewController.swift in Sources */,
 				A56753442046A41300F1F6D5 /* SoundInstanceRequest.swift in Sources */,

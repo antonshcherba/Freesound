@@ -97,7 +97,7 @@ class FreesoundService {
     }
 
     // MARK: - Sound functions
-        
+    
     func downloadSound(_ soundInfo: SoundInfo, withComplitionHandler handler: @escaping (_ sound: SoundDetailInfo?) -> Void ) {
         
         guard let url = URL(string: resourcePath.soundPathFor("\(soundInfo.id)")) else {

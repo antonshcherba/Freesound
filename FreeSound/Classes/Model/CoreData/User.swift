@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class User {
+class User: Parsable {
     
     // MARK: - Variables
     var name = ""
@@ -32,7 +32,7 @@ class User {
     
     // MARK: - Constructors
     
-    init() {
+    required init() {
     }
     
     // MARK: - Methods of class
