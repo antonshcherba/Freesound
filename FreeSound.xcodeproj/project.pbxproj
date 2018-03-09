@@ -19,6 +19,7 @@
 		A56753462046A53200F1F6D5 /* FSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56753452046A53200F1F6D5 /* FSRequest.swift */; };
 		A5715EA5204DAD930096A2FF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5715EA4204DAD920096A2FF /* Result.swift */; };
 		A5715EA7204ECEB80096A2FF /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5715EA6204ECEB80096A2FF /* Error.swift */; };
+		A573226F20529232006A4DE8 /* SoundListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573226E20529232006A4DE8 /* SoundListViewModel.swift */; };
 		A5D8AC57204C52C000B8571D /* SoundCommentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D8AC56204C52C000B8571D /* SoundCommentsRequest.swift */; };
 		A5ECCCB620290687004F4251 /* CommentCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECCCB420290684004F4251 /* CommentCoreData+CoreDataClass.swift */; };
 		A5ECCCB720290687004F4251 /* CommentCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECCCB520290685004F4251 /* CommentCoreData+CoreDataProperties.swift */; };
@@ -98,6 +99,7 @@
 		A56753452046A53200F1F6D5 /* FSRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSRequest.swift; sourceTree = "<group>"; };
 		A5715EA4204DAD920096A2FF /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		A5715EA6204ECEB80096A2FF /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		A573226E20529232006A4DE8 /* SoundListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundListViewModel.swift; sourceTree = "<group>"; };
 		A5D8AC56204C52C000B8571D /* SoundCommentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCommentsRequest.swift; sourceTree = "<group>"; };
 		A5ECCCB420290684004F4251 /* CommentCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CommentCoreData+CoreDataClass.swift"; path = "/Users/chiuser/Downloads/Freesound-Intern/FreeSound/Classes/Model/CoreData/CommentCoreData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		A5ECCCB520290685004F4251 /* CommentCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CommentCoreData+CoreDataProperties.swift"; path = "/Users/chiuser/Downloads/Freesound-Intern/FreeSound/Classes/Model/CoreData/CommentCoreData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
@@ -207,6 +209,7 @@
 		A53D9FC01F1F83290066A588 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A573226C20529205006A4DE8 /* ViewModel */,
 				A5F5E2451F20A1A3002C611E /* AppDelegate */,
 				A5F5E2141F209C67002C611E /* Helper */,
 				A5F5E2001F209AE3002C611E /* Model */,
@@ -226,6 +229,22 @@
 				A5D8AC56204C52C000B8571D /* SoundCommentsRequest.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		A573226C20529205006A4DE8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A573226D20529217006A4DE8 /* Sound */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A573226D20529217006A4DE8 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				A573226E20529232006A4DE8 /* SoundListViewModel.swift */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 		A5F5E1B81F209900002C611E /* Screen */ = {
@@ -867,6 +886,7 @@
 				A5D8AC57204C52C000B8571D /* SoundCommentsRequest.swift in Sources */,
 				A5F5E20C1F209AE3002C611E /* SoundDetailInfo.swift in Sources */,
 				A5F5E1EC1F209900002C611E /* LeftMenuViewController.swift in Sources */,
+				A573226F20529232006A4DE8 /* SoundListViewModel.swift in Sources */,
 				A5F88E9D200788DC004C0F6A /* UserInfoCell.swift in Sources */,
 				A5F5E1EF1F209900002C611E /* SoundPlayerView.swift in Sources */,
 				A521E87A202111E0007074C3 /* Comment.swift in Sources */,

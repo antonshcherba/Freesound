@@ -82,9 +82,11 @@ class SoundListViewController: UIViewController {
     
     fileprivate var sounds = Variable([SoundInfo]())
     
-    fileprivate var filterParameter: FilterParameter?
+//    fileprivate var filterParameter: FilterParameter?
+//
+//    fileprivate var sortParameter: SortParameter?
     
-    fileprivate var sortParameter: SortParameter?
+    fileprivate var viewModel: SoundListViewModel = SoundListViewModel()
     
     // MARK: - Constructors
     
@@ -100,8 +102,8 @@ class SoundListViewController: UIViewController {
 //            return
 //        }
         
-        sortParameter = .relevance
-        self.searchSoundWith(text: "", sortParameter: sortParameter, filterParameter: nil)
+//        sortParameter = .relevance
+//        self.searchSoundWith(text: "", sortParameter: sortParameter, filterParameter: nil)
     }
     
     deinit {
@@ -114,7 +116,7 @@ class SoundListViewController: UIViewController {
     
     func setupObservers() {
         
-        sounds.asObservable().bind(to: tableView.rx.items(cellIdentifier: CellID.SoundInfo.rawValue)) { _, sound, cell in
+        viewModel.sounds.drive(tableView.rx.items(cellIdentifier: CellID.SoundInfo.rawValue)) { _, sound, cell in
             self.configureDataForCell(cell, soundInfo: sound)
             }.disposed(by: bag)
         
@@ -126,13 +128,15 @@ class SoundListViewController: UIViewController {
             self.performSegue(withIdentifier: SegueID.SoundDetail.rawValue, sender: sound)
         }).disposed(by: bag)
         
-        searchController.searchBar.rx.text.filter({ text in
-            text?.count > 3
-        }).subscribe(onNext: { searchString in
-            guard let searchString = searchString else { return }
-            
-            self.searchSoundWith(text: searchString, sortParameter: self.sortParameter, filterParameter: self.filterParameter)
-        }).disposed(by: bag)
+        searchController.searchBar.rx.text
+            .filter({ $0 != nil }).map({ $0! })
+            .bind(to: viewModel.searchText)
+            .disposed(by: bag)
+        
+        searchController.searchBar.rx.cancelButtonClicked
+            .map{""}
+            .bind(to: viewModel.searchText)
+            .disposed(by: bag)
     }
     
     func configureUI() {
@@ -201,6 +205,13 @@ class SoundListViewController: UIViewController {
         searchController = UISearchController(searchResultsController: nil)
         searchController.dimsBackgroundDuringPresentation = false
         topContainerView.addSubview(searchController.searchBar)
+        
+//        searchController.searchBar.snp.makeConstraints { maker in
+//            maker.top.equalTo(topContainerView)
+//            maker.left.equalTo(topContainerView)
+//            maker.bottom.equalTo(topContainerView)
+//            maker.right.equalTo(topContainerView)
+//        }
 
         searchController.searchBar.delegate = self
     }
@@ -247,8 +258,8 @@ class SoundListViewController: UIViewController {
         var params:[FilterParameter] = [.tag, .username,.description, .comment]
         let index = sender.tag - 200
         
-        filterParameter = (index < params.count ? params[index] : nil)
-        searchSoundWith(text: searchController.searchBar.text!, sortParameter: sortParameter, filterParameter: filterParameter)
+        viewModel.filterParameter.value = (index < params.count ? params[index] : nil)
+//        searchSoundWith(text: searchController.searchBar.text!, sortParameter: sortParameter, filterParameter: filterParameter)
     }
     
     @IBAction func actionButtonTapped(_ sender: UIButton) {
@@ -271,13 +282,13 @@ class SoundListViewController: UIViewController {
     
     @objc func searchSettingsButtonTapped(_ sender: UIButton) {
         let controller = SearchOptionsController()
-        controller.sortParameter = sortParameter
+        controller.sortParameter = viewModel.sortParameter.value
         
         controller.searchOptionsApply = { params in
-            self.sortParameter = params
-            self.searchSoundWith(text: self.searchController.searchBar.text!,
-                                 sortParameter: self.sortParameter,
-                                 filterParameter: self.filterParameter)
+            self.viewModel.sortParameter.value = params
+//            self.searchSoundWith(text: self.searchController.searchBar.text!,
+//                                 sortParameter: self.sortParameter,
+//                                 filterParameter: self.filterParameter)
         }
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -437,7 +448,7 @@ extension SoundListViewController: UISearchBarDelegate {
 //    }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchSoundWith(text: "", sortParameter: sortParameter, filterParameter: filterParameter)
+//        searchSoundWith(text: "", sortParameter: sortParameter, filterParameter: filterParameter)
     }
 }
 
