@@ -9,6 +9,8 @@
 
 import UIKit
 import CoreData
+import RxSwift
+import RxCocoa
 
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
@@ -31,7 +33,7 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-class SoundListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SoundListViewController: UIViewController {
 
     enum CellID: String {
         case SoundInfo
@@ -72,11 +74,13 @@ class SoundListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // MARK: - Private Properties
     
+    fileprivate var bag = DisposeBag()
+    
     fileprivate var searchContext = 0
     
     fileprivate var detailIndexPath: IndexPath?
     
-    fileprivate var sounds: [SoundInfo] = []
+    fileprivate var sounds = Variable([SoundInfo]())
     
     fileprivate var filterParameter: FilterParameter?
     
@@ -90,6 +94,7 @@ class SoundListViewController: UIViewController, UITableViewDelegate, UITableVie
         self.definesPresentationContext = true
         
         configureUI()
+        setupObservers()
         
 //        if fetchController.fetchedObjects?.count > 0 {
 //            return
@@ -106,6 +111,29 @@ class SoundListViewController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: - Methods of class
     
     // MARK: - Methods of instance
+    
+    func setupObservers() {
+        
+        sounds.asObservable().bind(to: tableView.rx.items(cellIdentifier: CellID.SoundInfo.rawValue)) { _, sound, cell in
+            self.configureDataForCell(cell, soundInfo: sound)
+            }.disposed(by: bag)
+        
+        tableView.rx.modelSelected(SoundInfo.self).subscribe(onNext: { sound in
+            if self.searchController.isActive {
+                self.searchController.isActive = false
+            }
+            
+            self.performSegue(withIdentifier: SegueID.SoundDetail.rawValue, sender: sound)
+        }).disposed(by: bag)
+        
+        searchController.searchBar.rx.text.filter({ text in
+            text?.count > 3
+        }).subscribe(onNext: { searchString in
+            guard let searchString = searchString else { return }
+            
+            self.searchSoundWith(text: searchString, sortParameter: self.sortParameter, filterParameter: self.filterParameter)
+        }).disposed(by: bag)
+    }
     
     func configureUI() {
         
@@ -143,8 +171,8 @@ class SoundListViewController: UIViewController, UITableViewDelegate, UITableVie
     func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 400
-        tableView.delegate = self
-        tableView.dataSource = self
+//        tableView.delegate = self
+//        tableView.dataSource = self
         
         tableView.tableFooterView = UIView()
 
@@ -171,7 +199,6 @@ class SoundListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func configureSearchController() {
         searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         topContainerView.addSubview(searchController.searchBar)
 
@@ -183,24 +210,24 @@ class SoundListViewController: UIViewController, UITableViewDelegate, UITableVie
         guard let identifier = segue.identifier else {
             return
         }
-        
+
         switch identifier {
         case SegueID.SoundDetail.rawValue:
             let controller = segue.destination as! SoundDetailViewController
             let indexPath = tableView.indexPathForSelectedRow!
-            
+
 //            let soundInfo = fetchController.object(at: indexPath) as! SoundInfo
-            let soundInfo = sounds[indexPath.row]
+            let soundInfo = sender as! SoundInfo
             controller.soundInfo = soundInfo
-            
+
         case SegueID.Detail.rawValue:
             let controller = segue.destination as! DescriptionViewController
             let indexPath = tableView.indexPathForSelectedRow!
-            
+
 //            let soundInfo = fetchController.object(at: detailIndexPath!) as! SoundInfo
-            let soundInfo = sounds[indexPath.row]
+            let soundInfo = sender as! SoundInfo
             controller.shortDescription = soundInfo.detailInfo?.userDescription
-            
+
         default:
             break
         }
@@ -261,54 +288,70 @@ class SoundListViewController: UIViewController, UITableViewDelegate, UITableVie
 // MARK: - UITableViewDataSource
 extension SoundListViewController {
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-//        return fetchController.sections?.count ?? 0
-        return 1
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+////        return fetchController.sections?.count ?? 0
+//        return 1
+//    }
     
-    func tableView(_ tableView: UITableView,
-                            numberOfRowsInSection section: Int) -> Int {
-        
-//        let sectionInfo = fetchController.sections![section]
-//        print("Fetched count: \(sectionInfo.numberOfObjects)")
-//        return sectionInfo.numberOfObjects
-        
-        return sounds.count
-    }
+//    func tableView(_ tableView: UITableView,
+//                            numberOfRowsInSection section: Int) -> Int {
+//
+////        let sectionInfo = fetchController.sections![section]
+////        print("Fetched count: \(sectionInfo.numberOfObjects)")
+////        return sectionInfo.numberOfObjects
+//
+//        return sounds.count
+//    }
     
-    func tableView(_ tableView: UITableView,
-                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellID.SoundInfo.rawValue,
-                                                               for: indexPath) as! SoundInfoCell
-        
-        configureDataForCell(cell, atIndexPath: indexPath)
-        
-        return cell
-    }
+//    func tableView(_ tableView: UITableView,
+//                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: CellID.SoundInfo.rawValue,
+//                                                               for: indexPath) as! SoundInfoCell
+//
+//        configureDataForCell(cell, atIndexPath: indexPath)
+//
+//        return cell
+//    }
     
-    func configureDataForCell(_ cell: SoundInfoCell, atIndexPath indexPath: IndexPath) {
-//        guard let soundInfo = fetchController.object(at: indexPath) as? SoundInfo else {
-//            return
-//        }
+//    func configureDataForCell(_ cell: SoundInfoCell, atIndexPath indexPath: IndexPath) {
+////        guard let soundInfo = fetchController.object(at: indexPath) as? SoundInfo else {
+////            return
+////        }
+//
+//        let soundInfo = sounds[indexPath.row]
+//
+//        cell.titleLabel.text = soundInfo.name
+//        cell.usernameLabel.text = soundInfo.username
+//        cell.typeLabel.text = soundInfo.type
+//        cell.downloadsLabel.text = String(soundInfo.downloadsCount)
+//
+////        let tags = soundInfo.tags?.allObjects.map {tag in (tag as! Tag).title }
+////        cell.tagsView.tags = tags!
+//
+//        cell.detailButton.addTarget(self, action: #selector(detailButtonTapped), for: .touchUpInside)
+//        cell.detailButton.tag = indexPath.row
+//    }
 
-        let soundInfo = sounds[indexPath.row]
-        
+    func configureDataForCell(_ cell: SoundInfoCell, soundInfo: SoundInfo) {
         cell.titleLabel.text = soundInfo.name
         cell.usernameLabel.text = soundInfo.username
         cell.typeLabel.text = soundInfo.type
         cell.downloadsLabel.text = String(soundInfo.downloadsCount)
         
-//        let tags = soundInfo.tags?.allObjects.map {tag in (tag as! Tag).title }
-//        cell.tagsView.tags = tags!
+        //        let tags = soundInfo.tags?.allObjects.map {tag in (tag as! Tag).title }
+        //        cell.tagsView.tags = tags!
         
         cell.detailButton.addTarget(self, action: #selector(detailButtonTapped), for: .touchUpInside)
-        cell.detailButton.tag = indexPath.row
+//        cell.detailButton.tag = indexPath.row
     }
     
     @IBAction func detailButtonTapped(_ sender: UIButton) {
-        detailIndexPath = IndexPath(row: sender.tag, section: 0)
+//        detailIndexPath = IndexPath(row: sender.tag, section: 0)
+
         
-        performSegue(withIdentifier: SegueID.Detail.rawValue, sender: self)
+        guard let detailIndexPath = tableView.indexPath(for: sender.superview!.superview as! UITableViewCell) else { return }
+        
+        performSegue(withIdentifier: SegueID.Detail.rawValue, sender: sounds.value[detailIndexPath.row])
     }
 }
 
@@ -349,46 +392,7 @@ extension SoundListViewController {
 }
 
 // MARK: - UISearchResultsUpdating
-extension SoundListViewController: UISearchResultsUpdating {
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let searchString = searchController.searchBar.text, searchString.characters.count > 1 else {
-            return
-        }
-        searchSoundWith(text: searchString, sortParameter: sortParameter, filterParameter: filterParameter)
-    }
-    
-//    func searchSoundByText(_ text: String) {
-//        
-//        fetchController.fetchRequest.predicate = NSPredicate(format: "name contains[c] %@", text)
-//        
-//        do {
-//            try fetchController.performFetch()
-//        } catch {
-//            fatalError("Error searching: \(error)")
-//        }
-//        
-//        if fetchController.fetchedObjects!.isEmpty ||
-//            fetchController.fetchedObjects!.count <= 8 {
-//            
-//            print("Extra load")
-//            loader.searchSoundWith(text, loadedCount: fetchController.fetchedObjects!.count) { sounds in
-//                if sounds.count <= self.fetchController.fetchedObjects!.count {
-//                    return
-//                }
-//                
-//                DispatchQueue.main.async(execute: { [unowned self] in
-//                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-//                    try! self.fetchController.performFetch()
-//                    self.tableView.reloadData()
-//                    
-//                })
-//            }
-//        } else {
-//            tableView.reloadData()
-//        }
-//        
-//    }
+extension SoundListViewController {
     
     func searchSoundWith(text: String, sortParameter: SortParameter?, filterParameter: FilterParameter?) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -396,7 +400,8 @@ extension SoundListViewController: UISearchResultsUpdating {
             if sounds.count <= 0 {
                 return
             }
-            self.sounds = sounds
+//            self.sounds = sounds
+            self.sounds.value = sounds
             DispatchQueue.main.async(execute: { [unowned self] in
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.tableView.reloadData()
