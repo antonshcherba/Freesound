@@ -20,6 +20,7 @@
 		A5715EA5204DAD930096A2FF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5715EA4204DAD920096A2FF /* Result.swift */; };
 		A5715EA7204ECEB80096A2FF /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5715EA6204ECEB80096A2FF /* Error.swift */; };
 		A573226F20529232006A4DE8 /* SoundListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573226E20529232006A4DE8 /* SoundListViewModel.swift */; };
+		A57322712052E130006A4DE8 /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57322702052E130006A4DE8 /* SearchRequest.swift */; };
 		A5D8AC57204C52C000B8571D /* SoundCommentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D8AC56204C52C000B8571D /* SoundCommentsRequest.swift */; };
 		A5ECCCB620290687004F4251 /* CommentCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECCCB420290684004F4251 /* CommentCoreData+CoreDataClass.swift */; };
 		A5ECCCB720290687004F4251 /* CommentCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECCCB520290685004F4251 /* CommentCoreData+CoreDataProperties.swift */; };
@@ -100,6 +101,7 @@
 		A5715EA4204DAD920096A2FF /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		A5715EA6204ECEB80096A2FF /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		A573226E20529232006A4DE8 /* SoundListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundListViewModel.swift; sourceTree = "<group>"; };
+		A57322702052E130006A4DE8 /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
 		A5D8AC56204C52C000B8571D /* SoundCommentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCommentsRequest.swift; sourceTree = "<group>"; };
 		A5ECCCB420290684004F4251 /* CommentCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CommentCoreData+CoreDataClass.swift"; path = "/Users/chiuser/Downloads/Freesound-Intern/FreeSound/Classes/Model/CoreData/CommentCoreData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		A5ECCCB520290685004F4251 /* CommentCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CommentCoreData+CoreDataProperties.swift"; path = "/Users/chiuser/Downloads/Freesound-Intern/FreeSound/Classes/Model/CoreData/CommentCoreData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
@@ -227,6 +229,7 @@
 				A56753432046A41200F1F6D5 /* SoundInstanceRequest.swift */,
 				A56753452046A53200F1F6D5 /* FSRequest.swift */,
 				A5D8AC56204C52C000B8571D /* SoundCommentsRequest.swift */,
+				A57322702052E130006A4DE8 /* SearchRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -869,6 +872,7 @@
 				A5F5E2421F209FAD002C611E /* DescriptionViewController.swift in Sources */,
 				A5F5E1F01F209900002C611E /* ProfileViewController.swift in Sources */,
 				A5F5E20B1F209AE3002C611E /* SoundDetailInfo+CoreDataProperties.swift in Sources */,
+				A57322712052E130006A4DE8 /* SearchRequest.swift in Sources */,
 				A51F55D42050101F0048645E /* Parsable.swift in Sources */,
 				A5F5E1E41F209900002C611E /* TagCell.swift in Sources */,
 				A5F5E1E81F209900002C611E /* AuthViewController.swift in Sources */,
