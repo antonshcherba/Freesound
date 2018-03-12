@@ -127,10 +127,11 @@ class SoundLoader {
             
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 200 {
-                    if let result = self.parseSearchResultFrom(data!, loadedCount: loadedCount) {
-                        handler(result.results as! [SoundInfo])
-                    }
+                    let result = SearchResult()
+                    let json = JSON(data: data!)
                     
+                    result.configureWithJson(json)
+                    handler(result.results as! [SoundInfo])
                 } else {
                     print("Server Error: \(httpResponse.statusCode)")
                 }
@@ -161,9 +162,11 @@ class SoundLoader {
             
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 200 {
-                    if let result = self.parseSearchResultFrom(data!, loadedCount: loadedCount) {
-                        handler(result.results as! [SoundInfo])
-                    }
+                    let result = SearchResult()
+                    let json = JSON(data: data!)
+                    
+                    result.configureWithJson(json)
+                    handler(result.results as! [SoundInfo])
                     
                 } else {
                     print("Server Error: \(httpResponse.statusCode)")
@@ -175,30 +178,65 @@ class SoundLoader {
         task.resume()
     }
     
+//    func searchSoundWith(_ text: String, loadedCount: Int = 0,
+//                          sortParameter: SortParameter?,
+//                          filterParameter: FilterParameter?,
+//                          handler: @escaping (_ sounds: [SoundInfo]) -> Void) {
+//        var text = text
+//        var params: [String: String] = [:]
+//
+//        if let sortParameter = sortParameter {
+//            params["sort"] = sortParameter.rawValue
+//        }
+//        if let filterParameter = filterParameter {
+//            params["filter"] = filterParameter.rawValue + ":\(text)"
+//            text = ""
+//        }
+//
+//        guard let url = URL(string: resourcePath.searchPathWith(text, queryParams: params) /*+ getParamsString(params: params)*/) else {
+//            return
+//        }
+//
+//        let request = URLRequest(url: url)
+//
+//        defaultSession = URLSession(configuration: defaultSessionConfig,
+//                                    delegate: nil,
+//                                    delegateQueue: OperationQueue.main)
+//
+//
+//        let task = defaultSession.dataTask(with: request, completionHandler: {[unowned self] (data, response, error) in
+//            if error != nil {
+//                print("Error: \(error?.localizedDescription)")
+//                return
+//            }
+//
+//            if let httpResponse = response as? HTTPURLResponse {
+//                if httpResponse.statusCode == 200 {
+//                    if let result = self.parseSearchResultFrom(data!, loadedCount: loadedCount) {
+//                        handler(result.results as! [SoundInfo])
+//                    }
+//
+//                } else {
+//                    print("Server Error: \(httpResponse.statusCode)")
+//                }
+//            } else {
+//                print("Error")
+//            }
+//        })
+//        task.resume()
+//    }
+
     func searchSoundWith(_ text: String, loadedCount: Int = 0,
-                          sortParameter: SortParameter?,
-                          filterParameter: FilterParameter?,
-                          handler: @escaping (_ sounds: [SoundInfo]) -> Void) {
-        var text = text
-        var params: [String: String] = [:]
-        
-        if let sortParameter = sortParameter {
-            params["sort"] = sortParameter.rawValue
-        }
-        if let filterParameter = filterParameter {
-            params["filter"] = filterParameter.rawValue + ":\(text)"
-            text = ""
-        }
-        
-        guard let url = URL(string: resourcePath.searchPathWith(text, queryParams: params) /*+ getParamsString(params: params)*/) else {
-            return
-        }
-        
-        let request = URLRequest(url: url)
+                         sortParameter: SortParameter?,
+                         filterParameter: FilterParameter?,
+                         handler: @escaping (_ sounds: [SoundInfo]) -> Void) {
         
         defaultSession = URLSession(configuration: defaultSessionConfig,
                                     delegate: nil,
                                     delegateQueue: OperationQueue.main)
+        
+        
+        let request = RequestBuilder.create(request: SearchRequest(query: text, filter: filterParameter, sort: sortParameter))
         
         
         let task = defaultSession.dataTask(with: request, completionHandler: {[unowned self] (data, response, error) in
@@ -209,10 +247,11 @@ class SoundLoader {
             
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 200 {
-                    if let result = self.parseSearchResultFrom(data!, loadedCount: loadedCount) {
-                        handler(result.results as! [SoundInfo])
-                    }
+                    let result = SearchResult()
+                    let json = JSON(data: data!)
                     
+                    result.configureWithJson(json)
+                    handler(result.results as! [SoundInfo])
                 } else {
                     print("Server Error: \(httpResponse.statusCode)")
                 }
@@ -222,7 +261,8 @@ class SoundLoader {
         })
         task.resume()
     }
-
+    
+    
     func loadUser1(withName name: String, authRequired: Bool = false) -> Observable<User> {
         guard let url = URL(string: resourcePath.userPathFor(name)) else {
             return Observable.error(SomeError.wrongData)
@@ -233,6 +273,8 @@ class SoundLoader {
         defaultSession = URLSession(configuration: defaultSessionConfig,
                                       delegate: nil,
                                       delegateQueue: OperationQueue.main)
+        
+//        loadd(request: UserInstanceRequest(username: name))
         
         return self.defaultSession.rx.response(request: request)
             .map({ (httpResponse, data) -> User in
@@ -281,71 +323,6 @@ class SoundLoader {
                     throw error
                 }
             })
-    }
-    
-    func parseSearchResultFrom(_ data: Data) -> SearchResult? {
-        let searchJSONResult = JSON(data: data)
-        let tmp = String(data: data, encoding: String.Encoding.utf8)
-        
-        let searchResult = SearchResult(fromJSON: searchJSONResult)
-        if searchResult?.count > 0 {
-            searchResult?.results = parseSearchDataFrom(data)
-        }
-        
-        return searchResult
-    }
-    
-    func parseSearchResultFrom(_ data: Data, loadedCount: Int) -> SearchResult? {
-        let searchJSONResult = JSON(data: data)
-        let tmp = String(data: data, encoding: String.Encoding.utf8)
-        
-        let searchResult = SearchResult(fromJSON: searchJSONResult)
-        if searchResult?.count > 0 ||
-            searchResult?.count > loadedCount {
-            
-            searchResult?.results = parseSearchDataFrom(data)
-        }
-        
-        return searchResult
-    }
-    
-    func parseSearchDataFrom(_ data: Data) -> [SoundInfo] {
-        let json = JSON(data: data)
-        var jsonResultsArray = json["results"].array
-        var results = [SoundInfo]()
-        
-        let database = DatabaseManager()
-        
-        for (index, subJSON) in jsonResultsArray!.enumerated().reversed() {
-            let request = NSFetchRequest<SoundInfo>(entityName: SoundInfo.entityName)
-            request.predicate = NSPredicate(format: "id == %ld", subJSON["id"].intValue)
-            
-            do {
-                let results = try database.coreData.context.fetch(request) as! [SoundInfo]
-//                if results.first != nil { jsonResultsArray?.remove(at: index) }
-                
-            } catch {
-                fatalError("Error loading sound info: \(error)")
-            }
-        }
-        
-        
-        for subJSON in jsonResultsArray! {
-            let soundInfo = database.newSoundInfo
-            soundInfo.configureWithJson(subJSON)
-            
-            results.append(soundInfo)
-            
-            do {
-                try soundInfo.managedObjectContext?.save()
-            } catch {
-                fatalError("Error saving songs")
-            }
-            
-//            print(soundInfo.tags?.count)
-        }
-        
-        return results
     }
     
     func parseSoundDetailFrom(_ data: Data) -> SoundDetailInfo? {

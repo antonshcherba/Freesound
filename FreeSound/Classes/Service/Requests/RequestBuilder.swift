@@ -10,7 +10,18 @@ import Foundation
 
 class RequestBuilder {
     static func create(request: FRRequest) -> URLRequest {
-        let urlString = request.url! + request.path
+        var urlString = request.url! + request.path
+        if let method = request.httpMethod {
+            switch method {
+            case "GET":
+                let urlParams = request.params.map({ (key, value) -> String in
+                    "\(key)=\(value)"
+                }).joined(separator: "&")
+                urlString += "?" + urlParams
+            default:
+                break
+            }
+        }
         
         let url = URL(string: urlString)!
         
@@ -24,6 +35,11 @@ class RequestBuilder {
         
         urlRequest.timeoutInterval = 30
         
+        
+        
+        
         return urlRequest
     }
+    
+    
 }

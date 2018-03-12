@@ -113,7 +113,7 @@ class ResourcePathManager {
     
     let clientID = "1b42440e0f401650d770"
     
-    var searchPath: String {
+    public var searchPath: String {
         
         let tmp = basePath +
             Resource.Search.rawValue + String.slash +

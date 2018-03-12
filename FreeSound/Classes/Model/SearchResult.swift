@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import CoreData
 
 class SearchResult {
     
@@ -18,6 +19,11 @@ class SearchResult {
     var previous: String?
     
     var results: [Any]
+    
+    required init() {
+        count = 0
+        results = []
+    }
     
     init(count: Int, nextURL: String?, previousURL: String?, searchResults results: [Any]) {
         self.count = count
@@ -52,5 +58,58 @@ extension SearchResult: CustomStringConvertible {
         }
         
         return description
+    }
+}
+
+extension SearchResult: Parsable {
+    func configureWithJson(_ json: JSON) {
+        let searchJSONResult = json//JSON(data: data)
+//        let tmp = String(data: data, encoding: String.Encoding.utf8)
+        
+        let searchResult = SearchResult(fromJSON: searchJSONResult)
+//        if searchResult?.count > 0 ||
+//            searchResult?.count > loadedCount {
+        
+//            searchResult?.results = parseSearchDataFrom(data)
+//        }
+        
+        
+        let jsonResultsArray = json["results"].array
+        var results = [SoundInfo]()
+        
+        let database = DatabaseManager()
+        
+        for (index, subJSON) in jsonResultsArray!.enumerated().reversed() {
+            let request = NSFetchRequest<SoundInfo>(entityName: SoundInfo.entityName)
+            request.predicate = NSPredicate(format: "id == %ld", subJSON["id"].intValue)
+            
+            do {
+                let results = try database.coreData.context.fetch(request) as! [SoundInfo]
+                //                if results.first != nil { jsonResultsArray?.remove(at: index) }
+                
+            } catch {
+                fatalError("Error loading sound info: \(error)")
+            }
+        }
+        
+        
+        for subJSON in jsonResultsArray! {
+            let soundInfo = database.newSoundInfo
+            soundInfo.configureWithJson(subJSON)
+            
+            results.append(soundInfo)
+            
+            do {
+                try soundInfo.managedObjectContext?.save()
+            } catch {
+                fatalError("Error saving songs")
+            }
+            
+            //            print(soundInfo.tags?.count)
+        }
+        
+        self.results = results
+        
+//        return searchResult
     }
 }
