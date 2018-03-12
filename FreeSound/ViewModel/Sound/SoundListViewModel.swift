@@ -37,20 +37,13 @@ class SoundListViewModel {
     func searchSoundWith(text: String, sortParameter: SortParameter?, filterParameter: FilterParameter?) -> Observable<[SoundInfo]> {
         let aaa = PublishSubject<[SoundInfo]>()
         
-        loader.searchSoundWith(text, sortParameter: sortParameter, filterParameter: filterParameter) { (sounds) in
+        loader.searchSoundWith(text, sortParameter: sortParameter, filterParameter: filterParameter).subscribe(onNext: ({ (sounds) in
             if sounds.count <= 0 {
                 return
             }
-            //            self.sounds = sounds
-//            self.sounds.value = sounds
             
             aaa.onNext(sounds)
-//            DispatchQueue.main.async(execute: { [unowned self] in
-//                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-//                self.tableView.reloadData()
-            
-//            }
-        }
+        })).disposed(by: bag)
         
         return aaa.asObservable()
     }

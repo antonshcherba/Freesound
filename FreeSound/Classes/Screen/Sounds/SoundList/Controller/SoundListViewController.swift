@@ -82,10 +82,6 @@ class SoundListViewController: UIViewController {
     
     fileprivate var sounds = Variable([SoundInfo]())
     
-//    fileprivate var filterParameter: FilterParameter?
-//
-//    fileprivate var sortParameter: SortParameter?
-    
     fileprivate var viewModel: SoundListViewModel = SoundListViewModel()
     
     // MARK: - Constructors
@@ -175,8 +171,6 @@ class SoundListViewController: UIViewController {
     func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 400
-//        tableView.delegate = self
-//        tableView.dataSource = self
         
         tableView.tableFooterView = UIView()
 
@@ -212,8 +206,6 @@ class SoundListViewController: UIViewController {
 //            maker.bottom.equalTo(topContainerView)
 //            maker.right.equalTo(topContainerView)
 //        }
-
-        searchController.searchBar.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -402,25 +394,6 @@ extension SoundListViewController {
 //    }
 }
 
-// MARK: - UISearchResultsUpdating
-extension SoundListViewController {
-    
-    func searchSoundWith(text: String, sortParameter: SortParameter?, filterParameter: FilterParameter?) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        loader.searchSoundWith(text, sortParameter: sortParameter, filterParameter: filterParameter) { (sounds) in
-            if sounds.count <= 0 {
-                return
-            }
-//            self.sounds = sounds
-            self.sounds.value = sounds
-            DispatchQueue.main.async(execute: { [unowned self] in
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                self.tableView.reloadData()
-                
-            })
-        }
-    }
-}
 
 // MARK: - NSFetchedResultsControllerDelegate
 extension SoundListViewController: NSFetchedResultsControllerDelegate {
@@ -432,23 +405,3 @@ extension SoundListViewController: NSFetchedResultsControllerDelegate {
 //        tableView.endUpdates()
     }
 }
-
-// MARK: - UISearchBarDelegate
-extension SoundListViewController: UISearchBarDelegate {
-//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        fetchController.fetchRequest.predicate = nil
-//        
-//        do {
-//            try fetchController.performFetch()
-//        } catch {
-//            fatalError("Error searching: \(error)")
-//        }
-//        
-//        tableView.reloadData()
-//    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        searchSoundWith(text: "", sortParameter: sortParameter, filterParameter: filterParameter)
-    }
-}
-

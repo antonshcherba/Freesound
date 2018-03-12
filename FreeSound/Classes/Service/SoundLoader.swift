@@ -228,69 +228,15 @@ class SoundLoader {
 
     func searchSoundWith(_ text: String, loadedCount: Int = 0,
                          sortParameter: SortParameter?,
-                         filterParameter: FilterParameter?,
-                         handler: @escaping (_ sounds: [SoundInfo]) -> Void) {
+                         filterParameter: FilterParameter?) -> Observable<[SoundInfo]> {
         
         defaultSession = URLSession(configuration: defaultSessionConfig,
                                     delegate: nil,
                                     delegateQueue: OperationQueue.main)
         
+        let obs: Observable<SearchResult> = loadd(request: SearchRequest(query: text, filter: filterParameter, sort: sortParameter))
         
-        let request = RequestBuilder.create(request: SearchRequest(query: text, filter: filterParameter, sort: sortParameter))
-        
-        
-        let task = defaultSession.dataTask(with: request, completionHandler: {[unowned self] (data, response, error) in
-            if error != nil {
-                print("Error: \(error?.localizedDescription)")
-                return
-            }
-            
-            if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    let result = SearchResult()
-                    let json = JSON(data: data!)
-                    
-                    result.configureWithJson(json)
-                    handler(result.results as! [SoundInfo])
-                } else {
-                    print("Server Error: \(httpResponse.statusCode)")
-                }
-            } else {
-                print("Error")
-            }
-        })
-        task.resume()
-    }
-    
-    
-    func loadUser1(withName name: String, authRequired: Bool = false) -> Observable<User> {
-        guard let url = URL(string: resourcePath.userPathFor(name)) else {
-            return Observable.error(SomeError.wrongData)
-        }
-                
-        let request = RequestBuilder.create(request: UserInstanceRequest(username: name))
-        
-        defaultSession = URLSession(configuration: defaultSessionConfig,
-                                      delegate: nil,
-                                      delegateQueue: OperationQueue.main)
-        
-//        loadd(request: UserInstanceRequest(username: name))
-        
-        return self.defaultSession.rx.response(request: request)
-            .map({ (httpResponse, data) -> User in
-                    if httpResponse.statusCode == 200 {
-                        let user = User()
-                        user.configureWithJson(JSON(data: data))
-                        
-                        return user
-                    } else {
-                        print("Server Error: \(httpResponse.statusCode)")
-                        
-                        let error = NetworkError.responseStatusError(status: httpResponse.statusCode,
-                                                                     message: HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
-                        throw error
-                    }
-            })
+        return obs.map { $0.results as! [SoundInfo] }
     }
     
     func loadUser(withName name: String, authRequired: Bool = false) -> Observable<User> {
