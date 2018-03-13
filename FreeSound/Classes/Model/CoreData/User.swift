@@ -35,6 +35,18 @@ class User: Parsable {
     required init() {
     }
     
+    // sourcery:inline:User.Init
+    internal init(name: String, about: String, avatar: UIImage?, homepage: String?, joinedDate: String?, soundsCount: Int, packsCount: Int) {
+        self.name = name
+        self.about = about
+        self.avatar = avatar
+        self.homepage = homepage
+        self.joinedDate = joinedDate
+        self.soundsCount = soundsCount
+        self.packsCount = packsCount
+    }
+    // sourcery:end
+    
     // MARK: - Methods of class
     class func start() {
         

@@ -1,0 +1,8 @@
+sources:
+  - ./FreeSound
+templates:
+  - ./FreeSound/Templates/
+force-parse:
+output:
+  ./FreeSound/generated/gen.swift
+args:

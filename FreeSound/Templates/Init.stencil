@@ -1,0 +1,9 @@
+{% for type in types.all|!enum|!protocol %}
+// sourcery:inline:{{ type.name }}.Init
+    {{ type.accessLevel }} init({% for var in type.variables|!static|!computed %}{{ var.name }}: {{ var.actualTypeName }}{% if not forloop.last %}, {% endif %}{% endfor %}) {
+        {% for var in type.variables|!static|!computed %}
+        self.{{ var.name }} = {{ var.name }}
+        {% endfor %}
+    }
+// sourcery:end
+{% endfor %}
