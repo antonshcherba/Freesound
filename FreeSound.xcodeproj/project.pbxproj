@@ -22,6 +22,7 @@
 		A573226F20529232006A4DE8 /* SoundListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573226E20529232006A4DE8 /* SoundListViewModel.swift */; };
 		A57322712052E130006A4DE8 /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57322702052E130006A4DE8 /* SearchRequest.swift */; };
 		A5D8AC57204C52C000B8571D /* SoundCommentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D8AC56204C52C000B8571D /* SoundCommentsRequest.swift */; };
+		A5E40DFD2057E1C8007FF28C /* SoundPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E40DFC2057E1C8007FF28C /* SoundPlayer.storyboard */; };
 		A5ECCCB620290687004F4251 /* CommentCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECCCB420290684004F4251 /* CommentCoreData+CoreDataClass.swift */; };
 		A5ECCCB720290687004F4251 /* CommentCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECCCB520290685004F4251 /* CommentCoreData+CoreDataProperties.swift */; };
 		A5F5E1E31F209900002C611E /* CommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5E1BB1F209900002C611E /* CommentsController.swift */; };
@@ -103,6 +104,7 @@
 		A573226E20529232006A4DE8 /* SoundListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundListViewModel.swift; sourceTree = "<group>"; };
 		A57322702052E130006A4DE8 /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
 		A5D8AC56204C52C000B8571D /* SoundCommentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCommentsRequest.swift; sourceTree = "<group>"; };
+		A5E40DFC2057E1C8007FF28C /* SoundPlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SoundPlayer.storyboard; sourceTree = "<group>"; };
 		A5ECCCB420290684004F4251 /* CommentCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CommentCoreData+CoreDataClass.swift"; path = "/Users/chiuser/Downloads/Freesound-Intern/FreeSound/Classes/Model/CoreData/CommentCoreData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		A5ECCCB520290685004F4251 /* CommentCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CommentCoreData+CoreDataProperties.swift"; path = "/Users/chiuser/Downloads/Freesound-Intern/FreeSound/Classes/Model/CoreData/CommentCoreData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		A5F5E1BB1F209900002C611E /* CommentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsController.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				A5F5E1D71F209900002C611E /* SoundPlayerView.swift */,
+				A5E40DFC2057E1C8007FF28C /* SoundPlayer.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 				A5F88E9E200788DC004C0F6A /* UserInfoCell.xib in Resources */,
 				A5F88EA72007B19C004C0F6A /* UserSounds.storyboard in Resources */,
 				A5F5E1EA1F209900002C611E /* Login.storyboard in Resources */,
+				A5E40DFD2057E1C8007FF28C /* SoundPlayer.storyboard in Resources */,
 				A5F5E25A1F20A384002C611E /* Assets.xcassets in Resources */,
 				A5F5E2691F210284002C611E /* LeftMenu.storyboard in Resources */,
 				A5F88EA92007B210004C0F6A /* SoundInfoCell.xib in Resources */,

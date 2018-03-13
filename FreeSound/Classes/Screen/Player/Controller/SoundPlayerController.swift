@@ -8,9 +8,11 @@
 
 import UIKit
 import EZAudio
+import RxSwift
+import RxCocoa
 
 @objcMembers class SoundPlayerController: UIViewController, EZAudioPlayerDelegate {
-    
+
     var player: EZAudioPlayer!
     
     var playerView: SoundPlayerView!
@@ -40,6 +42,8 @@ import EZAudio
 //            }
         }
     }
+
+    fileprivate let bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,18 +53,22 @@ import EZAudio
         self.view = self.playerView
         
         playerView.playing = false
-//        playerView.playPauseButton.addTarget(self, action: #selector(playButtonTapped(_:)), for: .touchUpInside)
+        setupObservers()
     }
     
-    @objc func playButtonTapped(_ sender: UIButton) {
-        guard let _ = player else { return }
-        
-        if player.isPlaying {
-            player?.pause()
-        } else {
-            player?.play()
-        }
-        playerView.playing = player.isPlaying
+    func setupObservers() {
+        playerView.playPauseButton.rx.tap.subscribe(onNext: ({ [weak self] in
+            guard let strongSelf = self else { return }
+            
+            guard let _ = strongSelf.player else { return }
+            
+            if strongSelf.player.isPlaying {
+                strongSelf.player?.pause()
+            } else {
+                strongSelf.player?.play()
+            }
+            strongSelf.playerView.playing = strongSelf.player.isPlaying
+        })).disposed(by: bag)
     }
 }
 
