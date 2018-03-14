@@ -15,6 +15,7 @@ struct StoryboardName {
     static let soundList = "SoundList"
     static let profile = "Profile"
     static let userSounds = "UserSounds"
+    static let recorder = "Recorder"
 }
 
 struct StoryboardID {

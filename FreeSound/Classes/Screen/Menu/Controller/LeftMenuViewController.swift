@@ -20,15 +20,10 @@ class LeftMenuViewController : UITableViewController {
     
     let controllers = {
         return [NavigationManager.getController() as SoundListViewController,
-                NavigationManager.getController() as ProfileViewController]
+                NavigationManager.getController() as ProfileViewController,
+                NavigationManager.getController() as SoundRecorderController]
             .map { UINavigationController(rootViewController: $0) }
     }()
-    
-    let storyboardIDs = [StoryboardID.soundsViewController,
-                         StoryboardID.profileViewController]
-    
-    let storyboardName = [StoryboardName.soundList,
-                         StoryboardName.profile]
     
     // MARK: - Private Properties
     
@@ -78,7 +73,7 @@ extension LeftMenuViewController {
         case 0:
             return 1
         case 1:
-            return storyboardIDs.count
+            return controllers.count
         case 2:
             return 1
         default:

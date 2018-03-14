@@ -22,6 +22,9 @@
 		A573226F20529232006A4DE8 /* SoundListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573226E20529232006A4DE8 /* SoundListViewModel.swift */; };
 		A57322712052E130006A4DE8 /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57322702052E130006A4DE8 /* SearchRequest.swift */; };
 		A577917620581E85004FF65A /* DownloadSoundRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577917520581E85004FF65A /* DownloadSoundRequest.swift */; };
+		A577917820594E30004FF65A /* RecordWaveform.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577917720594E2F004FF65A /* RecordWaveform.swift */; };
+		A57791802059548A004FF65A /* SoundRecorderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577917F2059548A004FF65A /* SoundRecorderController.swift */; };
+		A577918220595F0C004FF65A /* Recorder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A577918120595F0C004FF65A /* Recorder.storyboard */; };
 		A5D8AC57204C52C000B8571D /* SoundCommentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D8AC56204C52C000B8571D /* SoundCommentsRequest.swift */; };
 		A5E40DFD2057E1C8007FF28C /* SoundPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E40DFC2057E1C8007FF28C /* SoundPlayer.storyboard */; };
 		A5ECCCB620290687004F4251 /* CommentCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECCCB420290684004F4251 /* CommentCoreData+CoreDataClass.swift */; };
@@ -105,6 +108,9 @@
 		A573226E20529232006A4DE8 /* SoundListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundListViewModel.swift; sourceTree = "<group>"; };
 		A57322702052E130006A4DE8 /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
 		A577917520581E85004FF65A /* DownloadSoundRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadSoundRequest.swift; sourceTree = "<group>"; };
+		A577917720594E2F004FF65A /* RecordWaveform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWaveform.swift; sourceTree = "<group>"; };
+		A577917F2059548A004FF65A /* SoundRecorderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundRecorderController.swift; sourceTree = "<group>"; };
+		A577918120595F0C004FF65A /* Recorder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recorder.storyboard; sourceTree = "<group>"; };
 		A5D8AC56204C52C000B8571D /* SoundCommentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCommentsRequest.swift; sourceTree = "<group>"; };
 		A5E40DFC2057E1C8007FF28C /* SoundPlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SoundPlayer.storyboard; sourceTree = "<group>"; };
 		A5ECCCB420290684004F4251 /* CommentCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CommentCoreData+CoreDataClass.swift"; path = "/Users/chiuser/Downloads/Freesound-Intern/FreeSound/Classes/Model/CoreData/CommentCoreData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
@@ -255,6 +261,31 @@
 			path = Sound;
 			sourceTree = "<group>";
 		};
+		A577917920595408004FF65A /* Recorder */ = {
+			isa = PBXGroup;
+			children = (
+				A577917B2059542F004FF65A /* Controller */,
+				A577917C20595437004FF65A /* View */,
+			);
+			path = Recorder;
+			sourceTree = "<group>";
+		};
+		A577917B2059542F004FF65A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A577917F2059548A004FF65A /* SoundRecorderController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A577917C20595437004FF65A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A577918120595F0C004FF65A /* Recorder.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A5F5E1B81F209900002C611E /* Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +297,7 @@
 				A5F5E1CE1F209900002C611E /* Menu */,
 				A5F5E1D31F209900002C611E /* Player */,
 				A5F5E1D81F209900002C611E /* Profile */,
+				A577917920595408004FF65A /* Recorder */,
 				A5F5E2271F209FAD002C611E /* Sounds */,
 			);
 			name = Screen;
@@ -506,6 +538,7 @@
 				A5715EA4204DAD920096A2FF /* Result.swift */,
 				A5715EA6204ECEB80096A2FF /* Error.swift */,
 				A51F55D32050101F0048645E /* Parsable.swift */,
+				A577917720594E2F004FF65A /* RecordWaveform.swift */,
 			);
 			name = Helper;
 			path = Classes/Helper;
@@ -764,6 +797,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A577918220595F0C004FF65A /* Recorder.storyboard in Resources */,
 				A542441A20064DA500C7B697 /* AuthorCell.xib in Resources */,
 				A5F5E1E51F209900002C611E /* TagCell.xib in Resources */,
 				A5F5E26D1F2105F8002C611E /* SoundList.storyboard in Resources */,
@@ -883,6 +917,7 @@
 				A5F5E20B1F209AE3002C611E /* SoundDetailInfo+CoreDataProperties.swift in Sources */,
 				A57322712052E130006A4DE8 /* SearchRequest.swift in Sources */,
 				A51F55D42050101F0048645E /* Parsable.swift in Sources */,
+				A577917820594E30004FF65A /* RecordWaveform.swift in Sources */,
 				A5F5E1E41F209900002C611E /* TagCell.swift in Sources */,
 				A5F5E1E81F209900002C611E /* AuthViewController.swift in Sources */,
 				A56753442046A41300F1F6D5 /* SoundInstanceRequest.swift in Sources */,
@@ -908,6 +943,7 @@
 				A5F5E2471F20A1A3002C611E /* AppDelegate.swift in Sources */,
 				A5F5E1FC1F209AA8002C611E /* CoreDataManager.swift in Sources */,
 				A5F5E2411F209FAD002C611E /* SoundTitleCell.swift in Sources */,
+				A57791802059548A004FF65A /* SoundRecorderController.swift in Sources */,
 				A5F5E23D1F209FAD002C611E /* SoundDetailViewController.swift in Sources */,
 				A5F5E2121F209AE3002C611E /* User.swift in Sources */,
 				A5539A1C2045F3CA00D6FAE6 /* RequestBuilder.swift in Sources */,

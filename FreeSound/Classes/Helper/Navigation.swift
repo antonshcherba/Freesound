@@ -69,7 +69,9 @@ extension NavigationManager {
 
 typealias StoryController = Storyboarding & UIViewController
 
-typealias StoryIDController = Storyboarding & UIViewController & Identifing
+typealias StoryIDController = StoryController & Identifing
+
+typealias StoryID = Storyboarding & Identifing
 
 extension NavigationManager {
     
@@ -94,14 +96,18 @@ extension NavigationManager {
     }
 }
 
-extension ProfileViewController: Storyboarding, Identifing {
+extension ProfileViewController: StoryID {
     static var storyboardName = StoryboardName.profile
 }
 
-extension SoundListViewController: Storyboarding, Identifing {
+extension SoundListViewController: StoryID {
     static var storyboardName = StoryboardName.soundList
 }
 
-extension UserSoundsController: Storyboarding, Identifing {
+extension UserSoundsController: StoryID {
     static var storyboardName = StoryboardName.userSounds
+}
+
+extension SoundRecorderController: StoryID {
+    static var storyboardName = StoryboardName.recorder
 }
