@@ -46,6 +46,8 @@ class SoundDetailViewController: UIViewController {
     
     let loader = SoundLoader()
     
+    let service = FreesoundService()
+    
     var soundInfo: SoundInfo!
     
     var metaInfoCount = 4
@@ -149,36 +151,20 @@ class SoundDetailViewController: UIViewController {
                 return
             }
             
-            let url = URL(string: strongSelf.soundInfo.detailInfo!.previewSound)
-            guard let data = try? Data(contentsOf: url!) else {
-//                DispatchQueue.main.async(execute: {
-//                    strongSelf.soundLoadingView.stopAnimating()
-//                })
-                return
-            }
-            let fileURL = saveFile(name: soundInfo.fullName!, data: data)
-            
-            strongSelf.playerController.audioFileURL = fileURL
-            let fileData: Data?
-            do {
-                 fileData = try Data(contentsOf: fileURL)
-            } catch {
-                print(error.localizedDescription)
-                return
-            }
-            
-            guard let fileDataa = fileData else { return }
-            
-            do {
-                strongSelf.soundPlayer = try AVAudioPlayer(data: fileDataa)
-//                strongSelf.playerView.canPlay = true
-            } catch {
-                print("Error playing sound: ")//\(error.localizedDescription)")
-            }
-            DispatchQueue.main.async(execute: { 
-//                strongSelf.soundLoadingView.stopAnimating()
+            strongSelf.service.downloadSound(strongSelf.soundInfo, withComplitionHandler: { (data) in
+                guard let data = data else { return }
+                
+                do {
+                    let fileURL = saveFile(name: soundInfo.fullName!, data: data)
+                    
+                    strongSelf.playerController.audioFileURL = fileURL
+                    
+                    strongSelf.soundPlayer = try AVAudioPlayer(data: data)
+                    strongSelf.playerView?.canPlay = true
+                } catch {
+                    print("Error playing sound: ")//\(error.localizedDescription)")
+                }
             })
-            
         }
     }
     

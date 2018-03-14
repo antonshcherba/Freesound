@@ -21,6 +21,7 @@
 		A5715EA7204ECEB80096A2FF /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5715EA6204ECEB80096A2FF /* Error.swift */; };
 		A573226F20529232006A4DE8 /* SoundListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573226E20529232006A4DE8 /* SoundListViewModel.swift */; };
 		A57322712052E130006A4DE8 /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57322702052E130006A4DE8 /* SearchRequest.swift */; };
+		A577917620581E85004FF65A /* DownloadSoundRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577917520581E85004FF65A /* DownloadSoundRequest.swift */; };
 		A5D8AC57204C52C000B8571D /* SoundCommentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D8AC56204C52C000B8571D /* SoundCommentsRequest.swift */; };
 		A5E40DFD2057E1C8007FF28C /* SoundPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E40DFC2057E1C8007FF28C /* SoundPlayer.storyboard */; };
 		A5ECCCB620290687004F4251 /* CommentCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECCCB420290684004F4251 /* CommentCoreData+CoreDataClass.swift */; };
@@ -103,6 +104,7 @@
 		A5715EA6204ECEB80096A2FF /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		A573226E20529232006A4DE8 /* SoundListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundListViewModel.swift; sourceTree = "<group>"; };
 		A57322702052E130006A4DE8 /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
+		A577917520581E85004FF65A /* DownloadSoundRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadSoundRequest.swift; sourceTree = "<group>"; };
 		A5D8AC56204C52C000B8571D /* SoundCommentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCommentsRequest.swift; sourceTree = "<group>"; };
 		A5E40DFC2057E1C8007FF28C /* SoundPlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SoundPlayer.storyboard; sourceTree = "<group>"; };
 		A5ECCCB420290684004F4251 /* CommentCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CommentCoreData+CoreDataClass.swift"; path = "/Users/chiuser/Downloads/Freesound-Intern/FreeSound/Classes/Model/CoreData/CommentCoreData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
@@ -232,6 +234,7 @@
 				A56753452046A53200F1F6D5 /* FSRequest.swift */,
 				A5D8AC56204C52C000B8571D /* SoundCommentsRequest.swift */,
 				A57322702052E130006A4DE8 /* SearchRequest.swift */,
+				A577917520581E85004FF65A /* DownloadSoundRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -924,6 +927,7 @@
 				A542441C200650D200C7B697 /* Navigation.swift in Sources */,
 				A5F5E2191F209C67002C611E /* Constants.swift in Sources */,
 				A5F5E2651F20C44B002C611E /* CommentCell.swift in Sources */,
+				A577917620581E85004FF65A /* DownloadSoundRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

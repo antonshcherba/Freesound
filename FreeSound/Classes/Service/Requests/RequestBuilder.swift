@@ -17,7 +17,10 @@ class RequestBuilder {
                 let urlParams = request.params.map({ (key, value) -> String in
                     "\(key)=\(value)"
                 }).joined(separator: "&")
-                urlString += "?" + urlParams
+                
+                if urlParams.count > 0 {
+                    urlString += "?" + urlParams
+                }
             default:
                 break
             }

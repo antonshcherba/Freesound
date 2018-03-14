@@ -135,7 +135,7 @@ class ResourcePathManager {
     
     fileprivate var APIKey = "25758667228b06230df1e90da76b144c529b8901"
     
-    fileprivate let schema = Schema.http
+    fileprivate let schema = Schema.https
     
     fileprivate let hostName = "www.freesound.org"
     

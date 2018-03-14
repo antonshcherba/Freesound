@@ -98,37 +98,31 @@ class FreesoundService {
 
     // MARK: - Sound functions
     
-    func downloadSound(_ soundInfo: SoundInfo, withComplitionHandler handler: @escaping (_ sound: SoundDetailInfo?) -> Void ) {
-        
-        guard let url = URL(string: resourcePath.soundPathFor("\(soundInfo.id)")) else {
-            return
-        }
-        let request = URLRequest(url: url)
+    func downloadSound(_ soundInfo: SoundInfo, withComplitionHandler handler: @escaping (_ sound: Data?) -> Void ) {
+        let request = RequestBuilder.create(request: DownloadSoundRequest(id: "\(soundInfo.id)"))
         
         defaultSession = URLSession(configuration: defaultSessionConfig,
                                     delegate: nil,
                                     delegateQueue: OperationQueue.main)
         
         
-        let task = defaultSession.dataTask(with: request, completionHandler: {[unowned self] (data, response, error) in
+        let task = defaultSession.downloadTask(with: request) { (url, response, error) in
             if error != nil {
                 print("Error: \(error?.localizedDescription)")
+                handler(nil)
                 return
             }
             
-            if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    //                    if let result = self.parseSoundDetailFrom(data!) {
-                    //                        handler(result)
-                    //                    }
-                    
-                } else {
-                    print("Server Error: \(httpResponse.statusCode)")
-                }
+            if let response = response as? HTTPURLResponse,
+                response.statusCode == 200,
+                let url = url {
+                let data = try? Data(contentsOf: url)
+                handler(data)
             } else {
-                print("Error")
+                handler(nil)
             }
-        })
+        }
+        
         task.resume()
     }
     
