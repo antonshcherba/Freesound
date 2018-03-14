@@ -9,12 +9,19 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import MBProgressHUD
 
 class ProfileViewController : UIViewController {
     
     enum TableRow: Int {
         case sounds
         case packs
+    }
+    
+    enum DataState {
+        case empty
+        case loading
+        case data(User)
     }
     
     // MARK: - Variables
@@ -35,6 +42,8 @@ class ProfileViewController : UIViewController {
     
     @IBOutlet weak var packsCountLabel: UILabel!
     
+    @IBOutlet weak var profileView: UIView!
+    
     // MARK: - Public Properties
     
     var user: User!
@@ -47,17 +56,27 @@ class ProfileViewController : UIViewController {
     
     fileprivate let loader = SoundLoader()
     
+    fileprivate var dataState = DataState.empty {
+        didSet {
+            updateWith(dataState)
+        }
+    }
+    
     // MARK: - Constructors
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dataState = .loading
         loader.loadUser(withName: username, authRequired: true)
             .subscribe(onNext: ({ [weak self] user in
                 guard let strongSelf = self else { return }
                 strongSelf.user = user
+                
+                
                 DispatchQueue.main.async {
-                    strongSelf.updateWith(user)
+                    strongSelf.dataState = .data(user)
+//                    strongSelf.updateWith(user)
                 }
             }), onError: ({ [weak self] error in
                 guard let strongSelf = self else { return }
@@ -105,13 +124,41 @@ class ProfileViewController : UIViewController {
         tableView.register(UINib(nibName: UserInfoCell.nibbName, bundle: nil), forCellReuseIdentifier: UserInfoCell.nibbName)
     }
     
-    func updateWith(_ user: User) {
+    private func updateWith(_ user: User) {
         nameLabel.text = user.name
         avatarImageView.image = user.avatar
         homepageLabel.text = user.homepage
         joinedDate.text = user.joinedDate
         
         tableView.reloadData()
+    }
+    
+    private func updateWith(_ state: DataState) {
+//        guard state == dataState else { return }
+        
+        switch state {
+        case .empty:
+            tableView.isHidden = true
+            profileView.isHidden = true
+            MBProgressHUD.hide(for: self.view, animated: true)
+        case .loading:
+            tableView.isHidden = true
+            profileView.isHidden = true
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+        case .data(let user):
+            tableView.isHidden = false
+            profileView.isHidden = false
+            MBProgressHUD.hide(for: self.view, animated: true)
+            
+            nameLabel.text = user.name
+            avatarImageView.image = user.avatar
+            homepageLabel.text = user.homepage
+            joinedDate.text = user.joinedDate
+            
+            tableView.reloadData()
+        default:
+            break
+        }
     }
     
     override func didReceiveMemoryWarning() {

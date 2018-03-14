@@ -18,4 +18,5 @@ target 'FreeSound' do
     pod 'MessageKit', '~> 0.9.0'
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'MBProgressHUD'
 end
