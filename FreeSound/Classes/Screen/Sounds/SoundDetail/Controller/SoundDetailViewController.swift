@@ -311,7 +311,7 @@ extension SoundDetailViewController: UITableViewDataSource {
             break
         }
         
-        cell.setDescription(title, withValue: soundInfo.detailInfo!.filesize.stringValue)
+        cell.setDescription(title, withValue: value)
     }
     
     
