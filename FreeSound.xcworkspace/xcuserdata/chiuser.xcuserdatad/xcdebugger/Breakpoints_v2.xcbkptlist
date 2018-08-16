@@ -85,7 +85,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FreeSound/Classes/Model/SearchResult.swift"
-            timestampString = "542544001.157962"
+            timestampString = "547115825.038468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
@@ -101,7 +101,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FreeSound/Classes/Service/SoundLoader.swift"
-            timestampString = "542709191.968908"
+            timestampString = "547125637.024177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "152"
@@ -117,11 +117,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FreeSound/Classes/Screen/Sounds/SoundDetail/Controller/SoundDetailViewController.swift"
-            timestampString = "542728562.557143"
+            timestampString = "545743178.407788"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "configureData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -132,13 +132,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FreeSound/Classes/Screen/Sounds/SoundDetail/Controller/SoundDetailViewController.swift"
-            timestampString = "542728562.5590971"
+            filePath = "FreeSound/Classes/Screen/Sounds/SoundList/Controller/SoundListViewController.swift"
+            timestampString = "556102649.669523"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "configureData()"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "configureFetchController()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -148,13 +148,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FreeSound/Classes/Screen/Sounds/SoundDetail/Controller/SoundDetailViewController.swift"
-            timestampString = "542728562.5592819"
+            filePath = "FreeSound/Classes/Screen/Sounds/SoundList/Controller/SoundListViewController.swift"
+            timestampString = "556102649.670392"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "configureData()"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "configureFetchController()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FreeSound/Classes/Screen/Sounds/SoundList/Controller/SoundListViewController.swift"
+            timestampString = "556102649.670951"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "configureFetchController()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

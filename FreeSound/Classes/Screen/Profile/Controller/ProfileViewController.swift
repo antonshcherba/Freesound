@@ -28,21 +28,11 @@ class ProfileViewController : UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var nameLabel: UILabel!
-    
-    @IBOutlet weak var avatarImageView: UIImageView!
-    
-    @IBOutlet weak var homepageLabel: UILabel!
-    
-    @IBOutlet weak var joinedDate: UILabel!
-    
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var soundsCountLabel: UILabel!
+    var profileView = ProfileUserView(frame: .zero)
     
-    @IBOutlet weak var packsCountLabel: UILabel!
-    
-    @IBOutlet weak var profileView: UIView!
+//    let profileView: ProfileUserView!
     
     // MARK: - Public Properties
     
@@ -97,6 +87,16 @@ class ProfileViewController : UIViewController {
     func setupUI() {
         setupNavigationBar()
         setupTableView()
+        
+        view.addSubview(profileView)
+        profileView.snp.makeConstraints { make in
+            make.top.equalTo(self.topLayoutGuide.snp.bottom)
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
+            
+            make.height.equalTo(256)
+            make.bottom.equalTo(tableView.snp.top)
+        }
     }
     
     func setupNavigationBar() {
@@ -125,10 +125,10 @@ class ProfileViewController : UIViewController {
     }
     
     private func updateWith(_ user: User) {
-        nameLabel.text = user.name
-        avatarImageView.image = user.avatar
-        homepageLabel.text = user.homepage
-        joinedDate.text = user.joinedDate
+        profileView.nameLabel.text = user.name
+        profileView.avatarImageView.image = user.avatar
+        profileView.homepageLabel.text = user.homepage
+        profileView.joinedDateLabel.text = user.joinedDate
         
         tableView.reloadData()
     }
@@ -150,10 +150,10 @@ class ProfileViewController : UIViewController {
             profileView.isHidden = false
             MBProgressHUD.hide(for: self.view, animated: true)
             
-            nameLabel.text = user.name
-            avatarImageView.image = user.avatar
-            homepageLabel.text = user.homepage
-            joinedDate.text = user.joinedDate
+            profileView.nameLabel.text = user.name
+            profileView.avatarImageView.image = user.avatar
+            profileView.homepageLabel.text = user.homepage
+            profileView.joinedDateLabel.text = user.joinedDate
             
             tableView.reloadData()
         default:

@@ -110,9 +110,8 @@ class SoundListViewController: UIViewController {
     
     // MARK: - Methods of instance
     
-    func setupObservers() {
-        
-        viewModel.sounds.drive(tableView.rx.items(cellIdentifier: CellID.SoundInfo.rawValue)) { _, sound, cell in
+    func setupObservers() {        
+        viewModel.sounds.drive(tableView.rx.items(cellIdentifier: CellID.SoundInfo.rawValue, cellType: SoundInfoCell.self)) { _, sound, cell in
             self.configureDataForCell(cell, soundInfo: sound)
             }.disposed(by: bag)
         
@@ -178,9 +177,22 @@ class SoundListViewController: UIViewController {
     
     func configureFetchController() {
         
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: SoundInfo.entityName)
-//        request.sortDescriptors = []
-//        request.fetchLimit = 10
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: SoundInfo.entityName)
+        request.sortDescriptors = []
+        request.fetchLimit = 10
+        
+        do {
+            let aaa = try database.coreData.context.fetch(request)
+            
+            if let info = aaa.first as? SoundInfo {
+                let idd = info.objectID
+                print(idd)
+            }
+            print(aaa)
+        } catch {
+            print("error")
+        }
+        
 //        fetchController = NSFetchedResultsController(fetchRequest: request,
 //                                                     managedObjectContext: database.coreData.context,
 //                                                     sectionNameKeyPath: nil, cacheName: nil)
