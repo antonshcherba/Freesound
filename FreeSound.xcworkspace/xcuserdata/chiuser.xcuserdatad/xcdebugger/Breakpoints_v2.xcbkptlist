@@ -85,7 +85,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FreeSound/Classes/Model/SearchResult.swift"
-            timestampString = "547115825.038468"
+            timestampString = "557054463.057229"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
@@ -101,11 +101,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FreeSound/Classes/Service/SoundLoader.swift"
-            timestampString = "547125637.024177"
+            timestampString = "557054463.057326"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "sounds(for:loadedCount:handler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -132,13 +132,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FreeSound/Classes/Screen/Sounds/SoundList/Controller/SoundListViewController.swift"
-            timestampString = "556102649.669523"
+            filePath = "FreeSound/Classes/Service/SoundLoader.swift"
+            timestampString = "557054463.0579979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
-            landmarkName = "configureFetchController()"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "searchSoundWith(_:loadedCount:handler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -148,13 +148,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FreeSound/Classes/Screen/Sounds/SoundList/Controller/SoundListViewController.swift"
-            timestampString = "556102649.670392"
+            filePath = "FreeSound/Classes/Service/SoundLoader.swift"
+            timestampString = "557054463.058406"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
-            landmarkName = "configureFetchController()"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "searchSoundWith(_:loadedCount:handler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -164,13 +164,93 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FreeSound/Classes/Screen/Sounds/SoundList/Controller/SoundListViewController.swift"
-            timestampString = "556102649.670951"
+            filePath = "FreeSound/Classes/Service/SoundLoader.swift"
+            timestampString = "557054463.058736"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "configureFetchController()"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "searchSoundWith(_:loadedCount:handler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FreeSound/Classes/Service/SoundLoader.swift"
+            timestampString = "557054463.05906"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "searchSoundWith(_:loadedCount:handler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FreeSound.SoundLoader.searchSoundWith(Swift.String, loadedCount: Swift.Int, handler: (Swift.Array&lt;FreeSound.SoundInfo&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "FreeSound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiuser/Downloads/Freesound-Intern/FreeSound/Classes/Service/SoundLoader.swift"
+                  timestampString = "557054463.4157341"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "665">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in FreeSound.SoundLoader.searchSoundWith(Swift.String, loadedCount: Swift.Int, handler: (Swift.Array&lt;FreeSound.SoundInfo&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "FreeSound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiuser/Downloads/Freesound-Intern/FreeSound/Classes/Service/SoundLoader.swift"
+                  timestampString = "557054463.418674"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "75">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FreeSound/Classes/Service/SoundLoader.swift"
+            timestampString = "557054463.05937"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
+            landmarkName = "loadd(request:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FreeSound/ViewModel/Sound/SoundListViewModel.swift"
+            timestampString = "557054463.059741"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "searchSoundWith(text:sortParameter:filterParameter:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -125,6 +125,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in SoundLoader.loadd(request:):SoundLoader.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "String.init(data: data, encoding: String.Encoding.utf8)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SearchOptionsController.configureNavigationBar() -&gt; ():SearchOptionsController.swift">
          <PersistentStrings>
             <PersistentString

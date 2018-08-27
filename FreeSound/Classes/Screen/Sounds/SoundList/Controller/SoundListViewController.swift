@@ -80,7 +80,7 @@ class SoundListViewController: UIViewController {
     
     fileprivate var detailIndexPath: IndexPath?
     
-    fileprivate var sounds = Variable([SoundInfo]())
+    fileprivate var sounds = Variable([Result]())
     
     fileprivate var viewModel: SoundListViewModel = SoundListViewModel()
     
@@ -358,6 +358,19 @@ extension SoundListViewController {
         
         cell.detailButton.addTarget(self, action: #selector(detailButtonTapped), for: .touchUpInside)
 //        cell.detailButton.tag = indexPath.row
+    }
+    
+    func configureDataForCell(_ cell: SoundInfoCell, soundInfo: Result) {
+        cell.titleLabel.text = soundInfo.name
+        cell.usernameLabel.text = soundInfo.username
+//        cell.typeLabel.text = soundInfo.type
+//        cell.downloadsLabel.text = String(soundInfo.downloadsCount)
+        
+        //        let tags = soundInfo.tags?.allObjects.map {tag in (tag as! Tag).title }
+        //        cell.tagsView.tags = tags!
+        
+        cell.detailButton.addTarget(self, action: #selector(detailButtonTapped), for: .touchUpInside)
+        //        cell.detailButton.tag = indexPath.row
     }
     
     @IBAction func detailButtonTapped(_ sender: UIButton) {

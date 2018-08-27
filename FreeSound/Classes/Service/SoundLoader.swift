@@ -127,10 +127,15 @@ class SoundLoader {
             
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 200 {
+                    let page = try! Page.init(data: data!)
+                    
+                    
                     let result = SearchResult()
                     let json = JSON(data: data!)
                     
                     result.configureWithJson(json)
+                    print(page)
+                    
                     handler(result.results as! [SoundInfo])
                 } else {
                     print("Server Error: \(httpResponse.statusCode)")
@@ -239,6 +244,22 @@ class SoundLoader {
         return obs.map { $0.results as! [SoundInfo] }
     }
     
+    func searchSoundWith(_ text: String, loadedCount: Int = 0,
+                         sortParameter: SortParameter?,
+                         filterParameter: FilterParameter?) -> Observable<[Result]> {
+        
+        defaultSession = URLSession(configuration: defaultSessionConfig,
+                                    delegate: nil,
+                                    delegateQueue: OperationQueue.main)
+        
+        //        let obs: Observable<SearchResult> = loadd(request: SearchRequest(query: text, filter: filterParameter, sort: sortParameter))
+        
+        let obs: Observable<Page> = loadd(request: SearchRequest(query: text, filter: filterParameter, sort: sortParameter))
+        
+        return obs.map { $0.results as! [Result] }
+    }
+    
+    
     func loadUser(withName name: String, authRequired: Bool = false) -> Observable<User> {
         guard let url = URL(string: resourcePath.userPathFor(name)) else {
             return Observable.error(SomeError.wrongData)
@@ -261,6 +282,36 @@ class SoundLoader {
                     parsed.configureWithJson(JSON(data: data))
                     
                     return parsed
+                } else {
+                    print("Server Error: \(httpResponse.statusCode)")
+                    
+                    let error = NetworkError.responseStatusError(status: httpResponse.statusCode,
+                                                                 message: HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
+                    throw error
+                }
+            })
+    }
+    
+    func loadd(request: FRRequest) -> Observable<Page> {
+        let request = RequestBuilder.create(request: request)
+        
+        defaultSession = URLSession(configuration: defaultSessionConfig,
+                                    delegate: nil,
+                                    delegateQueue: OperationQueue.main)
+        
+        return self.defaultSession.rx.response(request: request)
+            .map({ (httpResponse, data) -> Page in
+                if httpResponse.statusCode == 200 {
+    
+                    let page = try! Page.init(data: data)
+                    print(page)
+                    print(page)
+                    return page
+                    
+//                    let parsed = T.init()
+//                    parsed.configureWithJson(JSON(data: data))
+//
+//                    return parsed
                 } else {
                     print("Server Error: \(httpResponse.statusCode)")
                     

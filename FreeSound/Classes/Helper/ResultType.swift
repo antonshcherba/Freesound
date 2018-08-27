@@ -1,5 +1,5 @@
 //
-//  Result.swift
+//  ResultType.swift
 //  FreeSound
 //
 //  Created by Anton Shcherba on 3/5/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Result<Value> {
+enum ResultType<Value> {
     case success(Value)
     case failure(Error)
     
@@ -21,17 +21,17 @@ enum Result<Value> {
     }
 }
 
-extension Result {
-    func flatMap<U>(transform: (Value) -> Result<U>) -> Result<U> {
+extension ResultType {
+    func flatMap<U>(transform: (Value) -> ResultType<U>) -> ResultType<U> {
         switch self {
         case .success(let value): return transform(value)
         case .failure(let err): return .failure(err)
         }
     }
     
-    public func map<U>(_ transform: (Value) throws -> U) -> Result<U> {
+    public func map<U>(_ transform: (Value) throws -> U) -> ResultType<U> {
         switch self {
-        case .success(let val): return Result<U> { try transform(val) }
+        case .success(let val): return ResultType<U> { try transform(val) }
         case .failure(let e): return .failure(e)
         }
     }
